@@ -207,7 +207,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1212215243
+--- !u!1001 &954134044
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -258,26 +258,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2100654605602047883, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2381969614320695955, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3223900596561193123, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
+      propertyPath: cameraTransform
+      value: 
+      objectReference: {fileID: 519420032}
     - target: {fileID: 6330510853197941725, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
       propertyPath: rb
       value: 
-      objectReference: {fileID: 1212215244}
+      objectReference: {fileID: 954134045}
     - target: {fileID: 6330510853197941725, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
       propertyPath: moveSpeed
       value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
---- !u!50 &1212215244 stripped
+--- !u!50 &954134045 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 2100654605602047883, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
-  m_PrefabInstance: {fileID: 1212215243}
+  m_PrefabInstance: {fileID: 954134044}
   m_PrefabAsset: {fileID: 0}

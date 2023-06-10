@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 508229974840071627}
   - component: {fileID: 6330510853197941725}
+  - component: {fileID: 3223900596561193123}
   - component: {fileID: 2100654605602047883}
   m_Layer: 0
   m_Name: Player
@@ -133,6 +134,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0
   rb: {fileID: 0}
+--- !u!114 &3223900596561193123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2381969614320695955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e23b6465a0b8aa45b7c4f7fedd332e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTransform: {fileID: 0}
 --- !u!50 &2100654605602047883
 Rigidbody2D:
   serializedVersion: 4
