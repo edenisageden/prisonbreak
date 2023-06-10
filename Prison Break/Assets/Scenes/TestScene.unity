@@ -1031,16 +1031,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7700118638494505898, guid: df81ea34874b981478d2700c8b2e5d63, type: 3}
-      propertyPath: wanderingType
-      value: 1
+      propertyPath: chasingSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7700118638494505898, guid: df81ea34874b981478d2700c8b2e5d63, type: 3}
-      propertyPath: rotationTimeMax
+      propertyPath: wanderingType
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7700118638494505898, guid: df81ea34874b981478d2700c8b2e5d63, type: 3}
-      propertyPath: rotationTimeMin
+      propertyPath: rotateClockwise
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700118638494505898, guid: df81ea34874b981478d2700c8b2e5d63, type: 3}
+      propertyPath: rotationTimeMax
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7700118638494505898, guid: df81ea34874b981478d2700c8b2e5d63, type: 3}
+      propertyPath: rotationTimeMin
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df81ea34874b981478d2700c8b2e5d63, type: 3}

@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent (typeof(AIDestinationSetter))]
+[RequireComponent(typeof(AIPath))]
 [RequireComponent(typeof(VisionAndCollision))]
 public class EnemyLogic : MonoBehaviour
 {
@@ -13,11 +14,13 @@ public class EnemyLogic : MonoBehaviour
     //[SerializeField] private Weapon selectedWeapon;
     [SerializeField] private WanderingTypes wanderingType;
     [SerializeField] private float wanderSpeed;
+    [SerializeField] private float chasingSpeed;
     [SerializeField] private bool rotateClockwise;
     [SerializeField] private float rotationTimeMax, rotationTimeMin;
 
     [Header("Assignables")]
     [SerializeField] private AIDestinationSetter aiDestinationSetter;
+    [SerializeField] private AIPath aiPath;
     [SerializeField] private VisionAndCollision visionAndCollision;
     [SerializeField] private Rigidbody2D rb;
 
@@ -43,6 +46,7 @@ public class EnemyLogic : MonoBehaviour
     private void Awake()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        aiPath.speed = chasingSpeed;
     }
     private void Update()
     {

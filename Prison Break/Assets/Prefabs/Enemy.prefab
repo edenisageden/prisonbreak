@@ -476,7 +476,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wanderingType: 1
   wanderSpeed: 5
+  chasingSpeed: 0
+  rotateClockwise: 0
+  rotationTimeMax: 0
+  rotationTimeMin: 0
   aiDestinationSetter: {fileID: 6095337746392149172}
+  aiPath: {fileID: 3004965156376584187}
   visionAndCollision: {fileID: 5251288999884793487}
   rb: {fileID: 2903605228703377843}
   enemyState: 0
