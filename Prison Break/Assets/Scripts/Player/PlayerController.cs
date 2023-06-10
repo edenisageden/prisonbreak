@@ -19,6 +19,10 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         CalculateDirection();
+        
+    }
+    private void FixedUpdate()
+    {
         Move();
     }
     #endregion
