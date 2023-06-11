@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 using Unity.VisualScripting;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent (typeof(AIDestinationSetter))]
@@ -15,6 +17,9 @@ public class EnemyLogic : MonoBehaviour
     [SerializeField] private WanderingTypes wanderingType;
     [SerializeField] private float wanderSpeed;
     [SerializeField] private float chasingSpeed;
+    [SerializeField] private float rotationSpeed;
+    [SerializeField] private float timeBetweenRotationForRandom;
+    [SerializeField] private int randomRotationCountMin, randomRotationCountMax;
     [SerializeField] private bool rotateClockwise;
     [SerializeField] private float rotationTimeMax, rotationTimeMin;
 
@@ -45,8 +50,9 @@ public class EnemyLogic : MonoBehaviour
 
     private void Awake()
     {
+        LeanTween.reset();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        aiPath.speed = chasingSpeed;
+        aiPath.maxSpeed = chasingSpeed;
     }
     private void Update()
     {
@@ -102,7 +108,7 @@ public class EnemyLogic : MonoBehaviour
     private void DoPerimeter()
     {
         transform.position += transform.up * wanderSpeed * Time.deltaTime;
-        if (visionAndCollision.frontCollisionInRange) RotateAmount(perimeterRotateAmount);
+        if (visionAndCollision.frontCollisionInRange) RotateAmount(perimeterRotateAmount, rotationSpeed);
     }
     private void DoRandom()
     {
@@ -112,7 +118,7 @@ public class EnemyLogic : MonoBehaviour
             if (visionAndCollision.frontCollisionInRange)
             {
                 float randomAngle = Random.Range(-180, 180);
-                RotateAmount(randomAngle);
+                RotateAmount(randomAngle, rotationSpeed);
             }
             if (!randomRotateTimerTicking)
             {
@@ -127,12 +133,12 @@ public class EnemyLogic : MonoBehaviour
     private IEnumerator DoRandomRotate()
     {
         isDoingRandomRotate = true;
-        int rotateAmount = Random.Range(1, 4);
+        int rotateAmount = Random.Range(randomRotationCountMin, randomRotationCountMax);
         for (int i = 0; i < rotateAmount; i++)
         {
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(timeBetweenRotationForRandom);
             float randomAngle = Random.Range(-180, 180);
-            RotateAmount(randomAngle);
+            RotateAmount(randomAngle, rotationSpeed);
         }
         isDoingRandomRotate = false;
         randomRotateTimerTicking = false;
@@ -147,8 +153,10 @@ public class EnemyLogic : MonoBehaviour
     {
         lookoutTimerTicking = true;
         yield return new WaitForSeconds(Random.Range(rotationTimeMin, rotationTimeMax));
-        RotateAmount(lookoutRotateAmount);
+        RotateAmount(lookoutRotateAmount, rotationSpeed);
         lookoutTimerTicking = false;
+        if (rotateClockwise) rotateClockwise = false;
+        else rotateClockwise = true;
     }
     #endregion
 
@@ -169,8 +177,12 @@ public class EnemyLogic : MonoBehaviour
             else enemyState = EnemyStates.Chasing;
         }
     }
-    private void RotateAmount(float rotationAmount)
+    private void RotateAmount(float rotationAmount, float rotationTime)
     {
-        transform.rotation *= Quaternion.Euler(0f, 0f, rotationAmount);
+        LeanTween.init();
+        if (LeanTween.isTweening(gameObject)) return;
+        LeanTween.reset();
+        LeanTween.cancel(gameObject);
+        LeanTween.rotateAround(gameObject, Vector3.forward, rotationAmount, rotationTime);
     }
 }
