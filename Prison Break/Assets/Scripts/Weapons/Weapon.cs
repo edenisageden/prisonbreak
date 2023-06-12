@@ -7,4 +7,6 @@ public abstract class Weapon : ScriptableObject
     public new string name;
     public Sprite sprite;
     public float reloadTime;
+
+    public abstract void Attack(Vector3 start, Quaternion rotation, Vector3 direction, string ignoreLayer);
 }

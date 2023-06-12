@@ -334,8 +334,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6149587027008729740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.38, z: 0}
-  m_LocalScale: {x: 0.525, y: 1.9806929, z: 1}
+  m_LocalPosition: {x: 0, y: 5.0786, z: 0}
+  m_LocalScale: {x: 0.525, y: 9.377987, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 894475870458035004}
@@ -434,6 +434,8 @@ GameObject:
   - component: {fileID: 6095337746392149172}
   - component: {fileID: 8236955024274871430}
   - component: {fileID: 3004965156376584187}
+  - component: {fileID: 795013499940407203}
+  - component: {fileID: 3598961807878892322}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
@@ -477,13 +479,19 @@ MonoBehaviour:
   wanderingType: 1
   wanderSpeed: 5
   chasingSpeed: 0
+  rotationSpeed: 0
+  timeBetweenRotationForRandom: 0
+  randomRotationCountMin: 0
+  randomRotationCountMax: 0
   rotateClockwise: 0
   rotationTimeMax: 0
   rotationTimeMin: 0
   aiDestinationSetter: {fileID: 6095337746392149172}
   aiPath: {fileID: 3004965156376584187}
   visionAndCollision: {fileID: 5251288999884793487}
+  enemyShoot: {fileID: 795013499940407203}
   rb: {fileID: 2903605228703377843}
+  weaponPrefab: {fileID: 8312270055555447326, guid: a043d14b7f3915841aaa6c399f4ff81d, type: 3}
   enemyState: 0
 --- !u!114 &5251288999884793487
 MonoBehaviour:
@@ -620,6 +628,36 @@ MonoBehaviour:
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0
+--- !u!114 &795013499940407203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7247656249392969399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76b4cd95f1834a42b4eef50fb701b1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapon: {fileID: 0}
+  canShoot: 1
+--- !u!58 &3598961807878892322
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7247656249392969399}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &8145535043496028253
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,7 +668,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1009509049643259115}
   - component: {fileID: 7650833828964213900}
-  - component: {fileID: 5781773893294228230}
   m_Layer: 6
   m_Name: Circle
   m_TagString: Untagged
@@ -705,22 +742,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &5781773893294228230
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8145535043496028253}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!1 &9139011929088535785
 GameObject:
   m_ObjectHideFlags: 0

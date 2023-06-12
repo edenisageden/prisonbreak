@@ -10,10 +10,10 @@ using System.Runtime.InteropServices;
 [RequireComponent (typeof(AIDestinationSetter))]
 [RequireComponent(typeof(AIPath))]
 [RequireComponent(typeof(VisionAndCollision))]
-public class EnemyLogic : MonoBehaviour
+[RequireComponent(typeof(EnemyShoot))]
+public class EnemyLogic : MonoBehaviour, IKillable
 {
     [Header("Config")]
-    //[SerializeField] private Weapon selectedWeapon;
     [SerializeField] private WanderingTypes wanderingType;
     [SerializeField] private float wanderSpeed;
     [SerializeField] private float chasingSpeed;
@@ -27,8 +27,10 @@ public class EnemyLogic : MonoBehaviour
     [SerializeField] private AIDestinationSetter aiDestinationSetter;
     [SerializeField] private AIPath aiPath;
     [SerializeField] private VisionAndCollision visionAndCollision;
+    [SerializeField] private EnemyShoot enemyShoot;
     [SerializeField] private Rigidbody2D rb;
-
+    [SerializeField] private GameObject weaponPrefab;
+ 
     [Header("Debugging")]
     [SerializeField] private EnemyStates enemyState = EnemyStates.Wandering;
 
@@ -54,22 +56,6 @@ public class EnemyLogic : MonoBehaviour
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         aiPath.maxSpeed = chasingSpeed;
     }
-    private void Update()
-    {
-        /*CheckIfInRange();
-        switch (enemyState)
-        {
-            case EnemyStates.Wandering:
-                DoWandering();
-                break;
-            case EnemyStates.Chasing:
-                DoChasing();
-                break;
-            case EnemyStates.Attacking:
-                DoAttacking();
-                break;
-        }*/
-    }
     private void FixedUpdate()
     {
         // Temporarily fixed bug where multiple rotations happen
@@ -84,6 +70,9 @@ public class EnemyLogic : MonoBehaviour
                 break;
             case EnemyStates.Attacking:
                 DoAttacking();
+                break;
+            case EnemyStates.Death:
+                DoDeath();
                 break;
         }
     }
@@ -167,8 +156,17 @@ public class EnemyLogic : MonoBehaviour
     private void DoAttacking()
     {
         aiDestinationSetter.target = playerTransform;
+        enemyShoot.Shoot();
     }
-
+    private void DoDeath()
+    {
+        WeaponDropManager.DropWeapon(weaponPrefab, enemyShoot.weapon, transform.position, transform.rotation);
+        Destroy(gameObject);
+    }
+    public void Kill()
+    {
+        enemyState = EnemyStates.Death;
+    }
     private void CheckIfInRange()
     {
         if (enemyState == EnemyStates.Chasing || enemyState == EnemyStates.Attacking)

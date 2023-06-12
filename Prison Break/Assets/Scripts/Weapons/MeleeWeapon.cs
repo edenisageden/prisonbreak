@@ -6,4 +6,9 @@ using UnityEngine;
 public class MeleeWeapon : Weapon
 {
     public BoxCollider2D hitBox;
+
+    public override void Attack(Vector3 start, Quaternion rotation, Vector3 direction, string ignoreLayer)
+    {
+        
+    }
 }

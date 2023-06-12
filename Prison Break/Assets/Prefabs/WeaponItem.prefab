@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2627107024741050268}
   - component: {fileID: 1064869365153735302}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -94,7 +94,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2220288012429109711}
   - component: {fileID: 7234820431117256903}
-  m_Layer: 0
+  - component: {fileID: 5760165566280329305}
+  m_Layer: 8
   m_Name: WeaponItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,5 +130,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef9aa8641565e8242a8fac4aed215477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 0}
   spriteRenderer: {fileID: 1064869365153735302}
+  weapon: {fileID: 0}
+--- !u!58 &5760165566280329305
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8312270055555447326}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
