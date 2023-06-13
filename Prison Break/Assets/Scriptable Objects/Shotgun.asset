@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Shotgun
   m_EditorClassIdentifier: 
   name: Shotgun
-  sprite: {fileID: 21300000, guid: bb51334c6930f864abac38001f7bdf6e, type: 3}
+  sprite: {fileID: 21300000, guid: 7e40448643e8bc547a2cb524766c9476, type: 3}
+  playerSprite: {fileID: 21300000, guid: 84c18d27e3f27ef428c114c18b8e4311, type: 3}
+  enemySprite: {fileID: 21300000, guid: 84c18d27e3f27ef428c114c18b8e4311, type: 3}
   reloadTime: 0.5
-  bulletSpeed: 50
+  bulletSpeed: 60
   spread: 0
   bulletPrefab: {fileID: 2193585288452067729, guid: 1a3f055598e695043aa9cdd5f6de1eb2, type: 3}
   isAutomatic: 0
