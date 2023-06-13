@@ -52,6 +52,7 @@ public class EnemyLogic : MonoBehaviour, IKillable
 
     private void Awake()
     {
+        LeanTween.init();
         LeanTween.reset();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         aiPath.maxSpeed = chasingSpeed;
@@ -173,8 +174,22 @@ public class EnemyLogic : MonoBehaviour, IKillable
     {
         if (enemyState == EnemyStates.Chasing || enemyState == EnemyStates.Attacking)
         {
-            if (visionAndCollision.rangedInRange) enemyState = EnemyStates.Attacking;
-            else enemyState = EnemyStates.Chasing;
+            if (enemyShoot.weapon is RangedWeapon)
+            {
+                if (visionAndCollision.rangedInRange)
+                {
+                    enemyState = EnemyStates.Attacking;
+                }
+                else enemyState = EnemyStates.Chasing;
+            }
+            else
+            {
+                if (visionAndCollision.meleeInRange)
+                {
+                    enemyState = EnemyStates.Attacking;
+                }
+                else enemyState = EnemyStates.Chasing;
+            }
         }
     }
     private void RotateAmount(float rotationAmount, float rotationTime)

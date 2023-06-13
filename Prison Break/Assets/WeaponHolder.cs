@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -22,6 +23,13 @@ public class WeaponHolder : MonoBehaviour
             if (rangedWeapon.isAutomatic) isAttacking = Input.GetMouseButton(0);
             else isAttacking = Input.GetMouseButtonDown(0);
             if (isAttacking)
+            {
+                Shoot();
+            }
+        }
+        else 
+        {
+            if (Input.GetMouseButtonDown(0))
             {
                 Shoot();
             }
