@@ -6,6 +6,7 @@ public class EnemySpriteManager : MonoBehaviour
 {
     [SerializeField] private EnemyShoot enemyShoot;
     [SerializeField] private Animator animator;
+    [SerializeField] private EnemyLogic enemyLogic;
 
     private void Update()
     {

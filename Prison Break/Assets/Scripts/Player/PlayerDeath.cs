@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class PlayerDeath : MonoBehaviour, IKillable
 {
+    [SerializeField] GameObject deadPrefab;
+
     public void Kill()
     {
-        print("Player death");
+        Instantiate(deadPrefab, transform.position, transform.rotation);
+        gameObject.SetActive(false);
     }
 }

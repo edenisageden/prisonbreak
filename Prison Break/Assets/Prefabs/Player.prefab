@@ -79,6 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79f7c12f279f164469d604a1d65ba28b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deadPrefab: {fileID: 8510047037880979022, guid: 098b33ab4c25f134e8e124aecfdea711, type: 3}
 --- !u!50 &2100654605602047883
 Rigidbody2D:
   serializedVersion: 4
@@ -131,7 +132,7 @@ MonoBehaviour:
   weapon: {fileID: 11400000, guid: 853607b19ddda93488e0a88788c78c4f, type: 2}
   animator: {fileID: 5461007214968250093}
   fistWidth: 2
-  fistRange: 5
+  fistRange: 3
   fistReloadTime: 0.5
 --- !u!114 &5617725211604521888
 MonoBehaviour:

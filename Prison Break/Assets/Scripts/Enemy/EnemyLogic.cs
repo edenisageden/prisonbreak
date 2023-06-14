@@ -5,6 +5,7 @@ using Pathfinding;
 using Unity.VisualScripting;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using UnityEditor.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent (typeof(AIDestinationSetter))]
@@ -22,6 +23,7 @@ public class EnemyLogic : MonoBehaviour, IKillable
     [SerializeField] private int randomRotationCountMin, randomRotationCountMax;
     [SerializeField] private bool rotateClockwise;
     [SerializeField] private float rotationTimeMax, rotationTimeMin;
+    [SerializeField] private GameObject deadPrefab;
 
     [Header("Assignables")]
     [SerializeField] private AIDestinationSetter aiDestinationSetter;
@@ -155,16 +157,29 @@ public class EnemyLogic : MonoBehaviour, IKillable
         LeanTween.init();
         if (LeanTween.isTweening(gameObject)) LeanTween.cancel(gameObject);
         aiDestinationSetter.target = playerTransform;
+        if (!playerTransform.gameObject.activeSelf)
+        {
+            aiDestinationSetter.target = transform;
+            aiDestinationSetter.target = null;
+            enemyState = EnemyStates.Wandering;
+        }
     }
     private void DoAttacking()
     {
         if (LeanTween.isTweening(gameObject)) LeanTween.cancel(gameObject);
         aiDestinationSetter.target = playerTransform;
         enemyShoot.Shoot();
+        if (!playerTransform.gameObject.activeSelf)
+        {
+            aiDestinationSetter.target = transform;
+            aiDestinationSetter.target = null;
+            enemyState = EnemyStates.Wandering;
+        }
     }
     private void DoDeath()
     {
         WeaponDropManager.DropWeapon(weaponPrefab, enemyShoot.weapon, transform.position, transform.rotation);
+        Instantiate(deadPrefab, transform.position, transform.rotation);
         Destroy(gameObject);
     }
     public void Kill()
