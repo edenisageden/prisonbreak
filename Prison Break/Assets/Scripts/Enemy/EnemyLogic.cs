@@ -159,8 +159,8 @@ public class EnemyLogic : MonoBehaviour, IKillable
         aiDestinationSetter.target = playerTransform;
         if (!playerTransform.gameObject.activeSelf)
         {
-            aiDestinationSetter.target = transform;
             aiDestinationSetter.target = null;
+            aiPath.canMove = false;
             enemyState = EnemyStates.Wandering;
         }
     }
@@ -171,8 +171,8 @@ public class EnemyLogic : MonoBehaviour, IKillable
         enemyShoot.Shoot();
         if (!playerTransform.gameObject.activeSelf)
         {
-            aiDestinationSetter.target = transform;
             aiDestinationSetter.target = null;
+            aiPath.canMove = false;
             enemyState = EnemyStates.Wandering;
         }
     }
