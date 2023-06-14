@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
+using System;
 
 public class WeaponHolder : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class WeaponHolder : MonoBehaviour
     private bool isRanged;
     private bool isAttacking;
     private bool canShoot = true;
+    public static event Action OnFistAttack = delegate { };
 
     private void Update()
     {
@@ -87,6 +89,7 @@ public class WeaponHolder : MonoBehaviour
         if (!canShoot) return;
         canShoot = false;
 
+        OnFistAttack.Invoke();
         animator.SetTrigger("onAttack");
         Vector2 size = new Vector2(width, range);
         Collider2D[] collisionList = Physics2D.OverlapBoxAll(transform.position, size, transform.rotation.eulerAngles.z);

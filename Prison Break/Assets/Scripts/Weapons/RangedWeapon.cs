@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.FullSerializer;
@@ -10,9 +11,11 @@ public class RangedWeapon : Weapon
     public float spread;
     public GameObject bulletPrefab;
     public bool isAutomatic;
+    public static event Action<Weapon> OnAttack = delegate { };
 
     public override void Attack(Vector3 start, Quaternion rotation, Vector3 direction, string ignoreLayer, Animator animator)
     {
+        OnAttack(this);
         animator.SetTrigger("onAttack");
         GameObject newBullet = Instantiate(bulletPrefab, start, rotation);
         newBullet.GetComponent<BulletLogic>().ignoreLayer = ignoreLayer;

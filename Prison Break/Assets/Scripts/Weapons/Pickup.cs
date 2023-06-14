@@ -10,6 +10,7 @@ public class Pickup : MonoBehaviour
     [SerializeField] private LayerMask itemLayer;
     [SerializeField] private WeaponHolder weaponHolder;
     [SerializeField] private GameObject weaponPrefab;
+    public static event Action<Weapon> OnPickup = delegate { };
 
     private void Update()
     {
@@ -24,10 +25,13 @@ public class Pickup : MonoBehaviour
                     WeaponDropManager.DropWeapon(weaponPrefab, weaponHolder.weapon, transform.position, transform.rotation);
                     weaponHolder.weapon = null;
                     equiptable.Equipt(gameObject);
+                    
+                    OnPickup?.Invoke(collider.gameObject.GetComponent<WeaponItemLogic>().weapon);
                 }
                 else
                 {
                     equiptable.Equipt(gameObject);
+                    OnPickup?.Invoke(collider.gameObject.GetComponent<WeaponItemLogic>().weapon);
                 }
             }
         }

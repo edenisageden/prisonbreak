@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.FullSerializer;
@@ -7,9 +8,11 @@ using UnityEngine;
 public class MeleeWeapon : Weapon
 {
     public float range, width;
+    public static event Action<Weapon> OnAttack = delegate { };
 
     public override void Attack(Vector3 start, Quaternion rotation, Vector3 direction, string ignoreLayer, Animator animator)
     {
+        OnAttack(this);
         animator.SetTrigger("onAttack");
         Vector2 size = new Vector2(width, range);
         Collider2D[] collisionList = Physics2D.OverlapBoxAll(start, size, rotation.eulerAngles.z);
