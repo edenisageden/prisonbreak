@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -9,6 +10,7 @@ public class WeaponHolder : MonoBehaviour
 {
     public Weapon weapon;
     [SerializeField] private Animator animator;
+    [SerializeField] private float fistWidth, fistRange, fistReloadTime;
     private RangedWeapon rangedWeapon;
     private MeleeWeapon meleeWeapon;
     private bool isRanged;
@@ -19,7 +21,10 @@ public class WeaponHolder : MonoBehaviour
     {
         if (weapon == null)
         {
-            // Fist
+            if (Input.GetMouseButtonDown(0))
+            {
+                FistAttack(fistWidth, fistRange, "Player", fistReloadTime);
+            }
         }
         else
         {
@@ -57,6 +62,12 @@ public class WeaponHolder : MonoBehaviour
         canShoot = true;
     }
 
+    private IEnumerator ReloadFist(float reloadTime)
+    {
+        yield return new WaitForSeconds(reloadTime);
+        canShoot = true;
+    }
+
     private void CheckIfRangedOrMelee()
     {
         if (weapon is RangedWeapon)
@@ -69,5 +80,25 @@ public class WeaponHolder : MonoBehaviour
             meleeWeapon = weapon as MeleeWeapon;
             isRanged = false;
         }
+    }
+
+    public void FistAttack(float width, float range, string ignoreLayer, float reloadTime)
+    {
+        if (!canShoot) return;
+        canShoot = false;
+
+        animator.SetTrigger("onAttack");
+        Vector2 size = new Vector2(width, range);
+        Collider2D[] collisionList = Physics2D.OverlapBoxAll(transform.position, size, transform.rotation.eulerAngles.z);
+        for (int i = 0; i < collisionList.Length; i++)
+        {
+            if (collisionList[i].gameObject.layer != LayerMask.NameToLayer(ignoreLayer))
+            {
+                IKillable killable = collisionList[i].gameObject.GetComponent<IKillable>();
+                if (killable != null) killable.Kill();
+            }
+        }
+
+        StartCoroutine(ReloadFist(reloadTime));
     }
 }

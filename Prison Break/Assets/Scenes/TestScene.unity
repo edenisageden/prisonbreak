@@ -631,7 +631,7 @@ PrefabInstance:
     - target: {fileID: 1879942244058850348, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
       propertyPath: weapon
       value: 
-      objectReference: {fileID: 11400000, guid: 853607b19ddda93488e0a88788c78c4f, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 2381969614320695955, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
       propertyPath: m_Name
       value: Player

@@ -130,6 +130,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: 853607b19ddda93488e0a88788c78c4f, type: 2}
   animator: {fileID: 5461007214968250093}
+  fistWidth: 2
+  fistRange: 5
+  fistReloadTime: 0.5
 --- !u!114 &5617725211604521888
 MonoBehaviour:
   m_ObjectHideFlags: 0
