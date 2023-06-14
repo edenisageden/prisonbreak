@@ -121,6 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7820116061889877252}
   - component: {fileID: 70655621058720484}
+  - component: {fileID: 4441057397607667318}
   m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
@@ -195,6 +196,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &4441057397607667318
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4820248453382648179}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c57e24936a8d620499066e73408fa160, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5055875383779352675
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,6 +663,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 0}
+  animator: {fileID: 4441057397607667318}
   canShoot: 1
 --- !u!58 &3598961807878892322
 CircleCollider2D:
@@ -671,8 +694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyShoot: {fileID: 795013499940407203}
-  spriteRenderer: {fileID: 70655621058720484}
-  fistSprite: {fileID: 21300000, guid: 83b597a528252e8429aad33770b15e31, type: 3}
+  animator: {fileID: 4441057397607667318}
 --- !u!1 &9139011929088535785
 GameObject:
   m_ObjectHideFlags: 0

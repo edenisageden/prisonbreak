@@ -6,9 +6,8 @@ public abstract class Weapon : ScriptableObject
 {
     public new string name;
     public Sprite sprite;
-    public Sprite playerSprite;
-    public Sprite enemySprite;
     public float reloadTime;
+    public int id;
 
-    public abstract void Attack(Vector3 start, Quaternion rotation, Vector3 direction, string ignoreLayer);
+    public abstract void Attack(Vector3 start, Quaternion rotation, Vector3 direction, string ignoreLayer, Animator animator);
 }

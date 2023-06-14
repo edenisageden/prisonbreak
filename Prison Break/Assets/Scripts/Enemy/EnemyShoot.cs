@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyShoot : MonoBehaviour
 {
     public Weapon weapon;
+    [SerializeField] private Animator animator;
 
     [HideInInspector] public bool canShoot = true;
 
@@ -13,7 +14,7 @@ public class EnemyShoot : MonoBehaviour
     {
         if (!canShoot) return;
         canShoot = false;
-        weapon.Attack(transform.position, transform.rotation, transform.up, "Enemy");
+        weapon.Attack(transform.position, transform.rotation, transform.up, "Enemy", animator);
         StartCoroutine(ReloadShoot());
     }
 

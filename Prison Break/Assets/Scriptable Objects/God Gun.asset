@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: God Gun
   m_EditorClassIdentifier: 
   name: God Gun
-  sprite: {fileID: 21300000, guid: 678c92572cc724845a460c87117f5353, type: 3}
+  sprite: {fileID: 21300000, guid: 70141d51621e24facbca9196bbde84b4, type: 3}
+  playerSprite: {fileID: 21300000, guid: 6a37f5dcb74d06f499dde9f938edf810, type: 3}
+  enemySprite: {fileID: 21300000, guid: 6a37f5dcb74d06f499dde9f938edf810, type: 3}
   reloadTime: 0.02
   bulletSpeed: 200
   spread: 0

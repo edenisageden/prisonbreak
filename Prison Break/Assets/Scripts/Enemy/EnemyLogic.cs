@@ -152,6 +152,7 @@ public class EnemyLogic : MonoBehaviour, IKillable
 
     private void DoChasing()
     {
+        LeanTween.init();
         if (LeanTween.isTweening(gameObject)) LeanTween.cancel(gameObject);
         aiDestinationSetter.target = playerTransform;
     }

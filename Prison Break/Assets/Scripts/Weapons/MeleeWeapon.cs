@@ -8,8 +8,9 @@ public class MeleeWeapon : Weapon
 {
     public float range, width;
 
-    public override void Attack(Vector3 start, Quaternion rotation, Vector3 direction, string ignoreLayer)
+    public override void Attack(Vector3 start, Quaternion rotation, Vector3 direction, string ignoreLayer, Animator animator)
     {
+        animator.SetTrigger("onAttack");
         Vector2 size = new Vector2(width, range);
         Collider2D[] collisionList = Physics2D.OverlapBoxAll(start, size, rotation.eulerAngles.z);
         for (int i = 0; i < collisionList.Length; i++)

@@ -1,0 +1,4 @@
+- Add fist attack
+- Add animations
+- Add sound effects
+- Add melee weapon that slings you forward like a trident from Minecraft

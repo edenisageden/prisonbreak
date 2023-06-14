@@ -11,8 +11,9 @@ public class RangedWeapon : Weapon
     public GameObject bulletPrefab;
     public bool isAutomatic;
 
-    public override void Attack(Vector3 start, Quaternion rotation, Vector3 direction, string ignoreLayer)
+    public override void Attack(Vector3 start, Quaternion rotation, Vector3 direction, string ignoreLayer, Animator animator)
     {
+        animator.SetTrigger("onAttack");
         GameObject newBullet = Instantiate(bulletPrefab, start, rotation);
         newBullet.GetComponent<BulletLogic>().ignoreLayer = ignoreLayer;
         newBullet.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
