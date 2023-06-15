@@ -1,4 +1,6 @@
-- Add fist attack
-- Add animations
-- Add sound effects
 - Add melee weapon that slings you forward like a trident from Minecraft
+- Add spread
+- Add level completion
+- Agro mechanics
+- Add ammo
+- Maybe have move speed boost for weapons (or slow downs)

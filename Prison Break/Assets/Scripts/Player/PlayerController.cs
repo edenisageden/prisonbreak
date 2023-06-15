@@ -5,6 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private WeaponHolder holder;
+    [SerializeField] private float knifeSpeedBoost;
+
     #region Variables
     [Header("Movement")]
     [SerializeField] private float moveSpeed;
@@ -18,6 +21,11 @@ public class PlayerController : MonoBehaviour
     #region Execution
     private void Update()
     {
+        if (holder.weapon != null)
+        {
+            if (holder.weapon.name == "Knife") moveSpeed = knifeSpeedBoost;
+            else moveSpeed = 10;
+        }
         CalculateDirection();
         
     }

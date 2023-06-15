@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7188a6e2573253747bedfeb732d727c6, type: 3}
-  m_Name: God Gun
+  m_Name: they slash them
   m_EditorClassIdentifier: 
-  name: God Gun
-  sprite: {fileID: 21300000, guid: 70141d51621e24facbca9196bbde84b4, type: 3}
+  name: they/them
+  sprite: {fileID: 21300000, guid: 13d0e059708e3e145880f8f705f3efab, type: 3}
   reloadTime: 0.001
   id: 0
-  pickupSound: {fileID: 8300000, guid: f867abc2a022e024daf8116cdd570853, type: 3}
-  attackSound: {fileID: 8300000, guid: 4303d0f059b9ae54e97423de1c91391f, type: 3}
-  bulletSpeed: 200
+  pickupSound: {fileID: 8300000, guid: fcb3b4db35f5be64786bf399cbdf53d5, type: 3}
+  attackSound: {fileID: 8300000, guid: 94bc94226f6e1024089158130d400cb7, type: 3}
+  bulletSpeed: 100
   spread: 0
-  bulletPrefab: {fileID: 2193585288452067729, guid: 7e0138a26fc43e94a95bab87202916ec, type: 3}
+  bulletPrefab: {fileID: 2193585288452067729, guid: a715ba7fbeeb40549aacef3f16250571, type: 3}
   isAutomatic: 1

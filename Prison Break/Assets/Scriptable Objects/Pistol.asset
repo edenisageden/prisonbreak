@@ -18,7 +18,7 @@ MonoBehaviour:
   id: 2
   pickupSound: {fileID: 8300000, guid: f867abc2a022e024daf8116cdd570853, type: 3}
   attackSound: {fileID: 8300000, guid: aa680f28147da4b4aaaaa11896075ae1, type: 3}
-  bulletSpeed: 40
+  bulletSpeed: 60
   spread: 1
   bulletPrefab: {fileID: 2193585288452067729, guid: da23a0d4282f8794298879904ad49f89, type: 3}
   isAutomatic: 0
