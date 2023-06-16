@@ -84,6 +84,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b9861accdf0c3d45be09055c3094bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  holder: {fileID: 0}
+  knifeSpeedBoost: 0
   moveSpeed: 10
   rb: {fileID: 2100654605602047883}
 --- !u!114 &3223900596561193123
@@ -235,7 +237,7 @@ Transform:
   m_GameObject: {fileID: 6221906732619143906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 508229974840071627}
