@@ -6,6 +6,7 @@ public class SoundEffectManager : MonoBehaviour
 {
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip fistAttackSound;
+    [SerializeField] AudioClip enemyDeathSound;
 
     private void Start()
     {
@@ -13,6 +14,7 @@ public class SoundEffectManager : MonoBehaviour
         MeleeWeapon.OnAttack += PlayAttack;
         RangedWeapon.OnAttack += PlayAttack;
         WeaponHolder.OnFistAttack += PlayFistAttack;
+        EnemyLogic.OnEnemyDeath += PlayEnemyDeath;
     }
     private void OnDestroy()
     {
@@ -20,6 +22,7 @@ public class SoundEffectManager : MonoBehaviour
         MeleeWeapon.OnAttack -= PlayAttack;
         RangedWeapon.OnAttack -= PlayAttack;
         WeaponHolder.OnFistAttack -= PlayFistAttack;
+        EnemyLogic.OnEnemyDeath -= PlayEnemyDeath;
     }
     private void PlayPickup(Weapon weapon)
     {
@@ -32,5 +35,9 @@ public class SoundEffectManager : MonoBehaviour
     private void PlayFistAttack()
     {
         audioSource.PlayOneShot(fistAttackSound);
+    }
+    private void PlayEnemyDeath()
+    {
+        audioSource.PlayOneShot(enemyDeathSound);
     }
 }

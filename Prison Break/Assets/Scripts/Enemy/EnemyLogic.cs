@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using UnityEditor.SceneManagement;
+using System;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent (typeof(AIDestinationSetter))]
@@ -40,6 +41,7 @@ public class EnemyLogic : MonoBehaviour, IKillable
     private bool randomRotateTimerTicking = false;
     private bool isDoingRandomRotate = false;
     private bool lookoutTimerTicking = false;
+    public static event Action OnEnemyDeath = delegate { };
     private float perimeterRotateAmount => rotateClockwise ? -90 : 90;
     private float lookoutRotateAmount => rotateClockwise ? -180 : 180;
 
@@ -109,7 +111,7 @@ public class EnemyLogic : MonoBehaviour, IKillable
             transform.position += transform.up * wanderSpeed * Time.deltaTime;
             if (visionAndCollision.frontCollisionInRange)
             {
-                float randomAngle = Random.Range(-180, 180);
+                float randomAngle = UnityEngine.Random.Range(-180, 180);
                 RotateAmount(randomAngle, rotationSpeed);
             }
             if (!randomRotateTimerTicking)
@@ -125,11 +127,11 @@ public class EnemyLogic : MonoBehaviour, IKillable
     private IEnumerator DoRandomRotate()
     {
         isDoingRandomRotate = true;
-        int rotateAmount = Random.Range(randomRotationCountMin, randomRotationCountMax);
+        int rotateAmount = UnityEngine.Random.Range(randomRotationCountMin, randomRotationCountMax);
         for (int i = 0; i < rotateAmount; i++)
         {
             yield return new WaitForSeconds(timeBetweenRotationForRandom);
-            float randomAngle = Random.Range(-180, 180);
+            float randomAngle = UnityEngine.Random.Range(-180, 180);
             RotateAmount(randomAngle, rotationSpeed);
         }
         isDoingRandomRotate = false;
@@ -138,13 +140,13 @@ public class EnemyLogic : MonoBehaviour, IKillable
     private IEnumerator DoRandomRotateTimer()
     {
         randomRotateTimerTicking = true;
-        yield return new WaitForSeconds(Random.Range(rotationTimeMin, rotationTimeMax));
+        yield return new WaitForSeconds(UnityEngine.Random.Range(rotationTimeMin, rotationTimeMax));
         StartCoroutine(DoRandomRotate());
     }
     private IEnumerator LookoutTimer()
     {
         lookoutTimerTicking = true;
-        yield return new WaitForSeconds(Random.Range(rotationTimeMin, rotationTimeMax));
+        yield return new WaitForSeconds(UnityEngine.Random.Range(rotationTimeMin, rotationTimeMax));
         RotateAmount(lookoutRotateAmount, rotationSpeed);
         lookoutTimerTicking = false;
         if (rotateClockwise) rotateClockwise = false;
@@ -178,6 +180,7 @@ public class EnemyLogic : MonoBehaviour, IKillable
     }
     private void DoDeath()
     {
+        OnEnemyDeath?.Invoke();
         WeaponDropManager.DropWeapon(weaponPrefab, enemyShoot.weapon, transform.position, transform.rotation);
         Instantiate(deadPrefab, transform.position, transform.rotation);
         Destroy(gameObject);

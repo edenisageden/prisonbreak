@@ -15,9 +15,9 @@ public class BulletLogic : MonoBehaviour
         Destroy(gameObject, bulletLifetime);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        bool hasCollided = collision.gameObject.layer != LayerMask.NameToLayer(ignoreLayer) && !collision.isTrigger;
+        bool hasCollided = collision.gameObject.layer != LayerMask.NameToLayer(ignoreLayer);
         IKillable killable = collision.gameObject.GetComponent<IKillable>();
 
         if (hasCollided)
