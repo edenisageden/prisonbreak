@@ -266,7 +266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 87946289}
   fistAttackSound: {fileID: 8300000, guid: a3a877525fc8c4d449001cea9869010c, type: 3}
-  enemyDeathSound: {fileID: 8300000, guid: d9066614dfd2faf42be75f820aff7225, type: 3}
+  enemyDeathSound: {fileID: 8300000, guid: 9438bd4dc08031747ad1428b3da68fc1, type: 3}
 --- !u!4 &87946288
 Transform:
   m_ObjectHideFlags: 0
@@ -1624,6 +1624,10 @@ PrefabInstance:
     - target: {fileID: 6330510853197941725, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
       propertyPath: knifeSpeedBoost
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6958728626978377546, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
+      propertyPath: immortal
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7112989346170254858, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
       propertyPath: m_Layer
