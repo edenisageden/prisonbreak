@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AR
   m_EditorClassIdentifier: 
   name: AR
-  sprite: {fileID: 21300000, guid: f718faaa4b1f1c440b1666fc081c320c, type: 3}
+  sprite: {fileID: 21300000, guid: 86e06b09e250c2542b434ae4d567ec3a, type: 3}
   reloadTime: 0.15
   id: 4
   pickupSound: {fileID: 8300000, guid: f867abc2a022e024daf8116cdd570853, type: 3}

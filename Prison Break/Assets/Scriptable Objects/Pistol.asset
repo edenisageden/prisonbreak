@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pistol
   m_EditorClassIdentifier: 
   name: Pistol
-  sprite: {fileID: 21300000, guid: ef5f24ab9a3404346bbb32fddb10d239, type: 3}
+  sprite: {fileID: 21300000, guid: 1d46e4106d2fc164e8b5238d90586bbc, type: 3}
   reloadTime: 0.3
   id: 2
   pickupSound: {fileID: 8300000, guid: f867abc2a022e024daf8116cdd570853, type: 3}

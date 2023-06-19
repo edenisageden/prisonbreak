@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Knife
   m_EditorClassIdentifier: 
   name: Knife
-  sprite: {fileID: 21300000, guid: 2e5e4cd2618ea3441aab7fe0b3538450, type: 3}
+  sprite: {fileID: 21300000, guid: 3690364d5dcd6f445b9eaf22ddd48519, type: 3}
   reloadTime: 0.3
   id: 1
   pickupSound: {fileID: 8300000, guid: f867abc2a022e024daf8116cdd570853, type: 3}

@@ -91,6 +91,8 @@ public class WeaponHolder : MonoBehaviour
 
         OnFistAttack.Invoke();
         animator.SetTrigger("onAttack");
+        if (animator.GetBool("rightPunch")) animator.SetBool("rightPunch", false);
+        else animator.SetBool("rightPunch", true);
         Vector2 size = new Vector2(width, range);
         Collider2D[] collisionList = Physics2D.OverlapBoxAll(transform.position, size, transform.rotation.eulerAngles.z);
         for (int i = 0; i < collisionList.Length; i++)
