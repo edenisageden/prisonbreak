@@ -19,29 +19,28 @@ public class LevelManager : MonoBehaviour
     }
     public static void OpenLevel(int level)
     {
-        SceneManager.LoadScene(level);
+        SceneManager.LoadScene(level + 2);
     }
     public static void TryOpenLevel(int level)
     {
         // If level is unlocked in playerprefs
         string intName = "LevelUnlocked" + level;
-        if (PlayerPrefs.GetInt(intName, 0) == 1) SceneManager.LoadScene(level + 1);
+        if (PlayerPrefs.GetInt(intName, 0) == 1) SceneManager.LoadScene(level + 2);
     }
     public static void CompleteLevel(float time)
     {
         int currentlevel = GetCurrentLevel();
         PlayerPrefs.SetInt("LevelComplete" + currentlevel, 1);
         PlayerPrefs.SetFloat("CompleteTime" + currentlevel, time);
-        UnlockLevel(currentlevel + 2);
+        UnlockLevel(currentlevel + 1);
     }
     private static void UnlockLevel(int level)
     {
-        string intName = "LevelUnlocked" + level;
-        PlayerPrefs.SetInt(intName, 1);
+        PlayerPrefs.SetInt("LevelUnlocked" + level, 1);
     }
     public static int GetCurrentLevel()
     {
-        return SceneManager.GetActiveScene().buildIndex - 1;
+        return SceneManager.GetActiveScene().buildIndex - 2;
     }
     public static void DeleteData()
     {

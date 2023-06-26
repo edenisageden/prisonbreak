@@ -23,10 +23,10 @@ public class LevelMenuManager : MonoBehaviour
     private void Awake()
     {
         PlayerPrefs.SetInt("LevelUnlocked1", 1);
-        InitializeLevelStatusImageDict();
-        InitializeLevelMenu();
+        InitializeDict();
+        InitializeButtons();
     }
-    private void InitializeLevelStatusImageDict()
+    private void InitializeDict()
     {
         levelStatusImageDict = new Dictionary<LevelStatus, Sprite>
         {
@@ -37,11 +37,12 @@ public class LevelMenuManager : MonoBehaviour
             {LevelStatus.Locked, lockedButtonImage},
         };
     }
-    private void InitializeLevelMenu()
+    private void InitializeButtons()
     {
         for (int i = 0; i < levelInfoList.Length; i++)
         {
             levelInfoList[i].levelButton.GetComponent<Image>().sprite = levelStatusImageDict[GetLevelStatus(i + 1)];
+            Debug.Log("Level:" + i + 1 + " Status:" + GetLevelStatus(i + 1).ToString());
         }
     }
     private int LevelUnlocked(int level)
