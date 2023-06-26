@@ -26,14 +26,27 @@ public class GameMenuManager : MonoBehaviour
     {
         // Deactivate everything
         panel.SetActive(true);
-        Time.timeScale = 0f;
-        player.GetComponent<FaceCursor>().enabled = false;
+        PauseTime();
     }
     public void CloseMenu()
     {
         panel.SetActive(false);
+        StartTime();
+    }
+    private void PauseTime()
+    {
+        Time.timeScale = 0f;
+        player.GetComponent<FaceCursor>().enabled = false;
+        player.GetComponent<WeaponHolder>().enabled = false;
+        player.GetComponent<PlayerController>().enabled = false;
+        player.GetComponent<Pickup>().enabled = false;
+    }
+    private void StartTime()
+    {
         Time.timeScale = 1f;
         player.GetComponent<FaceCursor>().enabled = true;
-
+        player.GetComponent<WeaponHolder>().enabled = true;
+        player.GetComponent<PlayerController>().enabled = true;
+        player.GetComponent<Pickup>().enabled = true;
     }
 }
