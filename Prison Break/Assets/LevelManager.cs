@@ -32,7 +32,7 @@ public class LevelManager : MonoBehaviour
         int currentlevel = GetCurrentLevel();
         PlayerPrefs.SetInt("LevelComplete" + currentlevel, 1);
         PlayerPrefs.SetFloat("CompleteTime" + currentlevel, time);
-        UnlockLevel(currentlevel + 1);
+        UnlockLevel(currentlevel + 2);
     }
     private static void UnlockLevel(int level)
     {
@@ -46,5 +46,9 @@ public class LevelManager : MonoBehaviour
     public static void DeleteData()
     {
         PlayerPrefs.DeleteAll();
+    }
+    public static void CloseGame()
+    {
+        Application.Quit();
     }
 }
