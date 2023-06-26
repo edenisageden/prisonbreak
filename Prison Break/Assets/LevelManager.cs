@@ -31,7 +31,8 @@ public class LevelManager : MonoBehaviour
     {
         int currentlevel = GetCurrentLevel();
         PlayerPrefs.SetInt("LevelComplete" + currentlevel, 1);
-        PlayerPrefs.SetFloat("CompleteTime" + currentlevel, time);
+        if (PlayerPrefs.GetFloat("CompleteTime" + currentlevel) == 0) PlayerPrefs.SetFloat("CompleteTime" + currentlevel, time);
+        else if (PlayerPrefs.GetFloat("CompleteTime" + currentlevel) > time) PlayerPrefs.SetFloat("CompleteTime" + currentlevel, time);
         UnlockLevel(currentlevel + 1);
     }
     private static void UnlockLevel(int level)
