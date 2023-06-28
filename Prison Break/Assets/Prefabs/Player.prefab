@@ -114,6 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deadPrefab: {fileID: 8510047037880979022, guid: 6707ea928f20ee94e89c9623003aaa39, type: 3}
+  immortal: 0
 --- !u!50 &2100654605602047883
 Rigidbody2D:
   serializedVersion: 4
