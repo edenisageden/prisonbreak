@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class RestartLevel : MonoBehaviour
 {
+    [SerializeField] private GameObject player;
+
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            LevelManager.RestartLevel();
+            if (!player.activeSelf) LevelManager.RestartLevel();
         }
     }
 }
