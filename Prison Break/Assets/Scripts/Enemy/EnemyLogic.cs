@@ -1,11 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
-using Unity.VisualScripting;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using UnityEditor.SceneManagement;
 using System;
 
 [RequireComponent(typeof(Rigidbody2D))]
