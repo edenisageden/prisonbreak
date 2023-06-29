@@ -1338,14 +1338,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelInfoList:
   - levelButton: {fileID: 431548259}
-    SilverTime: 15
-    GoldTime: 10
+    SilverTime: 10
+    GoldTime: 5
   - levelButton: {fileID: 1049750305}
-    SilverTime: 20
-    GoldTime: 15
+    SilverTime: 13
+    GoldTime: 8
   - levelButton: {fileID: 161927853}
-    SilverTime: 25
-    GoldTime: 20
+    SilverTime: 14
+    GoldTime: 9
   bronzeButtonImage: {fileID: 21300000, guid: ddff90a4804d8814c960152fdaaf3f8b, type: 3}
   silverButtonImage: {fileID: 21300000, guid: 95ae1af0f7e20c24a8f79aaaece70e68, type: 3}
   goldButtonImage: {fileID: 21300000, guid: 1dc88708e8b813142b89d3a1d3b2b7bd, type: 3}
