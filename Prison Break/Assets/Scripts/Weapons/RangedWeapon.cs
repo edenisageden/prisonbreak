@@ -9,6 +9,7 @@ public class RangedWeapon : Weapon
 {
     public float bulletSpeed;
     public float spread;
+    public int maxAmmo;
     public GameObject bulletPrefab;
     public bool isAutomatic;
     public static event Action<Weapon> OnAttack = delegate { };

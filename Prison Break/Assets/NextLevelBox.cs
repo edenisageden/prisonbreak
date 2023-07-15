@@ -9,6 +9,7 @@ public class NextLevelBox : MonoBehaviour
 {
     [SerializeField] private Collider2D col;
     [SerializeField] private TimeManager timeManager;
+    [SerializeField] private GameObject ammoMenu;
     [SerializeField] private bool goToMenu = false;
     [SerializeField] private GameObject completionMenu;
     [SerializeField] private GameMenuManager gameMenuManager;
@@ -36,6 +37,7 @@ public class NextLevelBox : MonoBehaviour
                 InitializeCompletionMenu();
                 completionMenu.SetActive(true);
                 timer.enabled = false;
+                ammoMenu.SetActive(false);
             }
             else
             {
@@ -53,6 +55,7 @@ public class NextLevelBox : MonoBehaviour
         completionMenu.SetActive(false);
         StartTime();
         timer.enabled = true;
+        ammoMenu.SetActive(true);
         LevelManager.NextLevel();
     }
     public void OpenMenu()
@@ -60,6 +63,7 @@ public class NextLevelBox : MonoBehaviour
         completionMenu.SetActive(false);
         StartTime();
         timer.enabled = true;
+        ammoMenu.SetActive(true);
         LevelManager.OpenLevel(-1);
     }
     public void Retry()
@@ -67,6 +71,7 @@ public class NextLevelBox : MonoBehaviour
         completionMenu.SetActive(false);
         StartTime();
         timer.enabled = true;
+        ammoMenu.SetActive(true);   
         LevelManager.OpenLevel(LevelManager.GetCurrentLevel());
     }
 

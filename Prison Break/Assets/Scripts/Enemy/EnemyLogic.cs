@@ -176,7 +176,12 @@ public class EnemyLogic : MonoBehaviour, IKillable
     private void DoDeath()
     {
         OnEnemyDeath?.Invoke();
-        WeaponDropManager.DropWeapon(weaponPrefab, enemyShoot.weapon, transform.position, transform.rotation);
+        GameObject newWeapon = WeaponDropManager.DropWeapon(weaponPrefab, enemyShoot.weapon, transform.position, transform.rotation);
+        if (enemyShoot.weapon is RangedWeapon)
+        {
+            RangedWeapon newRangedWeapon = newWeapon.GetComponent<WeaponItemLogic>().weapon as RangedWeapon;
+            newWeapon.GetComponent<WeaponItemLogic>().currentAmmo = newRangedWeapon.maxAmmo;
+        }
         Instantiate(deadPrefab, transform.position, transform.rotation);
         Destroy(gameObject);
     }

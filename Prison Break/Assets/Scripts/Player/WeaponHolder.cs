@@ -14,9 +14,10 @@ public class WeaponHolder : MonoBehaviour
     [SerializeField] private float fistWidth, fistRange, fistReloadTime;
     private RangedWeapon rangedWeapon;
     private MeleeWeapon meleeWeapon;
-    private bool isRanged;
+    [HideInInspector] public bool isRanged;
     private bool isAttacking;
     private bool canShoot = true;
+    [HideInInspector] public int currentAmmo;
     public static event Action OnFistAttack = delegate { };
 
     private void Update()
@@ -52,9 +53,11 @@ public class WeaponHolder : MonoBehaviour
 
     private void Shoot()
     {
+        if (currentAmmo <= 0 && isRanged && weapon != null) return;
         if (!canShoot) return;
         canShoot = false;
         weapon.Attack(transform.position, transform.rotation, transform.up, "Player", animator);
+        currentAmmo -= 1;
         StartCoroutine(ReloadShoot());
     }
 

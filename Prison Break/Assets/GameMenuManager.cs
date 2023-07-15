@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,8 @@ public class GameMenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject panel;
     [SerializeField] private GameObject player;
+    [SerializeField] private TMP_Text ammo;
+    [SerializeField] private WeaponHolder weaponHolder;
 
     private void Start()
     {
@@ -19,6 +22,13 @@ public class GameMenuManager : MonoBehaviour
         {
             print("esc");
             OpenMenu();
+        }
+        if (!weaponHolder.isRanged || weaponHolder.weapon == null) ammo.enabled = false;
+        else
+        {
+            ammo.enabled = true;
+            if (weaponHolder.currentAmmo == 0) ammo.text = "Empty";
+            else ammo.text = "Ammo: " + weaponHolder.currentAmmo.ToString();
         }
     }
 

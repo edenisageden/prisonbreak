@@ -22,10 +22,10 @@ public class Pickup : MonoBehaviour
             {
                 if (weaponHolder.weapon != null)
                 {
-                    WeaponDropManager.DropWeapon(weaponPrefab, weaponHolder.weapon, transform.position, transform.rotation);
+                    GameObject newWeapon = WeaponDropManager.DropWeapon(weaponPrefab, weaponHolder.weapon, transform.position, transform.rotation);
+                    newWeapon.GetComponent<WeaponItemLogic>().currentAmmo = weaponHolder.currentAmmo;
                     weaponHolder.weapon = null;
                     equiptable.Equipt(gameObject);
-                    
                     OnPickup?.Invoke(collider.gameObject.GetComponent<WeaponItemLogic>().weapon);
                 }
                 else
@@ -37,7 +37,8 @@ public class Pickup : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.F) && weaponHolder.weapon != null)
         {
-            WeaponDropManager.DropWeapon(weaponPrefab, weaponHolder.weapon, transform.position, transform.rotation);
+            GameObject newWeapon = WeaponDropManager.DropWeapon(weaponPrefab, weaponHolder.weapon, transform.position, transform.rotation);
+            newWeapon.GetComponent<WeaponItemLogic>().currentAmmo = weaponHolder.currentAmmo;
             weaponHolder.weapon = null;
         }
     }

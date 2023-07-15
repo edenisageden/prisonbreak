@@ -7,6 +7,7 @@ public class WeaponItemLogic : MonoBehaviour, IEquiptable
 {
     [Header("Assignables")]
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [HideInInspector] public int currentAmmo;
 
     /*[HideInInspector]*/ public Weapon weapon;
 
@@ -18,7 +19,9 @@ public class WeaponItemLogic : MonoBehaviour, IEquiptable
     public void Equipt(GameObject player)
     {
         print("Equipted");
-        player.GetComponent<WeaponHolder>().weapon = weapon;
+        WeaponHolder weaponHolder = player.GetComponent<WeaponHolder>();
+        weaponHolder.weapon = weapon;
+        weaponHolder.currentAmmo = currentAmmo;
         Destroy(gameObject);
     }
 }
