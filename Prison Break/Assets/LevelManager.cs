@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour
 {
     // Make it a singleton 
+
+
     public static void RestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
