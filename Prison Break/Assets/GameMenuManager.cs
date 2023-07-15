@@ -33,7 +33,7 @@ public class GameMenuManager : MonoBehaviour
         panel.SetActive(false);
         StartTime();
     }
-    private void PauseTime()
+    public void PauseTime()
     {
         Time.timeScale = 0f;
         player.GetComponent<FaceCursor>().enabled = false;
@@ -41,7 +41,7 @@ public class GameMenuManager : MonoBehaviour
         player.GetComponent<PlayerController>().enabled = false;
         player.GetComponent<Pickup>().enabled = false;
     }
-    private void StartTime()
+    public void StartTime()
     {
         Time.timeScale = 1f;
         player.GetComponent<FaceCursor>().enabled = true;

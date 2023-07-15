@@ -1,13 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class NextLevelBox : MonoBehaviour
 {
     [SerializeField] private Collider2D col;
     [SerializeField] private TimeManager timeManager;
     [SerializeField] private bool goToMenu = false;
+    [SerializeField] private GameObject completionMenu;
+    [SerializeField] private GameMenuManager gameMenuManager;
+    [SerializeField] private TMP_Text time, best, nextMedal, timer;
+    [SerializeField] private LevelInfoSO[] levelInfoSOList;
+    [SerializeField] private GameObject player;
+    [SerializeField] private Color bronzeColor, silverColor, goldColor;
+
+    public enum Medal
+    {
+        Bronze,
+        Silver,
+        Gold
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,7 +32,10 @@ public class NextLevelBox : MonoBehaviour
             LevelManager.CompleteLevel(timeManager.time);
             if (!goToMenu)
             {
-                LevelManager.NextLevel();
+                PauseTime();
+                InitializeCompletionMenu();
+                completionMenu.SetActive(true);
+                timer.enabled = false;
             }
             else
             {
@@ -28,5 +46,91 @@ public class NextLevelBox : MonoBehaviour
     private GameObject[] GetEnemies()
     {
         return GameObject.FindGameObjectsWithTag("Enemy");
+    }
+
+    public void NextLevel()
+    {
+        completionMenu.SetActive(false);
+        StartTime();
+        timer.enabled = true;
+        LevelManager.NextLevel();
+    }
+    public void OpenMenu()
+    {
+        completionMenu.SetActive(false);
+        StartTime();
+        timer.enabled = true;
+        LevelManager.OpenLevel(-1);
+    }
+    public void Retry()
+    {
+        completionMenu.SetActive(false);
+        StartTime();
+        timer.enabled = true;
+        LevelManager.OpenLevel(LevelManager.GetCurrentLevel());
+    }
+
+    private void InitializeCompletionMenu()
+    {
+        float bestTime = PlayerPrefs.GetFloat("CompleteTime" + LevelManager.GetCurrentLevel());
+        float silverTime = levelInfoSOList[LevelManager.GetCurrentLevel() - 1].silverTime;
+        float goldTime = levelInfoSOList[LevelManager.GetCurrentLevel() - 1].goldTime;
+        time.text = timeManager.time.ToString("f1");
+        best.text = bestTime.ToString("f1");
+        switch (GetMedal(bestTime))
+        {
+            case Medal.Bronze:
+                nextMedal.text = silverTime.ToString();
+                nextMedal.color = silverColor;
+                best.color = bronzeColor;
+                break;
+            case Medal.Silver:
+                nextMedal.text = goldTime.ToString();
+                nextMedal.color = goldColor;
+                best.color = silverColor;
+                break;
+            case Medal.Gold:
+                nextMedal.text = "";
+                best.color = goldColor;
+                break;
+        }
+        switch (GetMedal(timeManager.time))
+        {
+            case Medal.Bronze:
+                time.color = bronzeColor;
+                break;
+            case Medal.Silver:
+                time.color = silverColor;
+                break;
+            case Medal.Gold:
+                time.color = goldColor;
+                break;
+        }
+    }
+
+    private Medal GetMedal(float time)
+    {
+        if (time <= levelInfoSOList[LevelManager.GetCurrentLevel() - 1].goldTime) return Medal.Gold;
+        else if (time <= levelInfoSOList[LevelManager.GetCurrentLevel() - 1].silverTime) return Medal.Silver;
+        else return Medal.Bronze;
+    }
+
+    public void PauseTime()
+    {
+        Time.timeScale = 0f;
+        player.GetComponent<FaceCursor>().enabled = false;
+        player.GetComponent<WeaponHolder>().enabled = false;
+        player.GetComponent<PlayerController>().enabled = false;
+        player.GetComponent<Pickup>().enabled = false;
+        gameMenuManager.enabled = false;
+    }
+    public void StartTime()
+    {
+        Time.timeScale = 1f;
+        player.GetComponent<FaceCursor>().enabled = true;
+        player.GetComponent<WeaponHolder>().enabled = true;
+        player.GetComponent<PlayerController>().enabled = true;
+        player.GetComponent<Pickup>().enabled = true;
+        gameMenuManager.enabled = true;
     }
 }

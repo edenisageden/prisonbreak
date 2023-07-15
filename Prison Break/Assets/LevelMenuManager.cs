@@ -7,7 +7,8 @@ using static Cinemachine.DocumentationSortingAttribute;
 
 public class LevelMenuManager : MonoBehaviour
 {
-    [SerializeField] private LevelInfo[] levelInfoList;
+    [SerializeField] private Button[] buttonList;
+    [SerializeField] private LevelInfoSO[] levelInfoSOList;
     [SerializeField] private Sprite bronzeButtonImage, silverButtonImage, goldButtonImage, incompleteButtonImage, lockedButtonImage;
 
     private Dictionary<LevelStatus, Sprite> levelStatusImageDict;
@@ -39,9 +40,9 @@ public class LevelMenuManager : MonoBehaviour
     }
     private void InitializeButtons()
     {
-        for (int i = 0; i < levelInfoList.Length; i++)
+        for (int i = 0; i < buttonList.Length; i++)
         {
-            levelInfoList[i].levelButton.GetComponent<Image>().sprite = levelStatusImageDict[GetLevelStatus(i + 1)];
+            buttonList[i].GetComponent<Image>().sprite = levelStatusImageDict[GetLevelStatus(i + 1)];
             Debug.Log("Level:" + i + 1 + " Status:" + GetLevelStatus(i + 1).ToString());
         }
     }
@@ -59,8 +60,8 @@ public class LevelMenuManager : MonoBehaviour
         {
             if (LevelComplete(level) == 1)
             {
-                if (PlayerPrefs.GetFloat("CompleteTime" + level) <= levelInfoList[level - 1].GoldTime) return LevelStatus.Gold;
-                else if (PlayerPrefs.GetFloat("CompleteTime" + level) <= levelInfoList[level - 1].SilverTime) return LevelStatus.Silver;
+                if (PlayerPrefs.GetFloat("CompleteTime" + level) <= levelInfoSOList[level - 1].goldTime) return LevelStatus.Gold;
+                else if (PlayerPrefs.GetFloat("CompleteTime" + level) <= levelInfoSOList[level - 1].silverTime) return LevelStatus.Silver;
                 else return LevelStatus.Bronze;
             }
             else return LevelStatus.Incomplete;
