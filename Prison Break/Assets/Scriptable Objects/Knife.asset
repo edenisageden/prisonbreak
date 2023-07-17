@@ -16,7 +16,8 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 3690364d5dcd6f445b9eaf22ddd48519, type: 3}
   reloadTime: 0.3
   id: 1
+  spread: 0
   pickupSound: {fileID: 8300000, guid: f867abc2a022e024daf8116cdd570853, type: 3}
   attackSound: {fileID: 8300000, guid: 3a61e64521a76234e9db19b8ba1b9f3b, type: 3}
-  range: 3
+  range: 4
   width: 2

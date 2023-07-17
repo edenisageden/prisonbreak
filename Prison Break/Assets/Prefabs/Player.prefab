@@ -233,8 +233,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashSpeed: 700
-  dashCooldown: 0.3
-  dashDuration: 0.2
+  dashCooldown: 0.2
+  dashDuration: 0.15
   rb: {fileID: 2100654605602047883}
   controller: {fileID: 6330510853197941725}
   weaponHolder: {fileID: 1879942244058850348}
