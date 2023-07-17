@@ -14,7 +14,7 @@ public class EnemyShoot : MonoBehaviour
     {
         if (!canShoot) return;
         canShoot = false;
-        weapon.Attack(transform.position, transform.rotation, transform.up, "Enemy", animator);
+        weapon.Attack(transform.position, transform.rotation, weapon.spread, transform.up, "Enemy", animator);
         StartCoroutine(ReloadShoot());
     }
 

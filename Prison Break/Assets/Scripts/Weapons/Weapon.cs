@@ -9,8 +9,9 @@ public abstract class Weapon : ScriptableObject
     public Sprite sprite;
     public float reloadTime;
     public int id;
+    public float spread;
     public AudioClip pickupSound;
     public AudioClip attackSound;
 
-    public abstract void Attack(Vector3 start, Quaternion rotation, Vector3 direction, string ignoreLayer, Animator animator);
+    public abstract void Attack(Vector3 start, Quaternion rotation, float spread, Vector3 direction, string ignoreLayer, Animator animator);
 }

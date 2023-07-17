@@ -14,7 +14,6 @@ public class PlayerDash : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = currentVelocity * Time.deltaTime;
-        print(controller.previousDirection.normalized);
     }
     private void Update()
     {

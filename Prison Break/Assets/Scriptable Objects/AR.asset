@@ -16,10 +16,10 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 86e06b09e250c2542b434ae4d567ec3a, type: 3}
   reloadTime: 0.15
   id: 4
+  spread: 10
   pickupSound: {fileID: 8300000, guid: f867abc2a022e024daf8116cdd570853, type: 3}
   attackSound: {fileID: 8300000, guid: 4303d0f059b9ae54e97423de1c91391f, type: 3}
   bulletSpeed: 60
-  spread: 0
   maxAmmo: 10
   bulletPrefab: {fileID: 2193585288452067729, guid: da23a0d4282f8794298879904ad49f89, type: 3}
   isAutomatic: 1

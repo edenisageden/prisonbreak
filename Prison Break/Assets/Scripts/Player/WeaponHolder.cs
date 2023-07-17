@@ -58,7 +58,7 @@ public class WeaponHolder : MonoBehaviour
         if (currentAmmo <= 0 && isRanged && weapon != null) return;
         if (!canShoot) return;
         canShoot = false;
-        weapon.Attack(transform.position, transform.rotation, transform.up, "Player", animator);
+        weapon.Attack(transform.position, transform.rotation, weapon.spread, transform.up, "Player", animator);
         currentAmmo -= 1;
         StartCoroutine(ReloadShoot());
     }

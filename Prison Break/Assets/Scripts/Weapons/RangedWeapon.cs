@@ -8,19 +8,26 @@ using UnityEngine;
 public class RangedWeapon : Weapon
 {
     public float bulletSpeed;
-    public float spread;
     public int maxAmmo;
     public GameObject bulletPrefab;
     public bool isAutomatic;
     public static event Action<Weapon> OnAttack = delegate { };
+    private Quaternion rotationAfterSpread;
 
-    public override void Attack(Vector3 start, Quaternion rotation, Vector3 direction, string ignoreLayer, Animator animator)
+    public override void Attack(Vector3 start, Quaternion rotation, float spread, Vector3 direction, string ignoreLayer, Animator animator)
     {
+        CalculateSpread(rotation, direction);
         Vector3 actualStart = start + direction * 1.5f;
         OnAttack(this);
         animator.SetTrigger("onAttack");
-        GameObject newBullet = Instantiate(bulletPrefab, actualStart, rotation);
+        GameObject newBullet = Instantiate(bulletPrefab, actualStart, rotationAfterSpread);
         newBullet.GetComponent<BulletLogic>().ignoreLayer = ignoreLayer;
-        newBullet.GetComponent<Rigidbody2D>().velocity = direction * bulletSpeed;
+        newBullet.GetComponent<Rigidbody2D>().velocity = newBullet.transform.up * bulletSpeed;
+    }
+
+    private void CalculateSpread(Quaternion rotation, Vector3 direction)
+    {
+        float randomSpread = UnityEngine.Random.Range(-spread, spread);
+        rotationAfterSpread = Quaternion.Euler(rotation.eulerAngles.x, rotation.eulerAngles.y, rotation.eulerAngles.z + randomSpread);
     }
 }
