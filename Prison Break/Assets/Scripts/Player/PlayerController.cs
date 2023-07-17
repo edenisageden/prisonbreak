@@ -15,12 +15,15 @@ public class PlayerController : MonoBehaviour
     [Header("Assignables")]
     [SerializeField] private Rigidbody2D rb;
 
-    private Vector3 direction;
+    [HideInInspector] public Vector3 direction;
+    [HideInInspector] public Vector2 previousDirection;
+    [HideInInspector] public bool canMove;
     #endregion 
 
     #region Execution
     private void Update()
     {
+        if (!canMove) return;
         if (holder.weapon != null)
         {
             if (holder.weapon.name == "Knife") moveSpeed = knifeSpeedBoost;
@@ -41,6 +44,11 @@ public class PlayerController : MonoBehaviour
         float horiztonal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         direction = new Vector3(horiztonal, vertical, 0);
+
+        if (direction.magnitude > 0)
+        {
+            previousDirection = direction;
+        }
     }
     private void Move()
     {

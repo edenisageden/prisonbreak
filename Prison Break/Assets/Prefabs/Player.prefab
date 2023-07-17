@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 5617725211604521888}
   - component: {fileID: 6563551351771895243}
   - component: {fileID: 5448601673237943824}
+  - component: {fileID: -8275722040359981627}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -88,6 +89,9 @@ MonoBehaviour:
   knifeSpeedBoost: 0
   moveSpeed: 10
   rb: {fileID: 2100654605602047883}
+  direction: {x: 0, y: 0, z: 0}
+  previousDirection: {x: 0, y: 0}
+  canMove: 0
 --- !u!114 &3223900596561193123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,6 +119,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deadPrefab: {fileID: 8510047037880979022, guid: 6707ea928f20ee94e89c9623003aaa39, type: 3}
   immortal: 0
+  deathMenu: {fileID: 0}
+  ammoMenu: {fileID: 0}
 --- !u!50 &2100654605602047883
 Rigidbody2D:
   serializedVersion: 4
@@ -153,6 +159,9 @@ MonoBehaviour:
   fistWidth: 2
   fistRange: 3
   fistReloadTime: 0.5
+  isRanged: 0
+  currentAmmo: 0
+  canAttack: 0
 --- !u!114 &5617725211604521888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +220,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-8275722040359981627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2381969614320695955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 532bd5dc84a54064f9c259107fa2c686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashSpeed: 700
+  dashCooldown: 0.3
+  dashDuration: 0.2
+  rb: {fileID: 2100654605602047883}
+  controller: {fileID: 6330510853197941725}
+  weaponHolder: {fileID: 1879942244058850348}
 --- !u!1 &6221906732619143906
 GameObject:
   m_ObjectHideFlags: 0

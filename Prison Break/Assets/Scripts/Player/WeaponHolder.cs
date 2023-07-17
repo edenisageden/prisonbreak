@@ -19,9 +19,11 @@ public class WeaponHolder : MonoBehaviour
     private bool canShoot = true;
     [HideInInspector] public int currentAmmo;
     public static event Action OnFistAttack = delegate { };
+    [HideInInspector] public bool canAttack;
 
     private void Update()
     {
+        if (!canAttack) return;
         if (weapon == null)
         {
             if (Input.GetMouseButtonDown(0))
