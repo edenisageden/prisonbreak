@@ -3785,6 +3785,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 856188276957998869, guid: 6250fbf39447d464db7f8f1431f0504a, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 856188276957998871, guid: 6250fbf39447d464db7f8f1431f0504a, type: 3}
       propertyPath: m_Name
       value: Completion Menu
