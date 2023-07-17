@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (!canMove) return;
         Move();
     }
     #endregion

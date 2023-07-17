@@ -10,6 +10,7 @@ public class PlayerDash : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private PlayerController controller;
     [SerializeField] private WeaponHolder weaponHolder;
+    [SerializeField] private PlayerDeath playerDeath;
     private Vector2 currentVelocity;
     private void FixedUpdate()
     {
@@ -24,12 +25,14 @@ public class PlayerDash : MonoBehaviour
 
         if (isDashDuration)
         {
+            playerDeath.immortal = true;
             weaponHolder.canAttack = false;
             controller.canMove = false;
             currentVelocity = controller.previousDirection.normalized * dashSpeed;
         }
         else
         {
+            playerDeath.immortal = false;
             weaponHolder.canAttack = true;
             controller.canMove = true;
             currentVelocity = Vector2.zero;
@@ -38,6 +41,7 @@ public class PlayerDash : MonoBehaviour
 
     private void Dash()
     {
+        //rb.velocity = Vector2.zero;
         isDashDuration = true;
         dashCooldownOver = false;
         StartCoroutine(DashCooldown());

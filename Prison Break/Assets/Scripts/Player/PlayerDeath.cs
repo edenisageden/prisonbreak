@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerDeath : MonoBehaviour, IKillable
 {
     [SerializeField] GameObject deadPrefab;
-    [SerializeField] bool immortal = false;
+    [SerializeField] public bool immortal = false;
     [SerializeField] GameObject deathMenu;
     [SerializeField] GameObject ammoMenu;
 

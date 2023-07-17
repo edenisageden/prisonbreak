@@ -3040,12 +3040,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 532bd5dc84a54064f9c259107fa2c686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashSpeed: 700
-  dashCooldown: 0.3
+  dashSpeed: 1050
+  dashCooldown: 0.25
   dashDuration: 0.2
   rb: {fileID: 1146583935}
   controller: {fileID: 1146583936}
   weaponHolder: {fileID: 557341297}
+  playerDeath: {fileID: 1765317750}
+--- !u!114 &1765317750 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6958728626978377546, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
+  m_PrefabInstance: {fileID: 1146583933}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765317743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f7c12f279f164469d604a1d65ba28b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1795585625
 GameObject:
   m_ObjectHideFlags: 0

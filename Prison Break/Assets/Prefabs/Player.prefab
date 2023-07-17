@@ -232,12 +232,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 532bd5dc84a54064f9c259107fa2c686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashSpeed: 700
-  dashCooldown: 0.2
-  dashDuration: 0.15
+  dashSpeed: 1050
+  dashCooldown: 0.25
+  dashDuration: 0.2
   rb: {fileID: 2100654605602047883}
   controller: {fileID: 6330510853197941725}
   weaponHolder: {fileID: 1879942244058850348}
+  playerDeath: {fileID: 6958728626978377546}
 --- !u!1 &6221906732619143906
 GameObject:
   m_ObjectHideFlags: 0
