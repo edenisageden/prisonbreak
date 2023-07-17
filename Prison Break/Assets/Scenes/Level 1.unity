@@ -1319,6 +1319,7 @@ MonoBehaviour:
   - W, A, S, D to move
   - Left Click to attack
   - E to pick up weapon
+  - Shift to roll
 --- !u!1 &733537905 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 856188276957998871, guid: 6250fbf39447d464db7f8f1431f0504a, type: 3}

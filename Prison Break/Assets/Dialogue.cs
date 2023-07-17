@@ -9,8 +9,9 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textComponent;
     [SerializeField] private string[] lines;
     private int index = 0;
-    private bool[] conditions = new bool[3];
-    bool finishedDialogue = false;
+    private bool[] conditions = new bool[4];
+    private bool finishedDialogue = false;
+    private bool dialogueReadyToFinish = false;
 
     private void Awake()
     {
@@ -32,7 +33,8 @@ public class Dialogue : MonoBehaviour
     {
         conditions[1] = Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0;
         conditions[2] = Input.GetMouseButtonDown(0);
-        finishedDialogue = Input.GetKeyDown(KeyCode.E) && index == lines.Length - 1;
+        conditions[3] = Input.GetKeyDown(KeyCode.E);
+        finishedDialogue = Input.GetKeyDown(KeyCode.LeftShift) && dialogueReadyToFinish;
         if (conditions[index]) StartDialogue();
         if (finishedDialogue)
         {
@@ -43,6 +45,13 @@ public class Dialogue : MonoBehaviour
     void StartDialogue()
     {
         textComponent.text = lines[index];
-        if (index < lines.Length - 1) index++;
+        if (index < lines.Length - 1)
+        {
+            index++;
+        }
+        else if (index < lines.Length)
+        {
+            dialogueReadyToFinish = true;
+        }
     }
 }
