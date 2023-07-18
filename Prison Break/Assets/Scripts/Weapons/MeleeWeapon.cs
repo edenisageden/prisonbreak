@@ -10,7 +10,7 @@ public class MeleeWeapon : Weapon
     public float range, width;
     public static event Action<Weapon> OnAttack = delegate { };
 
-    public override void Attack(Vector3 start, Quaternion rotation, float spread, Vector3 direction, string ignoreLayer, Animator animator)
+    public override void Attack(Vector3 start, Quaternion rotation, float spread, Vector3 direction, string ignoreLayer, Animator animator, float bulletSpeedMultiplier = 1)
     {
         OnAttack(this);
         animator.SetTrigger("onAttack");

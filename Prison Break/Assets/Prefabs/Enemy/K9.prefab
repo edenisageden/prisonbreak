@@ -666,6 +666,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: 853607b19ddda93488e0a88788c78c4f, type: 2}
   animator: {fileID: 4441057397607667318}
+  reloadTimeModifier: 1
+  bulletSpeedModifier: 1
   canShoot: 1
 --- !u!58 &3598961807878892322
 CircleCollider2D:

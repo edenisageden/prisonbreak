@@ -14,7 +14,7 @@ public class RangedWeapon : Weapon
     public static event Action<Weapon> OnAttack = delegate { };
     private Quaternion rotationAfterSpread;
 
-    public override void Attack(Vector3 start, Quaternion rotation, float spread, Vector3 direction, string ignoreLayer, Animator animator)
+    public override void Attack(Vector3 start, Quaternion rotation, float spread, Vector3 direction, string ignoreLayer, Animator animator, float bulletSpeedModifier = 1)
     {
         CalculateSpread(rotation, direction);
         Vector3 actualStart = start + direction * 1.5f;
@@ -22,7 +22,7 @@ public class RangedWeapon : Weapon
         animator.SetTrigger("onAttack");
         GameObject newBullet = Instantiate(bulletPrefab, actualStart, rotationAfterSpread);
         newBullet.GetComponent<BulletLogic>().ignoreLayer = ignoreLayer;
-        newBullet.GetComponent<Rigidbody2D>().velocity = newBullet.transform.up * bulletSpeed;
+        newBullet.GetComponent<Rigidbody2D>().velocity = newBullet.transform.up * bulletSpeed * bulletSpeedModifier;
     }
 
     private void CalculateSpread(Quaternion rotation, Vector3 direction)

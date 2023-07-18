@@ -1866,6 +1866,10 @@ PrefabInstance:
       propertyPath: deathMenu
       value: 
       objectReference: {fileID: 809592451}
+    - target: {fileID: 6958728626978377546, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
+      propertyPath: debugImmortal
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7112989346170254858, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
       propertyPath: m_Layer
       value: 0
