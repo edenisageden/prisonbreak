@@ -207,16 +207,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2070032696}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: TryOpenLevel
-        m_Mode: 3
+      - m_Target: {fileID: 4302695099576757186, guid: a78435a2bc96c9949b4e42f019901c2e, type: 3}
+        m_TargetAssemblyTypeName: MonobehaviourUtility, Assembly-CSharp
+        m_MethodName: OpenScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: level3
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &161927854
@@ -341,16 +341,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2070032696}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: OpenLevel
-        m_Mode: 3
+      - m_Target: {fileID: 4302695099576757186, guid: a78435a2bc96c9949b4e42f019901c2e, type: 3}
+        m_TargetAssemblyTypeName: MonobehaviourUtility, Assembly-CSharp
+        m_MethodName: OpenScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: -2
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: mainmenu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &211938602
@@ -551,16 +551,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2070032696}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: OpenLevel
-        m_Mode: 3
+      - m_Target: {fileID: 4302695099576757186, guid: a78435a2bc96c9949b4e42f019901c2e, type: 3}
+        m_TargetAssemblyTypeName: MonobehaviourUtility, Assembly-CSharp
+        m_MethodName: OpenScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: level1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &431548260
@@ -1039,16 +1039,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2070032696}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
-        m_MethodName: TryOpenLevel
-        m_Mode: 3
+      - m_Target: {fileID: 4302695099576757186, guid: a78435a2bc96c9949b4e42f019901c2e, type: 3}
+        m_TargetAssemblyTypeName: MonobehaviourUtility, Assembly-CSharp
+        m_MethodName: OpenScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: level2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1049750306

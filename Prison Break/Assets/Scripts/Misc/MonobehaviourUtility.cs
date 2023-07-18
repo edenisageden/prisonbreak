@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public static class Utility
+public class MonobehaviourUtility: MonoBehaviour
 {
     public static void OpenScene(string name)
     {

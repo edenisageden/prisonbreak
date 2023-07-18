@@ -125,4 +125,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   col: {fileID: 9156174770743927596}
-  timeManager: {fileID: 0}
+  timeManager: {fileID: 7467064830971467819, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
+  ammoMenu: {fileID: 0}
+  goToMenu: 0
+  completionMenu: {fileID: 0}
+  gameMenuManager: {fileID: 7467064830971467820, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
+  time: {fileID: 0}
+  best: {fileID: 0}
+  nextMedal: {fileID: 0}
+  timer: {fileID: 0}
+  levelInfoSOList: []
+  player: {fileID: 2381969614320695955, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
+  bronzeColor: {r: 0.8962264, g: 0.49895224, b: 0.14937098, a: 1}
+  silverColor: {r: 0.817254, g: 0.91007686, b: 0.9150943, a: 1}
+  goldColor: {r: 1, g: 0.9101912, b: 0.13836467, a: 1}
