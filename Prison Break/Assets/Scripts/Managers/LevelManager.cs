@@ -7,22 +7,6 @@ using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
-    // Make it a singleton 
-
-
-    public static void RestartLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-    public static void NextLevel()
-    {
-        // Check if there is another level
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-    public static void OpenLevel(int level)
-    {
-        SceneManager.LoadScene(level + 2);
-    }
     public static void TryOpenLevel(int level)
     {
         // If level is unlocked in playerprefs
@@ -44,13 +28,5 @@ public class LevelManager : MonoBehaviour
     public static int GetCurrentLevel()
     {
         return SceneManager.GetActiveScene().buildIndex - 2;
-    }
-    public static void DeleteData()
-    {
-        PlayerPrefs.DeleteAll();
-    }
-    public static void CloseGame()
-    {
-        Application.Quit();
     }
 }

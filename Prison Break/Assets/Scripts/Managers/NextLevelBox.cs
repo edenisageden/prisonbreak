@@ -41,7 +41,7 @@ public class NextLevelBox : MonoBehaviour
             }
             else
             {
-                LevelManager.OpenLevel(-1);
+                Utility.OpenScene("levelselection");
             }
         }
     }
@@ -56,7 +56,7 @@ public class NextLevelBox : MonoBehaviour
         StartTime();
         timer.enabled = true;
         ammoMenu.SetActive(true);
-        LevelManager.NextLevel();
+        Utility.OpenNextScene();
     }
     public void OpenMenu()
     {
@@ -64,7 +64,7 @@ public class NextLevelBox : MonoBehaviour
         StartTime();
         timer.enabled = true;
         ammoMenu.SetActive(true);
-        LevelManager.OpenLevel(-1);
+        Utility.OpenScene("mainmenu");
     }
     public void Retry()
     {
@@ -72,7 +72,7 @@ public class NextLevelBox : MonoBehaviour
         StartTime();
         timer.enabled = true;
         ammoMenu.SetActive(true);   
-        LevelManager.OpenLevel(LevelManager.GetCurrentLevel());
+        Utility.ReloadScene();
     }
 
     private void InitializeCompletionMenu()
