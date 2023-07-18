@@ -12,3 +12,8 @@ public interface IEquiptable
     void Equipt(GameObject player);
 }
 
+public interface IDamagable
+{
+    void Damage(int damage);
+}
+

@@ -69,6 +69,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ignoreLayer: Player
   bulletLifetime: 5
+  damage: 1
 --- !u!1 &6647693132604338143
 GameObject:
   m_ObjectHideFlags: 0

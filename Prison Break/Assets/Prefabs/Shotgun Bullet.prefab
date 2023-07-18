@@ -184,6 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ignoreLayer: Player
   bulletLifetime: 5
+  damage: 2
 --- !u!61 &6404413335492564831
 BoxCollider2D:
   m_ObjectHideFlags: 0

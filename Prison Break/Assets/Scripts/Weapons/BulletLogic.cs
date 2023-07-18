@@ -10,6 +10,7 @@ public class BulletLogic : MonoBehaviour
 {
     public string ignoreLayer; 
     [SerializeField] private float bulletLifetime;
+    [SerializeField] private int damage;
     public static event Action <Vector3, Quaternion> OnObstacleHit = delegate { };
 
     private void Start()
@@ -21,12 +22,14 @@ public class BulletLogic : MonoBehaviour
     {
         bool hasCollided = collision.gameObject.layer != LayerMask.NameToLayer(ignoreLayer);
         IKillable killable = collision.gameObject.GetComponent<IKillable>();
+        IDamagable damagable = collision.gameObject.GetComponent<IDamagable>();
 
         if (collision.gameObject.layer == LayerMask.NameToLayer("Environment")) OnObstacleHit?.Invoke(transform.position, transform.rotation);
 
         if (hasCollided)
         {
-            if (killable != null) killable.Kill();
+            if (damagable != null) damagable.Damage(damage);
+            else if (killable != null) killable.Kill();
             Destroy(gameObject);
         }
     }

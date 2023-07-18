@@ -20,6 +20,7 @@ public class EnemyLogic : MonoBehaviour, IKillable
     [SerializeField] private bool rotateClockwise;
     [SerializeField] private float rotationTimeMax, rotationTimeMin;
     [SerializeField] private GameObject deadPrefab;
+    [SerializeField] private bool dropWeapon = true;
 
     [Header("Assignables")]
     [SerializeField] private AIDestinationSetter aiDestinationSetter;
@@ -176,11 +177,14 @@ public class EnemyLogic : MonoBehaviour, IKillable
     private void DoDeath()
     {
         OnEnemyDeath?.Invoke();
-        GameObject newWeapon = WeaponDropManager.DropWeapon(weaponPrefab, enemyShoot.weapon, transform.position, transform.rotation);
-        if (enemyShoot.weapon is RangedWeapon)
+        if (dropWeapon)
         {
-            RangedWeapon newRangedWeapon = newWeapon.GetComponent<WeaponItemLogic>().weapon as RangedWeapon;
-            newWeapon.GetComponent<WeaponItemLogic>().currentAmmo = newRangedWeapon.maxAmmo;
+            GameObject newWeapon = WeaponDropManager.DropWeapon(weaponPrefab, enemyShoot.weapon, transform.position, transform.rotation);
+            if (enemyShoot.weapon is RangedWeapon)
+            {
+                RangedWeapon newRangedWeapon = newWeapon.GetComponent<WeaponItemLogic>().weapon as RangedWeapon;
+                newWeapon.GetComponent<WeaponItemLogic>().currentAmmo = newRangedWeapon.maxAmmo;
+            }
         }
         Instantiate(deadPrefab, transform.position, transform.rotation);
         Destroy(gameObject);
