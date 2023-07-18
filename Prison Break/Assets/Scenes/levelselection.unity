@@ -207,10 +207,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4302695099576757186, guid: a78435a2bc96c9949b4e42f019901c2e, type: 3}
-        m_TargetAssemblyTypeName: MonobehaviourUtility, Assembly-CSharp
-        m_MethodName: OpenScene
-        m_Mode: 5
+      - m_Target: {fileID: 1561116835}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: TryOpenLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1039,10 +1039,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4302695099576757186, guid: a78435a2bc96c9949b4e42f019901c2e, type: 3}
-        m_TargetAssemblyTypeName: MonobehaviourUtility, Assembly-CSharp
-        m_MethodName: OpenScene
-        m_Mode: 5
+      - m_Target: {fileID: 1561116835}
+        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+        m_MethodName: TryOpenLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1302,6 +1302,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1561116833}
   - component: {fileID: 1561116834}
+  - component: {fileID: 1561116835}
   m_Layer: 0
   m_Name: LevelMenuManager
   m_TagString: Untagged
@@ -1349,6 +1350,18 @@ MonoBehaviour:
   goldButtonImage: {fileID: 21300000, guid: 1dc88708e8b813142b89d3a1d3b2b7bd, type: 3}
   incompleteButtonImage: {fileID: 21300000, guid: ae9a2b5e3afce6f4688c105042acdf72, type: 3}
   lockedButtonImage: {fileID: 21300000, guid: 9427ee68761664744a28b71e672c8b7a, type: 3}
+--- !u!114 &1561116835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561116832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfd1bd68f7ea164448950797f35b890e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1634458668
 GameObject:
   m_ObjectHideFlags: 0
