@@ -13,7 +13,7 @@ public class RestartLevel : MonoBehaviour
         {
             if (!player.activeSelf)
             {
-                LevelManager.RestartLevel();
+                Utility.ReloadScene();
             }
         }
     }
