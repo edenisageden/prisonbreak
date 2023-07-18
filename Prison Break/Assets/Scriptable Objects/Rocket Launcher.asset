@@ -10,15 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7188a6e2573253747bedfeb732d727c6, type: 3}
-  m_Name: Bruh Launcher
+  m_Name: Rocket Launcher
   m_EditorClassIdentifier: 
-  name: Bruh Launcher
-  sprite: {fileID: 21300000, guid: 4dc13ee75fc94df48b67966a6ab03500, type: 3}
-  reloadTime: 0.5
-  id: 5
+  name: Rocket Launcher
+  sprite: {fileID: 21300000, guid: 449cf6f3cff187640bd75a2693b6188e, type: 3}
+  reloadTime: 1
+  id: 3
+  spread: 0
   pickupSound: {fileID: 8300000, guid: f867abc2a022e024daf8116cdd570853, type: 3}
   attackSound: {fileID: 8300000, guid: fcb3b4db35f5be64786bf399cbdf53d5, type: 3}
-  bulletSpeed: 10
-  spread: 0
-  bulletPrefab: {fileID: 2193585288452067729, guid: a05c07d740196774b95f3bdbf1a2a84b, type: 3}
-  isAutomatic: 1
+  bulletSpeed: 30
+  maxAmmo: 4
+  bulletPrefab: {fileID: 2193585288452067729, guid: 4b12fbed897c5434d890c98d2f67d025, type: 3}
+  isAutomatic: 0

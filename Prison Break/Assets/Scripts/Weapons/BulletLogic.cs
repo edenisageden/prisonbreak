@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using System;
 
-public class BulletLogic : MonoBehaviour
+public abstract class BulletLogic : MonoBehaviour
 {
     public string ignoreLayer; 
     [SerializeField] private float bulletLifetime;
@@ -30,7 +30,13 @@ public class BulletLogic : MonoBehaviour
         {
             if (damagable != null) damagable.Damage(damage);
             else if (killable != null) killable.Kill();
+            ExplodeIfRocket();
             Destroy(gameObject);
         }
+    }
+
+    public virtual void ExplodeIfRocket()
+    {
+
     }
 }

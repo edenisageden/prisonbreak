@@ -186,7 +186,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e29e10848e9420740aaeaa2efa5ba83e, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.47433886, g: 1, b: 0.46855342, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -499,8 +499,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wanderingType: 1
-  wanderSpeed: 6
-  chasingSpeed: 8
+  wanderSpeed: 8
+  chasingSpeed: 10
   rotationSpeed: 0.2
   timeBetweenRotationForRandom: 1
   randomRotationCountMin: 3

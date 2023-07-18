@@ -8,8 +8,14 @@ public class WeaponItemLogic : MonoBehaviour, IEquiptable
     [Header("Assignables")]
     [SerializeField] private SpriteRenderer spriteRenderer;
     [HideInInspector] public int currentAmmo;
+    [SerializeField] private int setCurrentAmmo;
 
     /*[HideInInspector]*/ public Weapon weapon;
+
+    private void Awake()
+    {
+        currentAmmo = setCurrentAmmo;
+    }
 
     private void Start()
     {

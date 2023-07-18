@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b370474f342e0b446953839a5b31dbe5, type: 3}
+  m_Name: K9 Attack
+  m_EditorClassIdentifier: 
+  name: K9 Attack
+  sprite: {fileID: 21300000, guid: 3690364d5dcd6f445b9eaf22ddd48519, type: 3}
+  reloadTime: 0.3
+  id: 1
+  spread: 0
+  pickupSound: {fileID: 8300000, guid: f867abc2a022e024daf8116cdd570853, type: 3}
+  attackSound: {fileID: 8300000, guid: 3a61e64521a76234e9db19b8ba1b9f3b, type: 3}
+  range: 4
+  width: 2

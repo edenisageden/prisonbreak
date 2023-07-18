@@ -131,6 +131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 1064869365153735302}
+  currentAmmo: 0
+  setCurrentAmmo: 5
   weapon: {fileID: 0}
 --- !u!58 &5760165566280329305
 CircleCollider2D:
