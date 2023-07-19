@@ -11,6 +11,15 @@ public class EnemyShoot : MonoBehaviour
     [SerializeField] private float bulletSpeedModifier = 1;
     [HideInInspector] public bool canShoot = true;
 
+    private void Start()
+    {
+        if (weapon is RangedWeapon)
+        {
+            RangedWeapon rangedWeapon = weapon as RangedWeapon;
+            rangedWeapon.bulletPrefab.GetComponent<BulletLogic>().ignoreLayer = "Enemy";
+        }
+    }
+
     public void Shoot()
     {
         if (!canShoot) return;

@@ -10,10 +10,11 @@ public class RocketExplosion : MonoBehaviour
     [SerializeField] private BulletLogic bulletLogic;
     [SerializeField] private int explosionDamage;
     private List<Collider2D> triggerColliders = new List<Collider2D>();
+    private List<IKillable> pendingToKillList = new List<IKillable>();
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") || collision.CompareTag("Player"))
         {
             triggerColliders.Add(collision);
         }
@@ -21,7 +22,7 @@ public class RocketExplosion : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") || collision.CompareTag("Player"))
         {
             triggerColliders.Remove(collision);
         }
@@ -41,17 +42,36 @@ public class RocketExplosion : MonoBehaviour
     {
         foreach (Collider2D collider in triggerColliders)
         {
-            print("Colliders found in triggerColliders");
-            EnemyLogic enemyLogic = collider.gameObject.GetComponent<EnemyLogic>();
-            if (enemyLogic != null)
+            if (bulletLogic.ignoreLayer == "Player")
             {
-                IKillable killable = enemyLogic.GetComponent<IKillable>();
-
-                if (killable != null)
+                EnemyLogic enemyLogic = collider.gameObject.GetComponent<EnemyLogic>();
+                if (enemyLogic != null)
                 {
-                    killable.Kill();
+                    IKillable killable = enemyLogic.GetComponent<IKillable>();
+
+                    if (killable != null)
+                    {
+                        pendingToKillList.Add(killable);
+                    }
                 }
             }
+            else if (bulletLogic.ignoreLayer == "Enemy")
+            {
+                PlayerDeath playerDeath = collider.gameObject.GetComponent<PlayerDeath>();
+                if (playerDeath != null)
+                {
+                    IKillable killable = playerDeath.GetComponent<IKillable>();
+
+                    if (killable != null)
+                    {
+                        pendingToKillList.Add(killable);
+                    }
+                }
+            }
+        }
+        foreach (IKillable killable in pendingToKillList)
+        {
+            killable.Kill();
         }
     }
 }

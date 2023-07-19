@@ -71,7 +71,6 @@ MonoBehaviour:
   ignoreLayer: Player
   bulletLifetime: 10
   damage: 1
-  hasCollided: 0
 --- !u!1 &2536217855392283270
 GameObject:
   m_ObjectHideFlags: 0

@@ -633,7 +633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c76b4cd95f1834a42b4eef50fb701b1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 34ac606d9611fa7438ca1d5564d9ef35, type: 2}
+  weapon: {fileID: 11400000, guid: 2a9d9f3fa4f99524290c0cc4f41f1a3f, type: 2}
   animator: {fileID: 4441057397607667318}
   reloadTimeModifier: 2
   bulletSpeedModifier: 0.5
