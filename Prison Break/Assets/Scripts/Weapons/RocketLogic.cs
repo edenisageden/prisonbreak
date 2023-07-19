@@ -7,16 +7,22 @@ public class RocketLogic : BulletLogic
 {
     [SerializeField] private int explosionDamage;
     [SerializeField] private CircleCollider2D explosionHitBox;
+    [SerializeField] private LayerMask targetLayer;
 
     public override void ExplodeIfRocket()
     {
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(explosionHitBox.transform.position, explosionHitBox.radius, Vector2.zero);
-        for (int i = 0; i < hits.Length; i++)
+        print("Rocket has exploded");
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(explosionHitBox.transform.position, explosionHitBox.radius, targetLayer);
+        for (int i = 0; i < colliders.Length; i++)
         {
-            IKillable killable = hits[i].collider.gameObject.GetComponent<IKillable>();
-            IDamagable damagable = hits[i].collider.gameObject.GetComponent<IDamagable>();
-            if (damagable != null) damagable.Damage(explosionDamage);
-            else if (killable != null) killable.Kill();
+            print("Enemy hit");
+            EnemyLogic enemyLogic = colliders[i].gameObject.GetComponentInParent<EnemyLogic>();
+            IKillable killable = enemyLogic.GetComponent<IKillable>();
+            if (killable != null)
+            {
+                print("Collision killable");
+                killable.Kill();
+            }
         }
     }
 }

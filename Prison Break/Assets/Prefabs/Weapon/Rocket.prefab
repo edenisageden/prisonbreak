@@ -73,6 +73,9 @@ MonoBehaviour:
   damage: 1
   explosionDamage: 10
   explosionHitBox: {fileID: 7935658265563948494}
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &2536217855392283270
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,7 +103,7 @@ Transform:
   m_GameObject: {fileID: 2536217855392283270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 1}
+  m_LocalScale: {x: 14, y: 14, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2193585288452067728}
