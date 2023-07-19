@@ -18,7 +18,6 @@ public class Dialogue : MonoBehaviour
         for (int i = 0; i < lines.Length; i++)
         {
             //conditions[i] = false;
-            print(i);
             conditions.Append(false);
         }
     }

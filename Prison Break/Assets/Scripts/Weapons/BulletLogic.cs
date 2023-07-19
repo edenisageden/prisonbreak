@@ -6,12 +6,13 @@ using Unity.VisualScripting;
 using UnityEngine;
 using System;
 
-public abstract class BulletLogic : MonoBehaviour
+public class BulletLogic : MonoBehaviour
 {
     public string ignoreLayer; 
     [SerializeField] private float bulletLifetime;
     [SerializeField] private int damage;
     public static event Action <Vector3, Quaternion> OnObstacleHit = delegate { };
+    public static event Action OnBulletCollision = delegate { };
 
     private void Start()
     {
@@ -28,15 +29,10 @@ public abstract class BulletLogic : MonoBehaviour
 
         if (hasCollided)
         {
+            OnBulletCollision?.Invoke();
             if (damagable != null) damagable.Damage(damage);
             else if (killable != null) killable.Kill();
-            ExplodeIfRocket();
             Destroy(gameObject);
         }
-    }
-
-    public virtual void ExplodeIfRocket()
-    {
-
     }
 }
