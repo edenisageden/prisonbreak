@@ -636,7 +636,7 @@ MonoBehaviour:
   weapon: {fileID: 11400000, guid: 2a9d9f3fa4f99524290c0cc4f41f1a3f, type: 2}
   animator: {fileID: 4441057397607667318}
   reloadTimeModifier: 2
-  bulletSpeedModifier: 0.5
+  bulletSpeedModifier: 0.8
   canShoot: 1
 --- !u!58 &3598961807878892322
 CircleCollider2D:
