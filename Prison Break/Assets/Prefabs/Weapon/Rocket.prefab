@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2193585288452067728}
   - component: {fileID: 4178535197856541906}
   - component: {fileID: 2308522521690813758}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rocket
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2697cf4634b10a4429eda096f53dc82e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ignoreLayer: Player
+  ignoreLayer: Enemy
   bulletLifetime: 10
   damage: 1
 --- !u!1 &2536217855392283270
@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 2670025474645779688}
   - component: {fileID: 7935658265563948494}
   - component: {fileID: 4781627338221998705}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 7708801236352309111}
   - component: {fileID: 739107410348899682}
   - component: {fileID: 4864423100661684897}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

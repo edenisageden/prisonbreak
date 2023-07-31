@@ -243,8 +243,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5055875383779352675}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 3.7946, z: 0}
-  m_LocalScale: {x: 9.3625, y: 6.411929, z: 1}
+  m_LocalPosition: {x: 0, y: 8.5662, z: 0}
+  m_LocalScale: {x: 9.3625, y: 13.120244, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 894475870458035004}
@@ -356,8 +356,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6149587027008729740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.3982, z: 0}
-  m_LocalScale: {x: 0.8, y: 4.017476, z: 1}
+  m_LocalPosition: {x: 0, y: 5.7077, z: 0}
+  m_LocalScale: {x: 0.8, y: 9.293558, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 894475870458035004}
@@ -700,7 +700,7 @@ MonoBehaviour:
   rb: {fileID: 2903605228703377843}
   weaponPrefab: {fileID: 8312270055555447326, guid: a043d14b7f3915841aaa6c399f4ff81d, type: 3}
   enemyState: 0
-  maxHealth: 6
+  maxHealth: 100
 --- !u!1 &9139011929088535785
 GameObject:
   m_ObjectHideFlags: 0
