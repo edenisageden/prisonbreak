@@ -6,7 +6,7 @@ using UnityEngine.PlayerLoop;
 public class WeaponItemLogic : MonoBehaviour, IEquiptable
 {
     [Header("Assignables")]
-    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private SpriteRenderer spriteRenderer, outlineRenderer;
     [HideInInspector] public int currentAmmo;
     [SerializeField] private int setCurrentAmmo;
 
@@ -20,6 +20,7 @@ public class WeaponItemLogic : MonoBehaviour, IEquiptable
     private void Start()
     {
         spriteRenderer.sprite = weapon.sprite;
+        outlineRenderer.sprite = weapon.sprite;
     }
 
     public void Equipt(GameObject player)

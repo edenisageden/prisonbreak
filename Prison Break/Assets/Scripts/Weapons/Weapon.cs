@@ -12,6 +12,7 @@ public abstract class Weapon : ScriptableObject
     public float spread;
     public AudioClip pickupSound;
     public AudioClip attackSound;
+    public bool isLegendary;
 
     public abstract void Attack(Vector3 start, Quaternion rotation, float spread, Vector3 direction, string ignoreLayer, Animator animator, float bulletSpeedMultiplier = 1);
 }
