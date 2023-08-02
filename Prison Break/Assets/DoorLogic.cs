@@ -35,8 +35,4 @@ public class DoorLogic : MonoBehaviour
 
         isOpen = true;
     }
-    public void OpenDoor2(bool clockwise = true)
-    {
-
-    }
 }
