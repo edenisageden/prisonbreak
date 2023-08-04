@@ -3,12 +3,12 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class BossLogic : MonoBehaviour
+public class BossLogic : MonoBehaviour, IDamagable
 {
     private bool isCoolingDown = false;
 
     [Header("New Config")]
-    [SerializeField] private float phase1MaxHealth, phase2MaxHealth;
+    [SerializeField] private float maxHealth, phase2Health;
     [SerializeField] private CircleCollider2D playerTooCloseRadius;
     [SerializeField] private Collider2D punchRange;
     [SerializeField] private float knifeSpeed;
@@ -26,17 +26,15 @@ public class BossLogic : MonoBehaviour
     [SerializeField] private AIPath aiPath;
     [SerializeField] private Transform projectileSpawnPoint;
     [SerializeField] private BossMeleeCollision bossMeleeCollision;
-    private float phase1CurrentHealth, phase2CurrentHealth;
     [SerializeField] private TooCloseColliderLogic tooCloseColliderLogic;
     [SerializeField] private BossDashLogic bossDashLogic;
     [SerializeField] private GameObject indicator1, indicator2, indicator3;
     [SerializeField] private GameObject knifeProjectile;
 
-    private float maxHealth => phase1MaxHealth + phase2MaxHealth;
     [HideInInspector] public Vector2 angle;
     private bool isDoingKnifeThrow;
-    private float currentHealth => phase1CurrentHealth + phase2CurrentHealth;
-    private bool isPhase2 => phase1CurrentHealth <= 0f;
+    public float currentHealth;
+    private bool isPhase2 => currentHealth <= phase2Health;
     private Attacks currentAttack;
     private bool isAttacking;
     private bool justDashed;
@@ -51,8 +49,7 @@ public class BossLogic : MonoBehaviour
 
     private void Awake()
     {
-        phase1CurrentHealth = phase1MaxHealth;
-        phase2CurrentHealth = phase2MaxHealth;
+        currentHealth = maxHealth;
         LeanTween.init();
         LeanTween.reset();
         aiPath.maxSpeed = chaseSpeed;
@@ -208,5 +205,15 @@ public class BossLogic : MonoBehaviour
         LeanTween.reset();
         LeanTween.cancel(gameObject);
         LeanTween.rotate(gameObject, new Vector3(0, 0, rotateTo), rotationTime);
+    }
+
+    public void Damage(int damage)
+    {
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+        {
+            // Death
+            print("Boss killed");
+        }
     }
 }
