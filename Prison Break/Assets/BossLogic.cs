@@ -17,19 +17,24 @@ public class BossLogic : MonoBehaviour
     [SerializeField] private float turnSpeed;
     [SerializeField] private float minCooldownTime, maxCooldownTime;
     [SerializeField] private float rotationTime;
+    [SerializeField] private float indicatorTime;
     private Vector2 currentVelocity;
 
     [Header("Assignables")]
     [SerializeField] private AIDestinationSetter aiDestinationSetter;
     [SerializeField] private Transform playerTransform;
     [SerializeField] private AIPath aiPath;
+    [SerializeField] private Transform projectileSpawnPoint;
     [SerializeField] private BossMeleeCollision bossMeleeCollision;
     private float phase1CurrentHealth, phase2CurrentHealth;
     [SerializeField] private TooCloseColliderLogic tooCloseColliderLogic;
     [SerializeField] private BossDashLogic bossDashLogic;
+    [SerializeField] private GameObject indicator1, indicator2, indicator3;
+    [SerializeField] private GameObject knifeProjectile;
 
     private float maxHealth => phase1MaxHealth + phase2MaxHealth;
     [HideInInspector] public Vector2 angle;
+    private bool isDoingKnifeThrow;
     private float currentHealth => phase1CurrentHealth + phase2CurrentHealth;
     private bool isPhase2 => phase1CurrentHealth <= 0f;
     private Attacks currentAttack;
@@ -58,11 +63,11 @@ public class BossLogic : MonoBehaviour
 
         if (justDashed && !bossDashLogic.isDashDuration)
         {
+            isDoingKnifeThrow = true;
             FacePlayer();
             justDashed = false;
             print("Knife throw");
-            StartCoroutine(AttackCooldown());
-            isAttacking = false;
+            StartCoroutine(DoTheKnifeThrow());
         }
 
         if (isAttacking)
@@ -73,6 +78,7 @@ public class BossLogic : MonoBehaviour
                     Punch();
                     break;
                 case Attacks.KnifeThrow:
+                    if (isDoingKnifeThrow) return;
                     KnifeThrow();
                     break;
                 case Attacks.KnifeThrow2:
@@ -134,9 +140,7 @@ public class BossLogic : MonoBehaviour
         }
         else
         {
-            print("Knife throw");
-            StartCoroutine(AttackCooldown());
-            isAttacking = false;
+            justDashed = true;
         }
     }
     private void KnifeThrow2()
@@ -146,6 +150,25 @@ public class BossLogic : MonoBehaviour
     private void DynamiteThrow() 
     {
         print("Dynamite throw");
+    }
+
+    private IEnumerator DoTheKnifeThrow()
+    {
+        // 1. Display indicator
+        indicator1.SetActive(true);
+
+        // 2. Wait for time
+        yield return new WaitForSeconds(indicatorTime);
+
+        // 3. Hide indicator, instantiate knife and give it velocity
+        indicator1.SetActive(false);
+        GameObject newKnife = Instantiate(knifeProjectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+        newKnife.GetComponent<Rigidbody2D>().velocity = newKnife.transform.up * knifeSpeed;
+        
+        // 4. Set the thingy
+        StartCoroutine(AttackCooldown());
+        isDoingKnifeThrow = false;
+        isAttacking = false;
     }
 
     private IEnumerator AttackCooldown()
