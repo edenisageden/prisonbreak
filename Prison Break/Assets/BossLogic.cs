@@ -1,6 +1,7 @@
 using Pathfinding;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class BossLogic : MonoBehaviour
 {
@@ -15,18 +16,25 @@ public class BossLogic : MonoBehaviour
     [SerializeField] private int dynamiteCount;
     [SerializeField] private float turnSpeed;
     [SerializeField] private float minCooldownTime, maxCooldownTime;
+    [SerializeField] private float rotationTime;
+    private Vector2 currentVelocity;
 
     [Header("Assignables")]
     [SerializeField] private AIDestinationSetter aiDestinationSetter;
     [SerializeField] private Transform playerTransform;
     [SerializeField] private AIPath aiPath;
     [SerializeField] private BossMeleeCollision bossMeleeCollision;
-    private float phase1CurrentHealth, phase2CurrentHealth; 
+    private float phase1CurrentHealth, phase2CurrentHealth;
+    [SerializeField] private TooCloseColliderLogic tooCloseColliderLogic;
+    [SerializeField] private BossDashLogic bossDashLogic;
+
     private float maxHealth => phase1MaxHealth + phase2MaxHealth;
+    [HideInInspector] public Vector2 angle;
     private float currentHealth => phase1CurrentHealth + phase2CurrentHealth;
     private bool isPhase2 => phase1CurrentHealth <= 0f;
     private Attacks currentAttack;
     private bool isAttacking;
+    private bool justDashed;
     private enum BossState
     {
         Attacking, Waiting, Dead
@@ -44,9 +52,19 @@ public class BossLogic : MonoBehaviour
         LeanTween.reset();
         aiPath.maxSpeed = chaseSpeed;
     }
-
     private void Update()
     {
+        CalculateAngle();
+
+        if (justDashed && !bossDashLogic.isDashDuration)
+        {
+            FacePlayer();
+            justDashed = false;
+            print("Knife throw");
+            StartCoroutine(AttackCooldown());
+            isAttacking = false;
+        }
+
         if (isAttacking)
         {
             switch (currentAttack)
@@ -73,7 +91,6 @@ public class BossLogic : MonoBehaviour
         if (isPhase2)
         {
             int x = UnityEngine.Random.Range(0, 3);
-            print(x);
             if (x == 0) return Attacks.Punch;
             else if (x == 1) return Attacks.KnifeThrow2;
             else return Attacks.DynamiteThrow;
@@ -81,12 +98,14 @@ public class BossLogic : MonoBehaviour
         else
         {
             int x = UnityEngine.Random.Range(0, 2);
-            print(x);
             if (x == 0) return Attacks.Punch;
             else return Attacks.KnifeThrow;
         }
     }
-
+    private void CalculateAngle()
+    {
+        angle = GetPlayerAngle() * -1;
+    }
     private void DoAttack()
     {
         isAttacking = true;
@@ -108,9 +127,17 @@ public class BossLogic : MonoBehaviour
     }
     private void KnifeThrow()
     {
-        print("Knife throw");
-        StartCoroutine(AttackCooldown());
-        isAttacking = false;
+        if (tooCloseColliderLogic.isTooClose)
+        {
+            bossDashLogic.Dash();
+            justDashed = true;
+        }
+        else
+        {
+            print("Knife throw");
+            StartCoroutine(AttackCooldown());
+            isAttacking = false;
+        }
     }
     private void KnifeThrow2()
     {
@@ -126,5 +153,37 @@ public class BossLogic : MonoBehaviour
         isCoolingDown = true;
         yield return new WaitForSeconds(Random.Range(minCooldownTime, maxCooldownTime));
         isCoolingDown = false;
+    }
+
+    private Vector2 GetPlayerAngle()
+    {
+        float y = playerTransform.position.y - transform.position.y;
+        float x = playerTransform.position.x - transform.position.x;
+        Vector2 angle = new Vector2(x, y).normalized;  
+        return angle;
+    }
+  
+    private void FacePlayer()
+    {
+        float rotateAngle = (Mathf.Atan2(GetPlayerAngle().y, GetPlayerAngle().x) * Mathf.Rad2Deg) - 90f;
+        RotateTo(rotateAngle, rotationTime);
+    }
+
+    private void RotateAmount(float rotationAmount, float rotationTime)
+    {
+        LeanTween.init();
+        if (LeanTween.isTweening(gameObject)) return;
+        LeanTween.reset();
+        LeanTween.cancel(gameObject);
+        LeanTween.rotateAround(gameObject, Vector3.forward, rotationAmount, rotationTime);
+    }
+
+    private void RotateTo(float rotateTo, float rotationTime)
+    {
+        LeanTween.init();
+        if (LeanTween.isTweening(gameObject)) return;
+        LeanTween.reset();
+        LeanTween.cancel(gameObject);
+        LeanTween.rotate(gameObject, new Vector3(0, 0, rotateTo), rotationTime);
     }
 }
