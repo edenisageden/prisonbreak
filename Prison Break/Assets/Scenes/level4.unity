@@ -238,6 +238,11 @@ CircleCollider2D:
   m_Offset: {x: 0.000000059604645, y: 0.00000011920929}
   serializedVersion: 2
   m_Radius: 0.5000001
+--- !u!95 &107124477 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5461007214968250093, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
+  m_PrefabInstance: {fileID: 1146583933}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &213078296
 GameObject:
   m_ObjectHideFlags: 0
@@ -1237,6 +1242,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8275722040359981627, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 107124477}
+    - target: {fileID: -8275722040359981627, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
+      propertyPath: faceCursor
+      value: 
+      objectReference: {fileID: 1765317750}
+    - target: {fileID: -8275722040359981627, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
       propertyPath: playerDeath
       value: 
       objectReference: {fileID: 1146583935}
@@ -1633,6 +1646,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 508229974840071627, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
   m_PrefabInstance: {fileID: 1146583933}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1765317750 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3223900596561193123, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
+  m_PrefabInstance: {fileID: 1146583933}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765317743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e23b6465a0b8aa45b7c4f7fedd332e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2097542821 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7467064830971467819, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}

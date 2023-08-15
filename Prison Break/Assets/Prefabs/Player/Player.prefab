@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 0}
+  canTurn: 1
 --- !u!114 &6958728626978377546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,6 +241,8 @@ MonoBehaviour:
   controller: {fileID: 6330510853197941725}
   weaponHolder: {fileID: 1879942244058850348}
   playerDeath: {fileID: 6958728626978377546}
+  animator: {fileID: 5461007214968250093}
+  faceCursor: {fileID: 3223900596561193123}
 --- !u!1 &6221906732619143906
 GameObject:
   m_ObjectHideFlags: 0

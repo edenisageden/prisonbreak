@@ -11,6 +11,8 @@ public class PlayerDash : MonoBehaviour
     [SerializeField] private PlayerController controller;
     [SerializeField] private WeaponHolder weaponHolder;
     [SerializeField] private PlayerDeath playerDeath;
+    [SerializeField] private Animator animator;
+    [SerializeField] private FaceCursor faceCursor;
     private Vector2 currentVelocity;
     private void FixedUpdate()
     {
@@ -28,12 +30,15 @@ public class PlayerDash : MonoBehaviour
             playerDeath.immortal = true;
             weaponHolder.canAttack = false;
             controller.canMove = false;
+            faceCursor.canTurn = false;
+            transform.rotation = Quaternion.Euler(0f, 0f, (Mathf.Atan2(controller.previousDirection.normalized.y, controller.previousDirection.normalized.x) * Mathf.Rad2Deg) - 90f);
             currentVelocity = controller.previousDirection.normalized * dashSpeed;
         }
         else
         {
             playerDeath.immortal = false;
             weaponHolder.canAttack = true;
+            faceCursor.canTurn = true;
             controller.canMove = true;
             currentVelocity = Vector2.zero;
         }
@@ -44,6 +49,7 @@ public class PlayerDash : MonoBehaviour
         //rb.velocity = Vector2.zero;
         isDashDuration = true;
         dashCooldownOver = false;
+        animator.SetTrigger("onRoll");
         StartCoroutine(DashCooldown());
         StartCoroutine(DashDuration());
     }
