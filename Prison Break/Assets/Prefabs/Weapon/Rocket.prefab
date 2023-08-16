@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 4781627338221998705}
   m_Layer: 9
   m_Name: Circle
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -187,6 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletLogic: {fileID: 2308522521690813758}
   explosionDamage: 6
+  explosion: {fileID: 1411079874357331481, guid: b3cd5eea7b01d4846ac7d4b233334b8b, type: 3}
 --- !u!1 &6647693132604338143
 GameObject:
   m_ObjectHideFlags: 0

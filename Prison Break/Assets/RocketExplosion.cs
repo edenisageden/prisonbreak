@@ -11,6 +11,7 @@ public class RocketExplosion : MonoBehaviour
     [SerializeField] private int explosionDamage;
     private List<Collider2D> triggerColliders = new List<Collider2D>();
     private List<IKillable> pendingToKillList = new List<IKillable>();
+    [SerializeField] private GameObject explosion;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -30,12 +31,13 @@ public class RocketExplosion : MonoBehaviour
 
     private void Start()
     {
-        BulletLogic.OnBulletCollision += DoExplosion;
+        bulletLogic.OnBulletCollision += DoExplosion;
     }
 
     private void OnDestroy()
     {
-        BulletLogic.OnBulletCollision -= DoExplosion;
+        Instantiate(explosion, transform.position, transform.rotation);
+        bulletLogic.OnBulletCollision -= DoExplosion;
     }
 
     private void DoExplosion()
