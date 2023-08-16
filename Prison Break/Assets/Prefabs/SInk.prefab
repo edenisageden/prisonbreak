@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5792627098777399539}
   - component: {fileID: 5792627098777399536}
   m_Layer: 0
-  m_Name: SInk
+  m_Name: Sink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
