@@ -3603,6 +3603,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 70655621058720484, guid: fc705de1dd988554382ddfdf3efd43c4, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 70655621058720484, guid: fc705de1dd988554382ddfdf3efd43c4, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 70655621058720484, guid: fc705de1dd988554382ddfdf3efd43c4, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 894475870458035004, guid: fc705de1dd988554382ddfdf3efd43c4, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -3654,6 +3666,14 @@ PrefabInstance:
     - target: {fileID: 7247656249392969399, guid: fc705de1dd988554382ddfdf3efd43c4, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7820116061889877252, guid: fc705de1dd988554382ddfdf3efd43c4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7820116061889877252, guid: fc705de1dd988554382ddfdf3efd43c4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 7932555362714588138, guid: fc705de1dd988554382ddfdf3efd43c4, type: 3}
       propertyPath: wanderingType
