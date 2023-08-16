@@ -700,7 +700,7 @@ MonoBehaviour:
   rb: {fileID: 2903605228703377843}
   weaponPrefab: {fileID: 8312270055555447326, guid: a043d14b7f3915841aaa6c399f4ff81d, type: 3}
   enemyState: 0
-  maxHealth: 13
+  maxHealth: 1
 --- !u!1 &9139011929088535785
 GameObject:
   m_ObjectHideFlags: 0
