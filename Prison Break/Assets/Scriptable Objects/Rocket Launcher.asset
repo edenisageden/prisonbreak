@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rocket Launcher
   m_EditorClassIdentifier: 
   name: Rocket Launcher
-  sprite: {fileID: 21300000, guid: 449cf6f3cff187640bd75a2693b6188e, type: 3}
+  sprite: {fileID: 21300000, guid: ebf2ea3b5c5e83c4eaeedd3db79dc76c, type: 3}
   reloadTime: 1
   id: 3
   spread: 0
