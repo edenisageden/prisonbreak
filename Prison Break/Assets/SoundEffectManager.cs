@@ -7,6 +7,8 @@ public class SoundEffectManager : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip fistAttackSound;
     [SerializeField] AudioClip enemyDeathSound;
+    [SerializeField] AudioClip rollSound;
+    [SerializeField] AudioClip explodeSound;
 
     private void Start()
     {
@@ -15,6 +17,8 @@ public class SoundEffectManager : MonoBehaviour
         RangedWeapon.OnAttack += PlayAttack;
         WeaponHolder.OnFistAttack += PlayFistAttack;
         EnemyLogic.OnEnemyDeath += PlayEnemyDeath;
+        PlayerDash.OnPlayerDash += PlayRoll;
+        RocketExplosion.OnExplode += PlayExplode;
     }
     private void OnDestroy()
     {
@@ -23,6 +27,8 @@ public class SoundEffectManager : MonoBehaviour
         RangedWeapon.OnAttack -= PlayAttack;
         WeaponHolder.OnFistAttack -= PlayFistAttack;
         EnemyLogic.OnEnemyDeath -= PlayEnemyDeath;
+        PlayerDash.OnPlayerDash -= PlayRoll;
+        RocketExplosion.OnExplode -= PlayExplode;
     }
     private void PlayPickup(Weapon weapon)
     {
@@ -39,5 +45,13 @@ public class SoundEffectManager : MonoBehaviour
     private void PlayEnemyDeath()
     {
         audioSource.PlayOneShot(enemyDeathSound);
+    }
+    private void PlayRoll()
+    {
+        audioSource.PlayOneShot(rollSound);
+    }
+    private void PlayExplode()
+    {
+        audioSource.PlayOneShot(explodeSound);
     }
 }

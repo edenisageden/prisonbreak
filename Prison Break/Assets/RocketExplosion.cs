@@ -12,6 +12,7 @@ public class RocketExplosion : MonoBehaviour
     private List<Collider2D> triggerColliders = new List<Collider2D>();
     private List<IKillable> pendingToKillList = new List<IKillable>();
     [SerializeField] private GameObject explosion;
+    public static event Action OnExplode = delegate { };
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -42,6 +43,8 @@ public class RocketExplosion : MonoBehaviour
 
     private void DoExplosion()
     {
+        OnExplode?.Invoke();
+
         foreach (Collider2D collider in triggerColliders)
         {
             if (bulletLogic.ignoreLayer == "Player")

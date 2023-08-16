@@ -1,3 +1,4 @@
+using System;
 using System.Collections; 
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -14,6 +15,7 @@ public class PlayerDash : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private FaceCursor faceCursor;
     private Vector2 currentVelocity;
+    public static event Action OnPlayerDash = delegate { };
     private void FixedUpdate()
     {
         rb.velocity = currentVelocity * Time.deltaTime;
@@ -50,6 +52,7 @@ public class PlayerDash : MonoBehaviour
         isDashDuration = true;
         dashCooldownOver = false;
         animator.SetTrigger("onRoll");
+        OnPlayerDash?.Invoke();
         StartCoroutine(DashCooldown());
         StartCoroutine(DashDuration());
     }
