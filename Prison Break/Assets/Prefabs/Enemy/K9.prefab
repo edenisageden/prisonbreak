@@ -138,7 +138,7 @@ Transform:
   m_GameObject: {fileID: 4820248453382648179}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.296, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 894475870458035004}
@@ -185,8 +185,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e29e10848e9420740aaeaa2efa5ba83e, type: 3}
-  m_Color: {r: 0.47433886, g: 1, b: 0.46855342, a: 1}
+  m_Sprite: {fileID: 309724900, guid: 2023763cd41c5854db1c5dd419c58b27, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -498,10 +498,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00c9e180116e99d4caa5dee4ceac1fe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wanderingType: 1
+  wanderingType: 2
   wanderSpeed: 8
   chasingSpeed: 10
-  rotationSpeed: 0.2
+  rotationSpeed: 0.1
   timeBetweenRotationForRandom: 1
   randomRotationCountMin: 3
   randomRotationCountMax: 5
@@ -664,7 +664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c76b4cd95f1834a42b4eef50fb701b1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 11400000, guid: 853607b19ddda93488e0a88788c78c4f, type: 2}
+  weapon: {fileID: 11400000, guid: aac479806c5d22448beb80021d69004e, type: 2}
   animator: {fileID: 4441057397607667318}
   reloadTimeModifier: 1
   bulletSpeedModifier: 1
