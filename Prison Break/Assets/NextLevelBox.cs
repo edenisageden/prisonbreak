@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -17,6 +18,7 @@ public class NextLevelBox : MonoBehaviour
     [SerializeField] private LevelInfoSO[] levelInfoSOList;
     [SerializeField] private GameObject player;
     [SerializeField] private Color bronzeColor, silverColor, goldColor;
+    public static event Action OnComplete = delegate { };
 
     public enum Medal
     {
@@ -48,6 +50,14 @@ public class NextLevelBox : MonoBehaviour
     private GameObject[] GetEnemies()
     {
         return GameObject.FindGameObjectsWithTag("Enemy");
+    }
+
+    private void Update()
+    {
+        if (GetEnemies().Length == 0)
+        {
+            OnComplete?.Invoke();
+        }
     }
 
     public void NextLevel()
