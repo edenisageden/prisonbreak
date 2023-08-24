@@ -3741,19 +3741,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e23b6465a0b8aa45b7c4f7fedd332e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1765317760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1765317743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 478a68fe9fdc7b9488b0731378cc1609, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeScale: 1
 --- !u!82 &1805556297 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 7467064830971467817, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
