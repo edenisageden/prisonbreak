@@ -2646,17 +2646,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: NextLevelBox
       objectReference: {fileID: 0}
+    - target: {fileID: 9156174770743927596, guid: 7d34073927f1db04ea11c2f2819f6549, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156174770743927596, guid: 7d34073927f1db04ea11c2f2819f6549, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156174770743927597, guid: 7d34073927f1db04ea11c2f2819f6549, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9156174770743927598, guid: 7d34073927f1db04ea11c2f2819f6549, type: 3}
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9156174770743927598, guid: 7d34073927f1db04ea11c2f2819f6549, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.8876324
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156174770743927598, guid: 7d34073927f1db04ea11c2f2819f6549, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9156174770743927598, guid: 7d34073927f1db04ea11c2f2819f6549, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.74
+      value: 17.86
       objectReference: {fileID: 0}
     - target: {fileID: 9156174770743927598, guid: 7d34073927f1db04ea11c2f2819f6549, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.04
+      value: -8.35
       objectReference: {fileID: 0}
     - target: {fileID: 9156174770743927598, guid: 7d34073927f1db04ea11c2f2819f6549, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3248,11 +3268,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7286265645968623057, guid: f22842f8ce18c034fad46f098e8d1394, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7967322010846262547, guid: f22842f8ce18c034fad46f098e8d1394, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f22842f8ce18c034fad46f098e8d1394, type: 3}
