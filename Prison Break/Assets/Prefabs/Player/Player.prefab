@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashSpeed: 1050
-  dashCooldown: 0.25
+  dashCooldown: 0.5
   dashDuration: 0.2
   rb: {fileID: 2100654605602047883}
   controller: {fileID: 6330510853197941725}
