@@ -15,14 +15,21 @@ public class CameraShakeManager : MonoBehaviour
         cinemachineShake = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         RangedWeapon.OnAttack += CallScreenShake;
         MeleeWeapon.OnAttack += CallScreenShake;
+        WeaponHolder.OnFistAttack += CallScreenShake;
     }
     private void OnDestroy()
     {
         RangedWeapon.OnAttack -= CallScreenShake;
         MeleeWeapon.OnAttack -= CallScreenShake;
+        WeaponHolder.OnFistAttack -= CallScreenShake;
     }
 
     void CallScreenShake(Weapon weapon)
+    {
+        StartCoroutine(ShakeCamera());
+    }
+
+    void CallScreenShake()
     {
         StartCoroutine(ShakeCamera());
     }
