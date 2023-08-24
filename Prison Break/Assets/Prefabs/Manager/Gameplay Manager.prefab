@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7467064830971467818}
   - component: {fileID: 7467064830971467817}
   - component: {fileID: 7467064830971467823}
+  - component: {fileID: 3026520244190601819}
   m_Layer: 0
   m_Name: Gameplay Manager
   m_TagString: Untagged
@@ -95,6 +96,8 @@ MonoBehaviour:
   audioSource: {fileID: 7467064830971467817}
   fistAttackSound: {fileID: 8300000, guid: a3a877525fc8c4d449001cea9869010c, type: 3}
   enemyDeathSound: {fileID: 0}
+  rollSound: {fileID: 0}
+  explodeSound: {fileID: 0}
 --- !u!82 &7467064830971467817
 AudioSource:
   m_ObjectHideFlags: 0
@@ -246,3 +249,15 @@ MonoBehaviour:
     pivotPointRoot: {fileID: 0}
     spreadOutCount: 1
   showGraphs: 1
+--- !u!114 &3026520244190601819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7467064830971467816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 310ab7788ecd1864c892b360872327ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

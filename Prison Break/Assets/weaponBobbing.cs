@@ -1,33 +1,33 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class weaponBobbing : MonoBehaviour
 {
-    [SerializeField] private float maxScale, ogScale, duration;
+    [SerializeField] private float maxScale, maxUp, scaleDuration, pulseDuration;
+    [SerializeField] private bool doScale, doPulse;
 
-    private void FixedUpdate()
+    private void Start()
     {
-        PulsingUpdate2(1f);
+        if (doScale) ScaleUp();
+        if (doPulse) PulseUp();
     }
 
-    private void PulsingUpdate(float value)
+    private void ScaleUp()
     {
-        LeanTween.reset();
-        LeanTween.init();
-        LeanTween.scale(gameObject, new Vector3(ogScale, ogScale, ogScale), duration)
-            .setEase(LeanTweenType.easeInOutSine)
-            .setLoopPingPong()
-            .setOnUpdate(PulsingUpdate2);
+        LeanTween.scale(gameObject, new Vector3(maxScale, maxScale, maxScale), scaleDuration).setOnComplete(ScaleDown);
     }
-
-    private void PulsingUpdate2(float value)
+    private void ScaleDown()
     {
-        LeanTween.reset();
-        LeanTween.init();
-        LeanTween.scale(gameObject, new Vector3(maxScale, maxScale, maxScale), duration)
-            .setEase(LeanTweenType.easeInOutSine)
-            .setLoopPingPong()
-            .setOnUpdate(PulsingUpdate);
+        LeanTween.scale(gameObject, Vector3.one, scaleDuration).setOnComplete(ScaleUp);
+    }
+    private void PulseUp()
+    {
+        LeanTween.moveY(gameObject, transform.position.y + maxUp, pulseDuration).setOnComplete(PulseDown);
+    }
+    private void PulseDown()
+    {
+        LeanTween.moveY(gameObject, transform.position.y - maxUp, pulseDuration).setOnComplete(PulseUp);
     }
 }
