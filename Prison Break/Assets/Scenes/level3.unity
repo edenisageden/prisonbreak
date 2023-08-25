@@ -2192,7 +2192,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 0}
+  m_BackGroundColor: {r: 0.13333334, g: 0.13333334, b: 0.13333334, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2604,7 +2604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7009551878228192602, guid: 8d508af850f17d3488e68ed108ed3e11, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.2
+      value: -4.17
       objectReference: {fileID: 0}
     - target: {fileID: 7009551878228192602, guid: 8d508af850f17d3488e68ed108ed3e11, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9986,6 +9986,34 @@ PrefabInstance:
     - target: {fileID: -3754945340548164507, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
       propertyPath: pauseTime
       value: 0.025
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630550841299251318, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
+      propertyPath: targetColors.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630550841299251318, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
+      propertyPath: targetColors.Array.data[0].b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630550841299251318, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
+      propertyPath: targetColors.Array.data[0].g
+      value: 0.7776993
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630550841299251318, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
+      propertyPath: targetColors.Array.data[0].r
+      value: 0.16666657
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630550841299251318, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
+      propertyPath: targetColors.Array.data[1].b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630550841299251318, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
+      propertyPath: targetColors.Array.data[1].g
+      value: 0.14779866
+      objectReference: {fileID: 0}
+    - target: {fileID: 2630550841299251318, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
+      propertyPath: targetColors.Array.data[1].r
+      value: 0.9947868
       objectReference: {fileID: 0}
     - target: {fileID: 7467064830971467816, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
       propertyPath: m_Name
