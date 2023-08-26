@@ -29,7 +29,7 @@ public class NextLevelBox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        bool hasCollided = collision.gameObject.layer == LayerMask.NameToLayer("Player");
+        bool hasCollided = collision.gameObject.layer == LayerMask.NameToLayer("EnvironmentCollider");
         if (hasCollided && GetEnemies().Length == 0)
         {
             LevelManager.CompleteLevel(timeManager.time);

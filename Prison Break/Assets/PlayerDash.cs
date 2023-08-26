@@ -16,6 +16,7 @@ public class PlayerDash : MonoBehaviour
     [SerializeField] private FaceCursor faceCursor;
     private Vector2 currentVelocity;
     public static event Action OnPlayerDash = delegate { };
+    [SerializeField] private Collider2D playerCollider;
     private void FixedUpdate()
     {
         rb.velocity = currentVelocity * Time.deltaTime;
@@ -30,6 +31,7 @@ public class PlayerDash : MonoBehaviour
         if (isDashDuration)
         {
             playerDeath.immortal = true;
+            playerCollider.enabled = false;
             weaponHolder.canAttack = false;
             controller.canMove = false;
             faceCursor.canTurn = false;
@@ -39,6 +41,7 @@ public class PlayerDash : MonoBehaviour
         else
         {
             playerDeath.immortal = false;
+            playerCollider.enabled = true;
             weaponHolder.canAttack = true;
             faceCursor.canTurn = true;
             controller.canMove = true;

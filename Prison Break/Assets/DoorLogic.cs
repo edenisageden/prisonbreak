@@ -11,14 +11,6 @@ public class DoorLogic : MonoBehaviour
     public static event Action OnDoorOpen = delegate { };
     private bool isOpen;
 
-    private void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.P))
-        {
-            OpenDoor();
-        }
-    }
-
     public void OpenDoor(bool clockwise = true)
     {
         if (isOpen) return;

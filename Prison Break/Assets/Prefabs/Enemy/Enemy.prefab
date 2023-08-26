@@ -649,7 +649,7 @@ MonoBehaviour:
     m_Bits: 128
   playerLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 1024
   visionCollider: {fileID: 3211193757311116220}
   rangedCollider: {fileID: 8602525838956559944}
   meleeCollider: {fileID: 479432817360113999}
