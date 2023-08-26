@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -7,6 +8,7 @@ using UnityEngine;
 public class DoorLogic : MonoBehaviour
 {
     [SerializeField] private Collider2D col;
+    public static event Action OnDoorOpen = delegate { };
     private bool isOpen;
 
     private void Update()
@@ -20,6 +22,7 @@ public class DoorLogic : MonoBehaviour
     public void OpenDoor(bool clockwise = true)
     {
         if (isOpen) return;
+        OnDoorOpen?.Invoke();
         col.enabled = false;
 
         Vector3 currentRotation = transform.eulerAngles;

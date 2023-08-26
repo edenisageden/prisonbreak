@@ -18,7 +18,7 @@ public class GameMenuManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !player.GetComponent<PlayerDeath>().isDead)
         {
             print("esc");
             OpenMenu();

@@ -10187,10 +10187,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gameplay Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 7467064830971467817, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7467064830971467818, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
       propertyPath: rollSound
       value: 
-      objectReference: {fileID: 8300000, guid: 9f1b02a43ef6f5f4680ecf013a9e0473, type: 3}
+      objectReference: {fileID: 8300000, guid: 9cd1918068545294d90cfbf79f337c0c, type: 3}
     - target: {fileID: 7467064830971467818, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
       propertyPath: audioSource
       value: 
@@ -10198,7 +10202,7 @@ PrefabInstance:
     - target: {fileID: 7467064830971467818, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
       propertyPath: explodeSound
       value: 
-      objectReference: {fileID: 8300000, guid: e8f71826d94089344b4e9b876de68555, type: 3}
+      objectReference: {fileID: 8300000, guid: 90ef9882979e8e84f914ad8585f79d2a, type: 3}
     - target: {fileID: 7467064830971467819, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
       propertyPath: timeText
       value: 

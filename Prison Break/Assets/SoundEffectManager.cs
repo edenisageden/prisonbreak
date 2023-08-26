@@ -9,6 +9,8 @@ public class SoundEffectManager : MonoBehaviour
     [SerializeField] AudioClip enemyDeathSound;
     [SerializeField] AudioClip rollSound;
     [SerializeField] AudioClip explodeSound;
+    [SerializeField] AudioClip doorSound;
+    [SerializeField] AudioClip completeSound;
 
     private void Start()
     {
@@ -19,6 +21,8 @@ public class SoundEffectManager : MonoBehaviour
         EnemyLogic.OnEnemyDeath += PlayEnemyDeath;
         PlayerDash.OnPlayerDash += PlayRoll;
         RocketExplosion.OnExplode += PlayExplode;
+        DoorLogic.OnDoorOpen += PlayDoor;
+        NextLevelBox.OnComplete += PlayComplete;
     }
     private void OnDestroy()
     {
@@ -29,6 +33,16 @@ public class SoundEffectManager : MonoBehaviour
         EnemyLogic.OnEnemyDeath -= PlayEnemyDeath;
         PlayerDash.OnPlayerDash -= PlayRoll;
         RocketExplosion.OnExplode -= PlayExplode;
+        DoorLogic.OnDoorOpen -= PlayDoor;
+        NextLevelBox.OnComplete -= PlayComplete;
+    }
+    private void PlayComplete()
+    {
+        audioSource.PlayOneShot(completeSound);
+    }
+    private void PlayDoor()
+    {
+        audioSource.PlayOneShot(doorSound);
     }
     private void PlayPickup(Weapon weapon)
     {
