@@ -47,7 +47,8 @@ public class RocketExplosion : MonoBehaviour
 
         foreach (Collider2D collider in triggerColliders)
         {
-            if (bulletLogic.ignoreLayer == "Player")
+            // Friendly fire off
+            /*if (bulletLogic.ignoreLayer == "Player")
             {
                 EnemyLogic enemyLogic = collider.gameObject.GetComponent<EnemyLogic>();
                 if (enemyLogic != null)
@@ -71,6 +72,26 @@ public class RocketExplosion : MonoBehaviour
                     {
                         pendingToKillList.Add(killable);
                     }
+                }
+            }*/
+            EnemyLogic enemyLogic = collider.gameObject.GetComponent<EnemyLogic>();
+            if (enemyLogic != null)
+            {
+                IKillable killable = enemyLogic.GetComponent<IKillable>();
+
+                if (killable != null)
+                {
+                    pendingToKillList.Add(killable);
+                }
+            }
+            PlayerDeath playerDeath = collider.gameObject.GetComponent<PlayerDeath>();
+            if (playerDeath != null)
+            {
+                IKillable killable = playerDeath.GetComponent<IKillable>();
+
+                if (killable != null)
+                {
+                    pendingToKillList.Add(killable);
                 }
             }
         }
