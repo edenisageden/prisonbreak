@@ -100,7 +100,7 @@ MonoBehaviour:
   rollSound: {fileID: 8300000, guid: 9cd1918068545294d90cfbf79f337c0c, type: 3}
   explodeSound: {fileID: 8300000, guid: 90ef9882979e8e84f914ad8585f79d2a, type: 3}
   doorSound: {fileID: 8300000, guid: 1635cb1b99d0d4f429056df0ca981d85, type: 3}
-  completeSound: {fileID: 8300000, guid: 5797754d160140f4fb122c1160b563a4, type: 3}
+  completeSound: {fileID: 8300000, guid: 07e8c294742aaeb4dab7ca39b76c2bd3, type: 3}
 --- !u!82 &7467064830971467817
 AudioSource:
   m_ObjectHideFlags: 0
