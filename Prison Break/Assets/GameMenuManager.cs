@@ -28,7 +28,7 @@ public class GameMenuManager : MonoBehaviour
         {
             ammo.enabled = true;
             if (weaponHolder.currentAmmo == 0) ammo.text = "Empty";
-            else ammo.text = "Ammo: " + weaponHolder.currentAmmo.ToString();
+            else ammo.text = weaponHolder.currentAmmo.ToString();
         }
     }
 
