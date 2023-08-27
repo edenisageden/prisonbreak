@@ -24,3 +24,4 @@ MonoBehaviour:
   maxAmmo: 8
   bulletPrefab: {fileID: 2193585288452067729, guid: da23a0d4282f8794298879904ad49f89, type: 3}
   isAutomatic: 0
+  bulletCount: 1

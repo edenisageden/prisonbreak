@@ -20,7 +20,8 @@ MonoBehaviour:
   pickupSound: {fileID: 8300000, guid: 1fafa57ba6779134ba5a2b93ff1a74d5, type: 3}
   attackSound: {fileID: 8300000, guid: 8ab249d9af1ec7e4e963ec770d402884, type: 3}
   isLegendary: 1
-  bulletSpeed: 20
-  maxAmmo: 4
+  bulletSpeed: 30
+  maxAmmo: 5
   bulletPrefab: {fileID: 2193585288452067729, guid: 4b12fbed897c5434d890c98d2f67d025, type: 3}
   isAutomatic: 0
+  bulletCount: 1
