@@ -19,6 +19,7 @@ public class NextLevelBox : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private Color bronzeColor, silverColor, goldColor;
     public static event Action OnComplete = delegate { };
+    private bool hasInvokedComplete = false;
 
     public enum Medal
     {
@@ -56,6 +57,8 @@ public class NextLevelBox : MonoBehaviour
     {
         if (GetEnemies().Length == 0)
         {
+            if (hasInvokedComplete) return;
+            hasInvokedComplete = true;
             OnComplete?.Invoke();
         }
     }

@@ -10148,6 +10148,10 @@ PrefabInstance:
       propertyPath: explodeSound
       value: 
       objectReference: {fileID: 8300000, guid: 90ef9882979e8e84f914ad8585f79d2a, type: 3}
+    - target: {fileID: 7467064830971467818, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
+      propertyPath: completeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 07e8c294742aaeb4dab7ca39b76c2bd3, type: 3}
     - target: {fileID: 7467064830971467819, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
       propertyPath: timeText
       value: 
