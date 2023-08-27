@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 4535127238275845701}
   - component: {fileID: 4535127238275845706}
   - component: {fileID: 4535127238275845700}
+  - component: {fileID: 249663355232586732}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -193,3 +194,18 @@ MonoBehaviour:
   amplitude: 2
   frequency: 2
   duration: 0.07
+--- !u!114 &249663355232586732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4535127238275845707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c285a92bf653f0f4aadc2c0c6a5a528c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centerPoint: 0
+  rotationCap: 3.5
+  rotationToDistanceRatio: 0.1
