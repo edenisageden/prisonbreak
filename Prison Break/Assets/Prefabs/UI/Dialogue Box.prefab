@@ -147,8 +147,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 99de41b1a8e8f6749abb0a713867a739, type: 2}
+  m_sharedMaterial: {fileID: 1336529701201302811, guid: 99de41b1a8e8f6749abb0a713867a739, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -306,10 +306,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 7504721061080622117}
   lines:
-  - W, A, S, D to move
-  - Left Click to attack
-  - E to pick up weapon
-  - Shift to roll
+  - W, A, S, D TO MOVE
+  - LEFT CLICK TO ATTACK
+  - E TO PICK UP WEAPON
+  - SHIFT TO ROLL
   finishedDialogue: 0
 --- !u!1 &7802280681692060840
 GameObject:
@@ -405,7 +405,7 @@ MonoBehaviour:
     m_Left: 10
     m_Right: 10
     m_Top: 0
-    m_Bottom: 0
+    m_Bottom: 8
   m_ChildAlignment: 4
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
