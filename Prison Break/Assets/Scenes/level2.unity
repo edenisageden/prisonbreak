@@ -2018,6 +2018,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: CloseMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 8262771573594660258, guid: 6ed59aae46f94fe4fb16e1985d7bbb12, type: 3}
+      propertyPath: weaponHolder
+      value: 
+      objectReference: {fileID: 557341297}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ed59aae46f94fe4fb16e1985d7bbb12, type: 3}
 --- !u!114 &287884958 stripped

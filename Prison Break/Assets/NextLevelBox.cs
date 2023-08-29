@@ -20,6 +20,8 @@ public class NextLevelBox : MonoBehaviour
     [SerializeField] private Color bronzeColor, silverColor, goldColor;
     public static event Action OnComplete = delegate { };
     private bool hasInvokedComplete = false;
+    public bool isComplete;
+    public bool isCompleteFully;
 
     public enum Medal
     {
@@ -36,6 +38,7 @@ public class NextLevelBox : MonoBehaviour
             LevelManager.CompleteLevel(timeManager.time);
             if (!goToMenu)
             {
+                isCompleteFully = true;
                 PauseTime();
                 InitializeCompletionMenu();
                 completionMenu.SetActive(true);
@@ -60,6 +63,7 @@ public class NextLevelBox : MonoBehaviour
             if (hasInvokedComplete) return;
             hasInvokedComplete = true;
             OnComplete?.Invoke();
+            isComplete = true;
         }
     }
 
