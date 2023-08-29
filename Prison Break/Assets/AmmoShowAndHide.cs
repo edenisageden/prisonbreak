@@ -12,6 +12,7 @@ public class AmmoShowAndHide : MonoBehaviour
     [SerializeField] GameMenuManager gameMenuManager;
     [SerializeField] PlayerDeath playerDeath;
     [SerializeField] Dialogue dialogue;
+    [SerializeField] GameObject deathDialogue;
 
     private void Update()
     {
@@ -25,23 +26,28 @@ public class AmmoShowAndHide : MonoBehaviour
             AmmoCounter.SetActive(false);
             TimeCounter.SetActive(false);
             Dialogue.SetActive(false);
+            deathDialogue.SetActive(false);
         }
         else if (NextLevelBox.isCompleteFully)
         {
             AmmoCounter.SetActive(false);
             TimeCounter.SetActive(false);
             Dialogue.SetActive(false);
+            deathDialogue.SetActive(false);
+
         }
         else if (playerDeath.isDead)
         {
             AmmoCounter.SetActive(false);
             TimeCounter.SetActive(false);
             Dialogue.SetActive(false);
+            deathDialogue.SetActive(true);
         }
         else
         {
             AmmoCounter.SetActive(true);
             TimeCounter.SetActive(true);
+            deathDialogue.SetActive(false);
             if (!dialogue.finishedDialogue) Dialogue.SetActive(true);
         }
     }
