@@ -11,7 +11,6 @@ public class DisplayOnComplete : MonoBehaviour
     {
         if (nextLevelBox.isCompleteFully)
         {
-            Time.timeScale = 1.0f;
             animator.SetBool("isComplete", true);
         }
     }
