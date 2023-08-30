@@ -5,10 +5,13 @@ using UnityEngine;
 public class DisplayOnComplete : MonoBehaviour
 {
     [SerializeField] private NextLevelBox nextLevelBox;
-    [SerializeField] private GameObject thingToDisplay;
+    [SerializeField] private Animator animator;
 
     private void Update()
     {
-        if (nextLevelBox.isComplete) thingToDisplay.SetActive(true);
+        if (nextLevelBox.isCompleteFully)
+        {
+            animator.SetBool("isComplete", true);
+        }
     }
 }
