@@ -1120,11 +1120,9 @@ MonoBehaviour:
   buttonList:
   - {fileID: 431548259}
   - {fileID: 1049750305}
-  - {fileID: 0}
   levelInfoSOList:
   - {fileID: 11400000, guid: fa68425b28c878f4a975a00ee041b686, type: 2}
   - {fileID: 11400000, guid: 016a935cd747a7442bc880d51154def9, type: 2}
-  - {fileID: 11400000, guid: 93edd786416d97447b81487b51b6559a, type: 2}
   bronzeButtonImage: {fileID: 21300000, guid: ddff90a4804d8814c960152fdaaf3f8b, type: 3}
   silverButtonImage: {fileID: 21300000, guid: 95ae1af0f7e20c24a8f79aaaece70e68, type: 3}
   goldButtonImage: {fileID: 21300000, guid: 1dc88708e8b813142b89d3a1d3b2b7bd, type: 3}
