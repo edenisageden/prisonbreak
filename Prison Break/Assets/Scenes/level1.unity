@@ -1734,6 +1734,10 @@ PrefabInstance:
       propertyPath: m_UpdateMode
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 527108129859058602, guid: 6ed59aae46f94fe4fb16e1985d7bbb12, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1041445593281876937, guid: 6ed59aae46f94fe4fb16e1985d7bbb12, type: 3}
       propertyPath: Dialogue
       value: 
@@ -1974,7 +1978,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7062188539900983676, guid: 6ed59aae46f94fe4fb16e1985d7bbb12, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6ed59aae46f94fe4fb16e1985d7bbb12, type: 3}
 --- !u!224 &287884957 stripped
 RectTransform:
