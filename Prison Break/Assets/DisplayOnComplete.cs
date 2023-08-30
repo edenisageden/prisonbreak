@@ -7,7 +7,7 @@ public class DisplayOnComplete : MonoBehaviour
     [SerializeField] private NextLevelBox nextLevelBox;
     [SerializeField] private Animator animator;
 
-    private void LateUpdate()
+    private void Update()
     {
         if (nextLevelBox.isCompleteFully)
         {
