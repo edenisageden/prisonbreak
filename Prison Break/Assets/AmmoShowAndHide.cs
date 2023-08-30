@@ -25,14 +25,14 @@ public class AmmoShowAndHide : MonoBehaviour
         {
             AmmoCounter.SetActive(false);
             TimeCounter.SetActive(false);
-            Dialogue.SetActive(false);
+            if (dialogue != null) Dialogue.SetActive(false);
             deathDialogue.SetActive(false);
         }
         else if (NextLevelBox.isCompleteFully)
         {
             AmmoCounter.SetActive(false);
             TimeCounter.SetActive(false);
-            Dialogue.SetActive(false);
+            if (dialogue != null) Dialogue.SetActive(false);
             deathDialogue.SetActive(false);
 
         }
@@ -40,7 +40,7 @@ public class AmmoShowAndHide : MonoBehaviour
         {
             AmmoCounter.SetActive(false);
             TimeCounter.SetActive(false);
-            Dialogue.SetActive(false);
+            if (dialogue != null) Dialogue.SetActive(false);
             deathDialogue.SetActive(true);
         }
         else
@@ -48,7 +48,7 @@ public class AmmoShowAndHide : MonoBehaviour
             AmmoCounter.SetActive(true);
             TimeCounter.SetActive(true);
             deathDialogue.SetActive(false);
-            if (!dialogue.finishedDialogue) Dialogue.SetActive(true);
+            if (dialogue != null) if (!dialogue.finishedDialogue) Dialogue.SetActive(true);
         }
     }
 }
