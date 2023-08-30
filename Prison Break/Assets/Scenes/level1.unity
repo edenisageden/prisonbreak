@@ -1958,7 +1958,8 @@ PrefabInstance:
       propertyPath: weaponHolder
       value: 
       objectReference: {fileID: 557341297}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7204161265398524761, guid: 6ed59aae46f94fe4fb16e1985d7bbb12, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6ed59aae46f94fe4fb16e1985d7bbb12, type: 3}
 --- !u!224 &287884957 stripped
 RectTransform:
