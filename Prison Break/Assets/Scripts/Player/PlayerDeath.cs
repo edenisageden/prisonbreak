@@ -21,6 +21,6 @@ public class PlayerDeath : MonoBehaviour, IKillable
         isDead = true;
         Instantiate(deadPrefab, transform.position, transform.rotation);
         gameObject.SetActive(false);
-        ammoMenu.SetActive(false);
+        //ammoMenu.SetActive(false);
     }
 }

@@ -2191,6 +2191,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1573350514289029280, guid: ff565e647d5dc9c4daab0dd42ab7a5e9, type: 3}
+    - {fileID: 5434564990036405802, guid: ff565e647d5dc9c4daab0dd42ab7a5e9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ff565e647d5dc9c4daab0dd42ab7a5e9, type: 3}
 --- !u!4 &2915069040071753618 stripped
 Transform:
@@ -2235,3 +2236,4 @@ MonoBehaviour:
   isDashDuration: 0
   rb: {fileID: 2915069040071753620}
   bossLogic: {fileID: 2915069040071753621}
+  currentRB: {x: 0, y: 0}

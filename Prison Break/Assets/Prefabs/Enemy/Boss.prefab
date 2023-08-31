@@ -127,7 +127,6 @@ GameObject:
   - component: {fileID: 128247289811974445}
   - component: {fileID: 1839284400055324148}
   - component: {fileID: 7045718803669574275}
-  - component: {fileID: 5434564990036405802}
   - component: {fileID: 2206490831322668005}
   m_Layer: 6
   m_Name: Boss
@@ -166,8 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 949519213d346b5418d0e6a2d2e2289d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phase1MaxHealth: 0
-  phase2MaxHealth: 0
+  maxHealth: 0
+  phase2Health: 0
   playerTooCloseRadius: {fileID: 0}
   punchRange: {fileID: 0}
   knifeSpeed: 0
@@ -177,14 +176,20 @@ MonoBehaviour:
   minCooldownTime: 0
   maxCooldownTime: 0
   rotationTime: 0
+  indicatorTime: 0
   aiDestinationSetter: {fileID: 8998925130358671970}
   playerTransform: {fileID: 3709649732908909760}
   aiPath: {fileID: 128247289811974445}
+  projectileSpawnPoint: {fileID: 0}
   bossMeleeCollision: {fileID: 0}
   tooCloseColliderLogic: {fileID: 0}
-  bossDashLogic: {fileID: 5434564990036405802}
-  animator: {fileID: 2206490831322668005}
+  bossDashLogic: {fileID: 0}
+  indicator1: {fileID: 0}
+  indicator2: {fileID: 0}
+  indicator3: {fileID: 0}
+  knifeProjectile: {fileID: 0}
   angle: {x: 0, y: 0}
+  currentHealth: 0
 --- !u!50 &17955346403446629
 Rigidbody2D:
   serializedVersion: 4
@@ -358,23 +363,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5434564990036405802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5539637741858558049}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cafc57db92b3e844babb9ecf38f61ab7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashSpeed: 1700
-  dashDuration: 0.4
-  isDashDuration: 0
-  rb: {fileID: 17955346403446629}
-  bossLogic: {fileID: 8846484531784022509}
 --- !u!95 &2206490831322668005
 Animator:
   serializedVersion: 5
