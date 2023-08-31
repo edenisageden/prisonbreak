@@ -1,14 +1,15 @@
 using Pathfinding;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class BossLogic : MonoBehaviour
+public class BossLogic : MonoBehaviour, IDamagable
 {
     private bool isCoolingDown = false;
 
     [Header("New Config")]
-    [SerializeField] private float phase1MaxHealth, phase2MaxHealth;
+    [SerializeField] private float maxHealth, phase2Health;
     [SerializeField] private CircleCollider2D playerTooCloseRadius;
     [SerializeField] private Collider2D punchRange;
     [SerializeField] private float knifeSpeed;
@@ -17,22 +18,24 @@ public class BossLogic : MonoBehaviour
     [SerializeField] private float turnSpeed;
     [SerializeField] private float minCooldownTime, maxCooldownTime;
     [SerializeField] private float rotationTime;
+    [SerializeField] private float indicatorTime;
     private Vector2 currentVelocity;
 
     [Header("Assignables")]
     [SerializeField] private AIDestinationSetter aiDestinationSetter;
     [SerializeField] private Transform playerTransform;
     [SerializeField] private AIPath aiPath;
+    [SerializeField] private Transform projectileSpawnPoint;
     [SerializeField] private BossMeleeCollision bossMeleeCollision;
-    private float phase1CurrentHealth, phase2CurrentHealth;
     [SerializeField] private TooCloseColliderLogic tooCloseColliderLogic;
     [SerializeField] private BossDashLogic bossDashLogic;
-    [SerializeField] private Animator animator;
+    [SerializeField] private GameObject indicator1, indicator2, indicator3;
+    [SerializeField] private GameObject knifeProjectile;
 
-    private float maxHealth => phase1MaxHealth + phase2MaxHealth;
     [HideInInspector] public Vector2 angle;
-    private float currentHealth => phase1CurrentHealth + phase2CurrentHealth;
-    private bool isPhase2 => phase1CurrentHealth <= 0f;
+    private bool isDoingKnifeThrow;
+    public float currentHealth;
+    private bool isPhase2 => currentHealth <= phase2Health;
     private Attacks currentAttack;
     private bool isAttacking;
     private bool justDashed;
@@ -47,8 +50,7 @@ public class BossLogic : MonoBehaviour
 
     private void Awake()
     {
-        phase1CurrentHealth = phase1MaxHealth;
-        phase2CurrentHealth = phase2MaxHealth;
+        currentHealth = maxHealth;
         LeanTween.init();
         LeanTween.reset();
         aiPath.maxSpeed = chaseSpeed;
@@ -59,11 +61,12 @@ public class BossLogic : MonoBehaviour
 
         if (justDashed && !bossDashLogic.isDashDuration)
         {
+            isDoingKnifeThrow = true;
             FacePlayer();
             justDashed = false;
             print("Knife throw");
-            StartCoroutine(AttackCooldown());
-            isAttacking = false;
+            if (isPhase2) StartCoroutine(DoTheKnifeThrow2());
+            else StartCoroutine(DoTheKnifeThrow());
         }
 
         if (isAttacking)
@@ -74,9 +77,11 @@ public class BossLogic : MonoBehaviour
                     Punch();
                     break;
                 case Attacks.KnifeThrow:
+                    if (isDoingKnifeThrow) return;
                     KnifeThrow();
                     break;
                 case Attacks.KnifeThrow2:
+                    if (isDoingKnifeThrow) return;
                     KnifeThrow2();
                     break;
                 case Attacks.DynamiteThrow:
@@ -136,18 +141,71 @@ public class BossLogic : MonoBehaviour
         }
         else
         {
-            print("Knife throw");
-            StartCoroutine(AttackCooldown());
-            isAttacking = false;
+            justDashed = true;
         }
     }
     private void KnifeThrow2()
     {
-        print("Knife throw 2");
+        if (tooCloseColliderLogic.isTooClose)
+        {
+            bossDashLogic.Dash();
+            justDashed = true;
+        }
+        else
+        {
+            justDashed = true;
+        }
     }
     private void DynamiteThrow() 
     {
         print("Dynamite throw");
+        isAttacking = false;
+    }
+
+    private IEnumerator DoTheKnifeThrow()
+    {
+        // 1. Display indicator
+        indicator1.SetActive(true);
+
+        // 2. Wait for time
+        yield return new WaitForSeconds(indicatorTime);
+
+        // 3. Hide indicator, instantiate knife and give it velocity
+        indicator1.SetActive(false);
+        GameObject newKnife = Instantiate(knifeProjectile, projectileSpawnPoint.position, indicator1.transform.rotation);
+        newKnife.GetComponent<Rigidbody2D>().velocity = newKnife.transform.up * knifeSpeed;
+        
+        // 4. Set the thingy
+        StartCoroutine(AttackCooldown());
+        isDoingKnifeThrow = false;
+        isAttacking = false;
+    }
+
+    private IEnumerator DoTheKnifeThrow2()
+    {
+        // 1. Display indicator
+        indicator1.SetActive(true);
+        indicator2.SetActive(true);
+        indicator3.SetActive(true);
+
+        // 2. Wait for time
+        yield return new WaitForSeconds(indicatorTime);
+
+        // 3. Hide indicator, instantiate knife and give it velocity
+        indicator1.SetActive(false);
+        indicator2.SetActive(false);
+        indicator3.SetActive(false);
+        GameObject newKnife = Instantiate(knifeProjectile, projectileSpawnPoint.position, indicator1.transform.rotation);
+        GameObject newKnife2 = Instantiate(knifeProjectile, projectileSpawnPoint.position, indicator2.transform.rotation);
+        GameObject newKnife3 = Instantiate(knifeProjectile, projectileSpawnPoint.position, indicator3.transform.rotation);
+        newKnife.GetComponent<Rigidbody2D>().velocity = newKnife.transform.up * knifeSpeed;
+        newKnife2.GetComponent<Rigidbody2D>().velocity = (indicator2.transform.rotation * Vector2.up).normalized * knifeSpeed;
+        newKnife3.GetComponent<Rigidbody2D>().velocity = (indicator3.transform.rotation * Vector2.up).normalized * knifeSpeed;
+
+        // 4. Set the thingy
+        StartCoroutine(AttackCooldown());
+        isDoingKnifeThrow = false;
+        isAttacking = false;
     }
 
     private IEnumerator AttackCooldown()
@@ -188,5 +246,15 @@ public class BossLogic : MonoBehaviour
         LeanTween.reset();
         LeanTween.cancel(gameObject);
         LeanTween.rotate(gameObject, new Vector3(0, 0, rotateTo), rotationTime);
+    }
+
+    public void Damage(int damage)
+    {
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+        {
+            // Death
+            print("Boss killed");
+        }
     }
 }
