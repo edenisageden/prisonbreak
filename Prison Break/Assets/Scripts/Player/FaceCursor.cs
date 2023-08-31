@@ -5,6 +5,7 @@ using UnityEngine;
 public class FaceCursor : MonoBehaviour
 {
     [SerializeField] Transform cameraTransform; // Reference to the camera transform
+    public bool canTurn = true;
 
     private void Update()
     {
@@ -19,7 +20,7 @@ public class FaceCursor : MonoBehaviour
         directionToCursor.z = 0f; // Ensure the z-axis is zero (assuming 2D gameplay)
 
         // Rotate the player to face the cursor
-        if (directionToCursor != Vector3.zero)
+        if (directionToCursor != Vector3.zero && canTurn)
         {
             Quaternion rotation = Quaternion.LookRotation(Vector3.forward, directionToCursor);
             transform.rotation = rotation;

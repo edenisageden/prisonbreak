@@ -52,8 +52,6 @@ public class EnemyLogic : MonoBehaviour, IKillable
 
     private void Awake()
     {
-        LeanTween.init();
-        LeanTween.reset();
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         aiPath.maxSpeed = chasingSpeed;
     }
@@ -152,7 +150,6 @@ public class EnemyLogic : MonoBehaviour, IKillable
 
     private void DoChasing()
     {
-        LeanTween.init();
         if (LeanTween.isTweening(gameObject)) LeanTween.cancel(gameObject);
         aiDestinationSetter.target = playerTransform;
         if (!playerTransform.gameObject.activeSelf)
@@ -217,9 +214,7 @@ public class EnemyLogic : MonoBehaviour, IKillable
     }
     private void RotateAmount(float rotationAmount, float rotationTime)
     {
-        LeanTween.init();
         if (LeanTween.isTweening(gameObject)) return;
-        LeanTween.reset();
         LeanTween.cancel(gameObject);
         LeanTween.rotateAround(gameObject, Vector3.forward, rotationAmount, rotationTime);
     }

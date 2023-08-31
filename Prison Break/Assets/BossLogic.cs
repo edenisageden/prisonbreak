@@ -124,7 +124,8 @@ public class BossLogic : MonoBehaviour, IDamagable
         aiDestinationSetter.target = playerTransform;
         if (bossMeleeCollision.isTouchingPlayer)
         {
-            print("Punch");
+            animator.Play("slash_2");
+            
             aiDestinationSetter.target = null;
             aiPath.canMove = false;
             StartCoroutine(AttackCooldown());
@@ -224,6 +225,7 @@ public class BossLogic : MonoBehaviour, IDamagable
   
     private void FacePlayer()
     {
+        print("G");
         float rotateAngle = (Mathf.Atan2(GetPlayerAngle().y, GetPlayerAngle().x) * Mathf.Rad2Deg) - 90f;
         RotateTo(rotateAngle, rotationTime);
     }
