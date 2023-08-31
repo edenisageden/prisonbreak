@@ -10,7 +10,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private string[] lines;
     private int index = 0;
     private bool[] conditions = new bool[4];
-    private bool finishedDialogue = false;
+    public bool finishedDialogue = false;
     private bool dialogueReadyToFinish = false;
 
     private void Awake()

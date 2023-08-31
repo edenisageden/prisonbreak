@@ -11,6 +11,8 @@ public class RocketExplosion : MonoBehaviour
     [SerializeField] private int explosionDamage;
     private List<Collider2D> triggerColliders = new List<Collider2D>();
     private List<IKillable> pendingToKillList = new List<IKillable>();
+    [SerializeField] private GameObject explosion;
+    public static event Action OnExplode = delegate { };
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -30,19 +32,23 @@ public class RocketExplosion : MonoBehaviour
 
     private void Start()
     {
-        BulletLogic.OnBulletCollision += DoExplosion;
+        bulletLogic.OnBulletCollision += DoExplosion;
     }
 
     private void OnDestroy()
     {
-        BulletLogic.OnBulletCollision -= DoExplosion;
+        Instantiate(explosion, transform.position, transform.rotation);
+        bulletLogic.OnBulletCollision -= DoExplosion;
     }
 
     private void DoExplosion()
     {
+        OnExplode?.Invoke();
+
         foreach (Collider2D collider in triggerColliders)
         {
-            if (bulletLogic.ignoreLayer == "Player")
+            // Friendly fire off
+            /*if (bulletLogic.ignoreLayer == "Player")
             {
                 EnemyLogic enemyLogic = collider.gameObject.GetComponent<EnemyLogic>();
                 if (enemyLogic != null)
@@ -66,6 +72,26 @@ public class RocketExplosion : MonoBehaviour
                     {
                         pendingToKillList.Add(killable);
                     }
+                }
+            }*/
+            EnemyLogic enemyLogic = collider.gameObject.GetComponent<EnemyLogic>();
+            if (enemyLogic != null)
+            {
+                IKillable killable = enemyLogic.GetComponent<IKillable>();
+
+                if (killable != null)
+                {
+                    pendingToKillList.Add(killable);
+                }
+            }
+            PlayerDeath playerDeath = collider.gameObject.GetComponent<PlayerDeath>();
+            if (playerDeath != null)
+            {
+                IKillable killable = playerDeath.GetComponent<IKillable>();
+
+                if (killable != null)
+                {
+                    pendingToKillList.Add(killable);
                 }
             }
         }

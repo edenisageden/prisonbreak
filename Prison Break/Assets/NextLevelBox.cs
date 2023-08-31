@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -17,6 +18,10 @@ public class NextLevelBox : MonoBehaviour
     [SerializeField] private LevelInfoSO[] levelInfoSOList;
     [SerializeField] private GameObject player;
     [SerializeField] private Color bronzeColor, silverColor, goldColor;
+    public static event Action OnComplete = delegate { };
+    private bool hasInvokedComplete = false;
+    public bool isComplete;
+    public bool isCompleteFully;
 
     public enum Medal
     {
@@ -27,12 +32,13 @@ public class NextLevelBox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        bool hasCollided = collision.gameObject.layer == LayerMask.NameToLayer("Player");
+        bool hasCollided = collision.gameObject.layer == LayerMask.NameToLayer("EnvironmentCollider");
         if (hasCollided && GetEnemies().Length == 0)
         {
             LevelManager.CompleteLevel(timeManager.time);
             if (!goToMenu)
             {
+                isCompleteFully = true;
                 PauseTime();
                 InitializeCompletionMenu();
                 completionMenu.SetActive(true);
@@ -48,6 +54,17 @@ public class NextLevelBox : MonoBehaviour
     private GameObject[] GetEnemies()
     {
         return GameObject.FindGameObjectsWithTag("Enemy");
+    }
+
+    private void Update()
+    {
+        if (GetEnemies().Length == 0)
+        {
+            if (hasInvokedComplete) return;
+            hasInvokedComplete = true;
+            OnComplete?.Invoke();
+            isComplete = true;
+        }
     }
 
     public void NextLevel()

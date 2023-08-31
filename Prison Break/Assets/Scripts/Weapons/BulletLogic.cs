@@ -12,7 +12,7 @@ public class BulletLogic : MonoBehaviour
     [SerializeField] private float bulletLifetime;
     [SerializeField] private int damage;
     public static event Action <Vector3, Quaternion> OnObstacleHit = delegate { };
-    public static event Action OnBulletCollision = delegate { };
+    public event Action OnBulletCollision = delegate { };
 
     private void Start()
     {

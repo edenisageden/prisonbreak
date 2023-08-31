@@ -10,6 +10,7 @@ public class GameMenuManager : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private TMP_Text ammo;
     [SerializeField] private WeaponHolder weaponHolder;
+    public bool isPaused;
 
     private void Start()
     {
@@ -18,7 +19,7 @@ public class GameMenuManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !player.GetComponent<PlayerDeath>().isDead)
         {
             print("esc");
             OpenMenu();
@@ -27,19 +28,22 @@ public class GameMenuManager : MonoBehaviour
         else
         {
             ammo.enabled = true;
-            if (weaponHolder.currentAmmo == 0) ammo.text = "Empty";
-            else ammo.text = "Ammo: " + weaponHolder.currentAmmo.ToString();
+            /*if (weaponHolder.currentAmmo == 0) ammo.text = "Empty";
+            else ammo.text = weaponHolder.currentAmmo.ToString();*/
+            ammo.text = weaponHolder.currentAmmo.ToString();
         }
     }
 
     public void OpenMenu()
     {
+        isPaused = true;
         // Deactivate everything
         panel.SetActive(true);
         PauseTime();
     }
     public void CloseMenu()
     {
+        isPaused = false;
         panel.SetActive(false);
         StartTime();
     }

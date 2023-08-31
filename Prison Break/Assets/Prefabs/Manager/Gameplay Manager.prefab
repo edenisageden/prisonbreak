@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 7467064830971467818}
   - component: {fileID: 7467064830971467817}
   - component: {fileID: 7467064830971467823}
+  - component: {fileID: 3026520244190601819}
+  - component: {fileID: -3754945340548164507}
   m_Layer: 0
   m_Name: Gameplay Manager
   m_TagString: Untagged
@@ -93,8 +95,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 7467064830971467817}
-  fistAttackSound: {fileID: 8300000, guid: a3a877525fc8c4d449001cea9869010c, type: 3}
-  enemyDeathSound: {fileID: 0}
+  fistAttackSound: {fileID: 8300000, guid: e063ea31c9a996a4f9c6324f789753d5, type: 3}
+  enemyDeathSound: {fileID: 8300000, guid: af3948eb17964e34f9d8e16d309f5f6a, type: 3}
+  rollSound: {fileID: 8300000, guid: 9cd1918068545294d90cfbf79f337c0c, type: 3}
+  explodeSound: {fileID: 8300000, guid: 90ef9882979e8e84f914ad8585f79d2a, type: 3}
+  doorSound: {fileID: 8300000, guid: 1635cb1b99d0d4f429056df0ca981d85, type: 3}
+  completeSound: {fileID: 8300000, guid: 07e8c294742aaeb4dab7ca39b76c2bd3, type: 3}
 --- !u!82 &7467064830971467817
 AudioSource:
   m_ObjectHideFlags: 0
@@ -246,3 +252,28 @@ MonoBehaviour:
     pivotPointRoot: {fileID: 0}
     spreadOutCount: 1
   showGraphs: 1
+--- !u!114 &3026520244190601819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7467064830971467816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 310ab7788ecd1864c892b360872327ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-3754945340548164507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7467064830971467816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd655c479fa8584a95847e67831e928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseTime: 0.025

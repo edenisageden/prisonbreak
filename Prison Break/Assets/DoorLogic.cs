@@ -1,26 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using UnityEditor.Experimental.GraphView;
 using UnityEditor.Rendering;
 using UnityEngine;
 
 public class DoorLogic : MonoBehaviour
 {
     [SerializeField] private Collider2D col;
+    public static event Action OnDoorOpen = delegate { };
     private bool isOpen;
-
-    private void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.P))
-        {
-            OpenDoor();
-        }
-    }
 
     public void OpenDoor(bool clockwise = true)
     {
         if (isOpen) return;
+        OnDoorOpen?.Invoke();
         col.enabled = false;
 
         Vector3 currentRotation = transform.eulerAngles;
