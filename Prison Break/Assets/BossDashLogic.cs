@@ -12,6 +12,7 @@ public class BossDashLogic : MonoBehaviour
     private Vector2 currentAngle;
     public Vector2 currentRB;
     [SerializeField] private Animator animator;
+    private Vector2 movementDirection;
 
     private void FixedUpdate()
     {
@@ -19,6 +20,7 @@ public class BossDashLogic : MonoBehaviour
     }
     private void Update()
     {
+        StartCoroutine(CalculateMovementDirection());
         currentRB = rb.velocity;
 
         if (isDashDuration)
@@ -35,6 +37,7 @@ public class BossDashLogic : MonoBehaviour
     {
         if (!isDashDuration) animator.SetTrigger("OnDash");
         //rb.velocity = Vector2.zero;
+        transform.rotation = Quaternion.Euler(0f, 0f, (Mathf.Atan2(currentAngle.y, currentAngle.normalized.x) * Mathf.Rad2Deg) - 90f);
         currentAngle = bossLogic.angle;
         isDashDuration = true;
         StartCoroutine(DashDuration());
@@ -44,5 +47,13 @@ public class BossDashLogic : MonoBehaviour
     {
         yield return new WaitForSeconds(dashDuration);
         isDashDuration = false;
+    }
+
+    private IEnumerator CalculateMovementDirection()
+    {
+        Vector2 beforePosition = transform.position;
+        yield return new WaitForSeconds(0.05f);
+        Vector2 afterPosition = transform.position;
+        movementDirection = afterPosition - beforePosition;
     }
 }
