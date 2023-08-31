@@ -18,10 +18,13 @@ public class DynamiteScript : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(dynamiteExplosionTimeMin, DynamiteExplosionTimeMax));
         animator.SetTrigger("OnExplode");
-        playerCol = FindAnyObjectByType<PlayerController>().GetComponent<Collider2D>();
-        if (radius.IsTouching(playerCol))
+        if (FindAnyObjectByType<PlayerController>())
         {
-            playerCol.GetComponentInParent<PlayerDeath>().Kill();
+            playerCol = FindAnyObjectByType<PlayerController>().GetComponent<Collider2D>();
+            if (radius.IsTouching(playerCol))
+            {
+                playerCol.GetComponent<PlayerDeath>().Kill();
+            }
         }
         yield return new WaitForSeconds(0.17f);
         Destroy(gameObject);
