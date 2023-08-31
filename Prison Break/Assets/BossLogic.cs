@@ -126,6 +126,7 @@ public class BossLogic : MonoBehaviour, IDamagable
         if (bossMeleeCollision.isTouchingPlayer)
         {
             print("Punch");
+            animator.SetTrigger("OnPunch");
             aiDestinationSetter.target = null;
             aiPath.canMove = false;
             StartCoroutine(AttackCooldown());
