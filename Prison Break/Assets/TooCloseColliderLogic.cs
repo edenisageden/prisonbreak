@@ -8,10 +8,13 @@ public class TooCloseColliderLogic : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player") isTooClose = true;
+        if (collision.tag == "EnvironmentCollider")
+        {
+            isTooClose = true;
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Player") isTooClose = false;
+        if (collision.tag == "EnvironmentCollider") isTooClose = false;
     }
 }

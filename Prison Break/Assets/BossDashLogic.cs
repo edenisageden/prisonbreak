@@ -10,12 +10,15 @@ public class BossDashLogic : MonoBehaviour
     private Vector2 currentVelocity;
     [SerializeField] private BossLogic bossLogic;
     private Vector2 currentAngle;
+    public Vector2 currentRB;
     private void FixedUpdate()
     {
         rb.velocity = currentVelocity * Time.deltaTime;
     }
     private void Update()
     {
+        currentRB = rb.velocity;
+
         if (isDashDuration)
         {
             currentVelocity = currentAngle * dashSpeed;
