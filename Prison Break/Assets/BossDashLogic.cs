@@ -11,6 +11,8 @@ public class BossDashLogic : MonoBehaviour
     [SerializeField] private BossLogic bossLogic;
     private Vector2 currentAngle;
     public Vector2 currentRB;
+    [SerializeField] private Animator animator;
+
     private void FixedUpdate()
     {
         rb.velocity = currentVelocity * Time.deltaTime;
@@ -31,6 +33,7 @@ public class BossDashLogic : MonoBehaviour
 
     public void Dash()
     {
+        if (!isDashDuration) animator.SetTrigger("OnDash");
         //rb.velocity = Vector2.zero;
         currentAngle = bossLogic.angle;
         isDashDuration = true;

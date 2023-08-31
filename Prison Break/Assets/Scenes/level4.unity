@@ -2237,3 +2237,9 @@ MonoBehaviour:
   rb: {fileID: 2915069040071753620}
   bossLogic: {fileID: 2915069040071753621}
   currentRB: {x: 0, y: 0}
+  animator: {fileID: 2915069040071753623}
+--- !u!95 &2915069040071753623 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2206490831322668005, guid: ff565e647d5dc9c4daab0dd42ab7a5e9, type: 3}
+  m_PrefabInstance: {fileID: 2915069040071753617}
+  m_PrefabAsset: {fileID: 0}
