@@ -2096,6 +2096,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2915069040071753623}
     - target: {fileID: 8846484531784022509, guid: ff565e647d5dc9c4daab0dd42ab7a5e9, type: 3}
+      propertyPath: dynamite
+      value: 
+      objectReference: {fileID: 2193585288452067729, guid: da23a0d4282f8794298879904ad49f89, type: 3}
+    - target: {fileID: 8846484531784022509, guid: ff565e647d5dc9c4daab0dd42ab7a5e9, type: 3}
       propertyPath: maxHealth
       value: 20
       objectReference: {fileID: 0}
@@ -2141,6 +2145,10 @@ PrefabInstance:
       objectReference: {fileID: 2915069040071753622}
     - target: {fileID: 8846484531784022509, guid: ff565e647d5dc9c4daab0dd42ab7a5e9, type: 3}
       propertyPath: dynamiteCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846484531784022509, guid: ff565e647d5dc9c4daab0dd42ab7a5e9, type: 3}
+      propertyPath: dynamiteSpeed
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8846484531784022509, guid: ff565e647d5dc9c4daab0dd42ab7a5e9, type: 3}
@@ -2199,6 +2207,14 @@ PrefabInstance:
       propertyPath: aiDestinationSetter
       value: 
       objectReference: {fileID: 1633706578}
+    - target: {fileID: 8846484531784022509, guid: ff565e647d5dc9c4daab0dd42ab7a5e9, type: 3}
+      propertyPath: dynamiteMaxThrowTime
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8846484531784022509, guid: ff565e647d5dc9c4daab0dd42ab7a5e9, type: 3}
+      propertyPath: dynamiteMinThrowTime
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8846484531784022509, guid: ff565e647d5dc9c4daab0dd42ab7a5e9, type: 3}
       propertyPath: playerTooCloseRadius
       value: 
