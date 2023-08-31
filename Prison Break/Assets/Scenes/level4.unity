@@ -1417,6 +1417,10 @@ PrefabInstance:
       propertyPath: deathMenu
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6958728626978377546, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
+      propertyPath: debugImmortal
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7112989346170254858, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -2145,11 +2149,11 @@ PrefabInstance:
       objectReference: {fileID: 2915069040071753622}
     - target: {fileID: 8846484531784022509, guid: ff565e647d5dc9c4daab0dd42ab7a5e9, type: 3}
       propertyPath: dynamiteCount
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8846484531784022509, guid: ff565e647d5dc9c4daab0dd42ab7a5e9, type: 3}
       propertyPath: dynamiteSpeed
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8846484531784022509, guid: ff565e647d5dc9c4daab0dd42ab7a5e9, type: 3}
       propertyPath: indicatorTime
@@ -2209,11 +2213,11 @@ PrefabInstance:
       objectReference: {fileID: 1633706578}
     - target: {fileID: 8846484531784022509, guid: ff565e647d5dc9c4daab0dd42ab7a5e9, type: 3}
       propertyPath: dynamiteMaxThrowTime
-      value: 3
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8846484531784022509, guid: ff565e647d5dc9c4daab0dd42ab7a5e9, type: 3}
       propertyPath: dynamiteMinThrowTime
-      value: 1
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 8846484531784022509, guid: ff565e647d5dc9c4daab0dd42ab7a5e9, type: 3}
       propertyPath: playerTooCloseRadius
