@@ -14,14 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Rocket Launcher
   sprite: {fileID: 21300000, guid: ebf2ea3b5c5e83c4eaeedd3db79dc76c, type: 3}
-  reloadTime: 0.5
+  reloadTime: 0.05
   id: 5
   spread: 14
   pickupSound: {fileID: 8300000, guid: 1fafa57ba6779134ba5a2b93ff1a74d5, type: 3}
   attackSound: {fileID: 8300000, guid: 8ab249d9af1ec7e4e963ec770d402884, type: 3}
   isLegendary: 1
+  bulletSprite: {fileID: 0}
   bulletSpeed: 30
   maxAmmo: 14
   bulletPrefab: {fileID: 2193585288452067729, guid: 4b12fbed897c5434d890c98d2f67d025, type: 3}
   isAutomatic: 1
-  bulletCount: 3
+  bulletCount: 10
