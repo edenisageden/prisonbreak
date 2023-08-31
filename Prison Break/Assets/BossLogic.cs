@@ -163,7 +163,8 @@ public class BossLogic : MonoBehaviour, IDamagable
     {
         print("Dynamite throw");
         animator.SetTrigger("OnDynamite");
-        //isAttacking = false;
+        isAttacking = false;
+        StartCoroutine(AttackCooldown());
     }
 
     private void SpawnDynamite()
@@ -180,7 +181,6 @@ public class BossLogic : MonoBehaviour, IDamagable
         newDynamite.GetComponent<Rigidbody2D>().velocity = newDynamite.transform.up * dynamiteSpeed;
         yield return new WaitForSeconds(Random.Range(dynamiteMinThrowTime, dynamiteMaxThrowTime));
         newDynamite.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        isAttacking = false;
     }
 
     private IEnumerator DoTheKnifeThrow()
