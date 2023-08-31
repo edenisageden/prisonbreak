@@ -2479,8 +2479,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caff207ba68b9d74a81a7cf8bac09ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevelBox: {fileID: 0}
-  animator: {fileID: 0}
+  nextLevelBox: {fileID: 1045111295}
+  animator: {fileID: 1847630990}
 --- !u!114 &557341297 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1879942244058850348, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
@@ -3734,6 +3734,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53435570a038f3f44ae00af55886f189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1847630990 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3884738492581689766, guid: 6ed59aae46f94fe4fb16e1985d7bbb12, type: 3}
+  m_PrefabInstance: {fileID: 287884956}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1874075998
 GameObject:
   m_ObjectHideFlags: 0
