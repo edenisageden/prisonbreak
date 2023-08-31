@@ -31,6 +31,7 @@ public class BossLogic : MonoBehaviour, IDamagable
     [SerializeField] private BossDashLogic bossDashLogic;
     [SerializeField] private GameObject indicator1, indicator2, indicator3;
     [SerializeField] private GameObject knifeProjectile;
+    [SerializeField] private Animator animator;
 
     [HideInInspector] public Vector2 angle;
     private bool isDoingKnifeThrow;
@@ -165,6 +166,7 @@ public class BossLogic : MonoBehaviour, IDamagable
     {
         // 1. Display indicator
         indicator1.SetActive(true);
+        animator.SetTrigger("OnThrow1");
 
         // 2. Wait for time
         yield return new WaitForSeconds(indicatorTime);
