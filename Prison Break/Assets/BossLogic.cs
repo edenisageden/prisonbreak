@@ -27,6 +27,7 @@ public class BossLogic : MonoBehaviour
     private float phase1CurrentHealth, phase2CurrentHealth;
     [SerializeField] private TooCloseColliderLogic tooCloseColliderLogic;
     [SerializeField] private BossDashLogic bossDashLogic;
+    [SerializeField] private Animator animator;
 
     private float maxHealth => phase1MaxHealth + phase2MaxHealth;
     [HideInInspector] public Vector2 angle;
@@ -118,7 +119,8 @@ public class BossLogic : MonoBehaviour
         aiDestinationSetter.target = playerTransform;
         if (bossMeleeCollision.isTouchingPlayer)
         {
-            print("Punch");
+            animator.Play("slash_1");
+            
             aiDestinationSetter.target = null;
             aiPath.canMove = false;
             StartCoroutine(AttackCooldown());
