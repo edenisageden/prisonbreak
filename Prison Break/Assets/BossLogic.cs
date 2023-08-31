@@ -188,6 +188,7 @@ public class BossLogic : MonoBehaviour, IDamagable
         indicator1.SetActive(true);
         indicator2.SetActive(true);
         indicator3.SetActive(true);
+        animator.SetTrigger("OnThrow2");
 
         // 2. Wait for time
         yield return new WaitForSeconds(indicatorTime);
