@@ -12,13 +12,14 @@ public class BossLogic : MonoBehaviour, IDamagable
     [SerializeField] private float maxHealth, phase2Health;
     [SerializeField] private CircleCollider2D playerTooCloseRadius;
     [SerializeField] private Collider2D punchRange;
-    [SerializeField] private float knifeSpeed;
+    [SerializeField] private float knifeSpeed, dynamiteSpeed;
     [SerializeField] private float chaseSpeed;
     [SerializeField] private int dynamiteCount;
     [SerializeField] private float turnSpeed;
     [SerializeField] private float minCooldownTime, maxCooldownTime;
     [SerializeField] private float rotationTime;
     [SerializeField] private float indicatorTime;
+    [SerializeField] private float dynamiteMinThrowTime, dynamiteMaxThrowTime;
     private Vector2 currentVelocity;
 
     [Header("Assignables")]
@@ -32,6 +33,7 @@ public class BossLogic : MonoBehaviour, IDamagable
     [SerializeField] private GameObject indicator1, indicator2, indicator3;
     [SerializeField] private GameObject knifeProjectile;
     [SerializeField] private Animator animator;
+    [SerializeField] private GameObject dynamite;
 
     [HideInInspector] public Vector2 angle;
     private bool isDoingKnifeThrow;
@@ -160,7 +162,24 @@ public class BossLogic : MonoBehaviour, IDamagable
     private void DynamiteThrow()
     {
         print("Dynamite throw");
+        animator.SetTrigger("OnDynamite");
         isAttacking = false;
+    }
+
+    private void SpawnDynamite()
+    {
+        for (int i = 0; i < dynamiteCount; i++)
+        {
+            StartCoroutine(DoSpawnDynamite());
+        }
+    }
+
+    private IEnumerator DoSpawnDynamite()
+    {
+        GameObject newDynamite = Instantiate(dynamite, projectileSpawnPoint.position, Quaternion.Euler(0f, 0f, Random.Range(-180, 180)));
+        newDynamite.GetComponent<Rigidbody2D>().velocity = newDynamite.transform.up * dynamiteSpeed;
+        yield return new WaitForSeconds(Random.Range(dynamiteMinThrowTime, dynamiteMaxThrowTime));
+        newDynamite.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
 
     private IEnumerator DoTheKnifeThrow()
