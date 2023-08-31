@@ -21,6 +21,8 @@ public class BulletLogic : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        print("Has collided with bullet");
+
         bool hasCollided = collision.gameObject.layer != LayerMask.NameToLayer(ignoreLayer);
         IKillable killable = collision.gameObject.GetComponent<IKillable>();
         IDamagable damagable = collision.gameObject.GetComponent<IDamagable>();
