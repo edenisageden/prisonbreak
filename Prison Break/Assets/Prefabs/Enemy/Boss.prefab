@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301281411397181017}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.518, z: 0}
-  m_LocalScale: {x: 0.6681759, y: 0.5529532, z: 1}
+  m_LocalPosition: {x: -0, y: 0.264, z: 0}
+  m_LocalScale: {x: 0.6681759, y: 0.13426861, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2602437130507099626}
@@ -92,7 +92,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301281411397181017}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -145,7 +145,7 @@ Transform:
   m_GameObject: {fileID: 5539637741858558049}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 19.12, y: -6.14, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 7, y: 7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8652235250078039595}
@@ -177,12 +177,13 @@ MonoBehaviour:
   minCooldownTime: 0
   maxCooldownTime: 0
   rotationTime: 0
-  aiDestinationSetter: {fileID: 0}
-  playerTransform: {fileID: 0}
-  aiPath: {fileID: 0}
+  aiDestinationSetter: {fileID: 8998925130358671970}
+  playerTransform: {fileID: 3709649732908909760}
+  aiPath: {fileID: 128247289811974445}
   bossMeleeCollision: {fileID: 0}
   tooCloseColliderLogic: {fileID: 0}
-  bossDashLogic: {fileID: 0}
+  bossDashLogic: {fileID: 5434564990036405802}
+  animator: {fileID: 2206490831322668005}
   angle: {x: 0, y: 0}
 --- !u!50 &17955346403446629
 Rigidbody2D:
