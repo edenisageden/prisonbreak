@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using static Cinemachine.DocumentationSortingAttribute;
@@ -43,6 +44,14 @@ public class LevelMenuManager : MonoBehaviour
         for (int i = 0; i < buttonList.Length; i++)
         {
             buttonList[i].GetComponent<Image>().sprite = levelStatusImageDict[GetLevelStatus(i + 1)];
+            if (GetLevelStatus(i + 1) == LevelStatus.Locked)
+            {
+                buttonList[i].GetComponentInChildren<TMP_Text>().text = null; 
+            }
+            else
+            {
+                buttonList[i].GetComponentInChildren<TMP_Text>().text = (i + 1).ToString();
+            }
             Debug.Log("Level:" + i + 1 + " Status:" + GetLevelStatus(i + 1).ToString());
         }
     }
