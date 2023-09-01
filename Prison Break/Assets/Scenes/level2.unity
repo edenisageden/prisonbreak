@@ -1922,6 +1922,10 @@ PrefabInstance:
       propertyPath: gameMenuManager
       value: 
       objectReference: {fileID: 1805556300}
+    - target: {fileID: 3884738492581689766, guid: 6ed59aae46f94fe4fb16e1985d7bbb12, type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7850498123359828556, guid: 6ed59aae46f94fe4fb16e1985d7bbb12, type: 3}
       propertyPath: m_Pivot.x
       value: 0
