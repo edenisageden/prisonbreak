@@ -11,8 +11,10 @@ public class LevelMenuManager : MonoBehaviour
     [SerializeField] private Button[] buttonList;
     [SerializeField] private LevelInfoSO[] levelInfoSOList;
     [SerializeField] private Sprite bronzeButtonImage, silverButtonImage, goldButtonImage, incompleteButtonImage, lockedButtonImage;
+    [SerializeField] private Sprite bossBronzeButtonImage, bossSilverButtonImage, bossGoldButtonImage, bossIncompleteButtonImage, bossLockedButtonImage;
 
     private Dictionary<LevelStatus, Sprite> levelStatusImageDict;
+    private Dictionary<LevelStatus, Sprite> bossLevelStatusImageDict;
 
     private enum LevelStatus
     { 
@@ -38,21 +40,36 @@ public class LevelMenuManager : MonoBehaviour
             {LevelStatus.Incomplete, incompleteButtonImage},
             {LevelStatus.Locked, lockedButtonImage},
         };
+        bossLevelStatusImageDict = new Dictionary<LevelStatus, Sprite>
+        {
+            {LevelStatus.Bronze, bossBronzeButtonImage},
+            {LevelStatus.Silver, bossSilverButtonImage},
+            {LevelStatus.Gold, bossGoldButtonImage},
+            {LevelStatus.Incomplete, bossIncompleteButtonImage},
+            {LevelStatus.Locked, bossLockedButtonImage},
+        };
     }
     private void InitializeButtons()
     {
         for (int i = 0; i < buttonList.Length; i++)
         {
-            buttonList[i].GetComponent<Image>().sprite = levelStatusImageDict[GetLevelStatus(i + 1)];
-            if (GetLevelStatus(i + 1) == LevelStatus.Locked)
+            if (levelInfoSOList[i].isBoss)
             {
-                buttonList[i].GetComponentInChildren<TMP_Text>().text = null; 
+                buttonList[i].GetComponent<Image>().sprite = bossLevelStatusImageDict[GetLevelStatus(i + 1)];
             }
             else
             {
-                buttonList[i].GetComponentInChildren<TMP_Text>().text = (i + 1).ToString();
+                buttonList[i].GetComponent<Image>().sprite = levelStatusImageDict[GetLevelStatus(i + 1)];
+                if (GetLevelStatus(i + 1) == LevelStatus.Locked)
+                {
+                    buttonList[i].GetComponentInChildren<TMP_Text>().text = null;
+                }
+                else
+                {
+                    buttonList[i].GetComponentInChildren<TMP_Text>().text = (i + 1).ToString();
+                }
+                Debug.Log("Level:" + i + 1 + " Status:" + GetLevelStatus(i + 1).ToString());
             }
-            Debug.Log("Level:" + i + 1 + " Status:" + GetLevelStatus(i + 1).ToString());
         }
     }
     private int LevelUnlocked(int level)

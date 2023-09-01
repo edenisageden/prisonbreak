@@ -8,4 +8,5 @@ public class LevelInfoSO : ScriptableObject
     public int level;
     public float goldTime;
     public float silverTime;
+    public bool isBoss;
 }
