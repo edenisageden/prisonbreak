@@ -509,7 +509,6 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
-  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -650,19 +649,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!114 &519420035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 478a68fe9fdc7b9488b0731378cc1609, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeScale: 1
 --- !u!114 &557341297 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1879942244058850348, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
@@ -890,24 +876,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53435570a038f3f44ae00af55886f189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &737177491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 737177480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3ea7ff13ecb3ac4bbf0863b2fec1429, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bossDashLogic: {fileID: 2915069040071753622}
-  bossLogic: {fileID: 2915069040071753621}
-  aIDestinationSetter: {fileID: 1633706578}
-  gameMenuManager: {fileID: 737177483}
-  aIPath: {fileID: 1633706576}
-  animator: {fileID: 2915069040071753623}
 --- !u!1 &762550623
 GameObject:
   m_ObjectHideFlags: 3
