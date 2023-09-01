@@ -555,18 +555,6 @@ MonoBehaviour:
           m_StringArgument: levelselection
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1404469855}
-        m_TargetAssemblyTypeName: AudioUtility, Assembly-CSharp
-        m_MethodName: PlayUI1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &747824133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -699,18 +687,6 @@ MonoBehaviour:
           m_IntArgument: -1
           m_FloatArgument: 0
           m_StringArgument: settings
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1404469855}
-        m_TargetAssemblyTypeName: AudioUtility, Assembly-CSharp
-        m_MethodName: PlayUI2
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &929924939
@@ -1364,17 +1340,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395351467}
   m_CullTransparentMesh: 1
---- !u!114 &1404469855 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8470862900462729453, guid: 369572ecdab0a824b9e8661cb2f2092b, type: 3}
-  m_PrefabInstance: {fileID: 8470862899616365234}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bc178aa7d3646e45bd72ee8329bf0ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1443323638
 GameObject:
   m_ObjectHideFlags: 0
