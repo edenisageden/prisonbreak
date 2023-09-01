@@ -15,7 +15,7 @@ public class NextLevelBox : MonoBehaviour
     [SerializeField] private GameObject completionMenu;
     [SerializeField] private GameMenuManager gameMenuManager;
     [SerializeField] private TMP_Text time, best, nextMedal, timer;
-    [SerializeField] private LevelInfoSO[] levelInfoSOList;
+    [SerializeField] private LevelInfoSO levelInfoSO;
     [SerializeField] private GameObject player;
     [SerializeField] private Color bronzeColor, silverColor, goldColor;
     public static event Action OnComplete = delegate { };
@@ -95,8 +95,8 @@ public class NextLevelBox : MonoBehaviour
     private void InitializeCompletionMenu()
     {
         float bestTime = PlayerPrefs.GetFloat("CompleteTime" + LevelManager.GetCurrentLevel());
-        float silverTime = levelInfoSOList[LevelManager.GetCurrentLevel() - 1].silverTime;
-        float goldTime = levelInfoSOList[LevelManager.GetCurrentLevel() - 1].goldTime;
+        float silverTime = levelInfoSO.silverTime;
+        float goldTime = levelInfoSO.goldTime;
         time.text = timeManager.time.ToString("f1");
         best.text = bestTime.ToString("f1");
         switch (GetMedal(bestTime))
@@ -132,8 +132,8 @@ public class NextLevelBox : MonoBehaviour
 
     private Medal GetMedal(float time)
     {
-        if (time <= levelInfoSOList[LevelManager.GetCurrentLevel() - 1].goldTime) return Medal.Gold;
-        else if (time <= levelInfoSOList[LevelManager.GetCurrentLevel() - 1].silverTime) return Medal.Silver;
+        if (time <= levelInfoSO.goldTime) return Medal.Gold;
+        else if (time <= levelInfoSO.silverTime) return Medal.Silver;
         else return Medal.Bronze;
     }
 
