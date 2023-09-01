@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: LevelInfo 2
   m_EditorClassIdentifier: 
   level: 2
-  goldTime: 5.5
+  goldTime: 6
   silverTime: 8
