@@ -97,6 +97,7 @@ public class NextLevelBox : MonoBehaviour
         float bestTime = PlayerPrefs.GetFloat("CompleteTime" + LevelManager.GetCurrentLevel());
         float silverTime = levelInfoSO.silverTime;
         float goldTime = levelInfoSO.goldTime;
+        print(timeManager.time);
         time.text = timeManager.time.ToString("f1");
         best.text = bestTime.ToString("f1");
         switch (GetMedal(bestTime))

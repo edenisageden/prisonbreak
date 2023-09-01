@@ -1370,8 +1370,8 @@ MonoBehaviour:
   goldButtonImage: {fileID: -1348756228, guid: baf16f2820a91414eb29de69c88e0a0b, type: 3}
   incompleteButtonImage: {fileID: -1926716007, guid: baf16f2820a91414eb29de69c88e0a0b, type: 3}
   lockedButtonImage: {fileID: -1294032065, guid: baf16f2820a91414eb29de69c88e0a0b, type: 3}
-  bossBronzeButtonImage: {fileID: -1005024391, guid: baf16f2820a91414eb29de69c88e0a0b, type: 3}
-  bossSilverButtonImage: {fileID: 124272763, guid: baf16f2820a91414eb29de69c88e0a0b, type: 3}
+  bossBronzeButtonImage: {fileID: -1029143162, guid: baf16f2820a91414eb29de69c88e0a0b, type: 3}
+  bossSilverButtonImage: {fileID: -1029143162, guid: baf16f2820a91414eb29de69c88e0a0b, type: 3}
   bossGoldButtonImage: {fileID: -1029143162, guid: baf16f2820a91414eb29de69c88e0a0b, type: 3}
   bossIncompleteButtonImage: {fileID: 1484369120, guid: baf16f2820a91414eb29de69c88e0a0b, type: 3}
   bossLockedButtonImage: {fileID: 1484369120, guid: baf16f2820a91414eb29de69c88e0a0b, type: 3}
