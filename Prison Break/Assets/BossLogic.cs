@@ -8,6 +8,7 @@ public class BossLogic : MonoBehaviour, IDamagable
     public static event Action OnSlash = delegate { };
     public static event Action OnThrow = delegate { };
     public static event Action OnDynamiteThrow = delegate { };
+    public static event Action OnDamaged = delegate { };
 
     private bool isCoolingDown = false;
 
@@ -291,6 +292,7 @@ public class BossLogic : MonoBehaviour, IDamagable
     public void Damage(int damage)
     {
         currentHealth -= damage;
+        OnDamaged?.Invoke();
         if (currentHealth <= 0)
         {
             // Death

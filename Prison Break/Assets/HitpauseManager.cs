@@ -10,11 +10,13 @@ public class HitpauseManager : MonoBehaviour
     {
         PlayerDeath.OnPlayerDeath += CallHitStop;
         EnemyLogic.OnEnemyDeath += CallHitStop;
+        BossLogic.OnDamaged += CallHitStop;
     }
     private void OnDestroy()
     {
         PlayerDeath.OnPlayerDeath -= CallHitStop;
         EnemyLogic.OnEnemyDeath -= CallHitStop;
+        BossLogic.OnDamaged -= CallHitStop;
     }
 
     public void CallHitStop()
