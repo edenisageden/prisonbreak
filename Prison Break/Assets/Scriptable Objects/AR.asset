@@ -23,6 +23,6 @@ MonoBehaviour:
   bulletSprite: {fileID: 927138283, guid: 2f3195fe4bd462747afa1c234aa02639, type: 3}
   bulletSpeed: 60
   maxAmmo: 14
-  bulletPrefab: {fileID: 2193585288452067729, guid: da23a0d4282f8794298879904ad49f89, type: 3}
+  bulletPrefab: {fileID: 2193585288452067729, guid: 25a9cf6bf6b15864a962d8635235a21a, type: 3}
   isAutomatic: 1
   bulletCount: 1
