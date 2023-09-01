@@ -71,7 +71,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ignoreLayer: Enemy
   bulletLifetime: 10
-  damage: 1
+  damage: 8
 --- !u!1 &2536217855392283270
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletLogic: {fileID: 2308522521690813758}
-  explosionDamage: 6
+  explosionDamage: 600
   explosion: {fileID: 1411079874357331481, guid: b3cd5eea7b01d4846ac7d4b233334b8b, type: 3}
 --- !u!1 &5305463541980080747
 GameObject:

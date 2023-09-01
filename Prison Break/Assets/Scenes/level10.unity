@@ -13654,7 +13654,7 @@ PrefabInstance:
       objectReference: {fileID: 590145429442355843, guid: 2a67913e692915a4c919de0e7623150b, type: 3}
     - target: {fileID: 8846484531784022509, guid: ff565e647d5dc9c4daab0dd42ab7a5e9, type: 3}
       propertyPath: maxHealth
-      value: 150
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 8846484531784022509, guid: ff565e647d5dc9c4daab0dd42ab7a5e9, type: 3}
       propertyPath: turnSpeed
@@ -13690,7 +13690,7 @@ PrefabInstance:
       objectReference: {fileID: 1688737209}
     - target: {fileID: 8846484531784022509, guid: ff565e647d5dc9c4daab0dd42ab7a5e9, type: 3}
       propertyPath: phase2Health
-      value: 75
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 8846484531784022509, guid: ff565e647d5dc9c4daab0dd42ab7a5e9, type: 3}
       propertyPath: rotationTime
