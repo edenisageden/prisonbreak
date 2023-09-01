@@ -9,7 +9,7 @@ public class DynamiteScript : MonoBehaviour
     [SerializeField] private Collider2D radius;
     private Collider2D playerCol;
     [SerializeField] private Animator animator;
-    public event Action OnDynamiteExplode = delegate { };
+    public static event Action OnDynamiteExplode = delegate { };
 
     private void Start()
     {

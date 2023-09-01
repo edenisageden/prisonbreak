@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class BossLogic : MonoBehaviour, IDamagable
 {
-    public event Action OnSlash = delegate { };
-    public event Action OnThrow = delegate { };
-    public event Action OnDynamiteThrow = delegate { };
+    public static event Action OnSlash = delegate { };
+    public static event Action OnThrow = delegate { };
+    public static event Action OnDynamiteThrow = delegate { };
 
     private bool isCoolingDown = false;
 
@@ -61,6 +61,20 @@ public class BossLogic : MonoBehaviour, IDamagable
         LeanTween.reset();
         aiPath.maxSpeed = chaseSpeed;
     }
+
+    private void InvokeThrow()
+    {
+        OnThrow?.Invoke();
+    }
+    private void InvokeSlash()
+    {
+        OnSlash?.Invoke();
+    }
+    private void InvokeDynamiteThrow()
+    {
+        OnDynamiteThrow?.Invoke();
+    }
+
     private void Update()
     {
         CalculateAngle();
@@ -131,7 +145,6 @@ public class BossLogic : MonoBehaviour, IDamagable
         if (bossMeleeCollision.isTouchingPlayer)
         {
             print("Punch");
-            OnSlash?.Invoke();
             animator.SetTrigger("OnPunch");
             aiDestinationSetter.target = null;
             aiPath.canMove = false;
@@ -166,7 +179,6 @@ public class BossLogic : MonoBehaviour, IDamagable
     private void DynamiteThrow()
     {
         print("Dynamite throw");
-        OnDynamiteThrow?.Invoke();
         animator.SetTrigger("OnDynamite");
         isAttacking = false;
         StartCoroutine(AttackCooldown());
@@ -193,7 +205,6 @@ public class BossLogic : MonoBehaviour, IDamagable
         // 1. Display indicator
         indicator1.SetActive(true);
         animator.SetTrigger("OnThrow1");
-        OnThrow?.Invoke();
 
         // 2. Wait for time
         yield return new WaitForSeconds(indicatorTime);
@@ -216,7 +227,6 @@ public class BossLogic : MonoBehaviour, IDamagable
         indicator2.SetActive(true);
         indicator3.SetActive(true);
         animator.SetTrigger("OnThrow2");
-        OnThrow?.Invoke();
 
         // 2. Wait for time
         yield return new WaitForSeconds(indicatorTime);

@@ -14,7 +14,7 @@ public class BossDashLogic : MonoBehaviour
     public Vector2 currentRB;
     [SerializeField] private Animator animator;
     private Vector2 movementDirection;
-    public event Action OnDash = delegate { };
+    public static event Action OnDash = delegate { };
 
     private void FixedUpdate()
     {
@@ -37,7 +37,11 @@ public class BossDashLogic : MonoBehaviour
 
     public void Dash()
     {
-        if (!isDashDuration) animator.SetTrigger("OnDash");
+        if (!isDashDuration)
+        {
+            animator.SetTrigger("OnDash");
+            OnDash?.Invoke();
+        }
         //rb.velocity = Vector2.zero;
         transform.rotation = Quaternion.Euler(0f, 0f, (Mathf.Atan2(currentAngle.y, currentAngle.normalized.x) * Mathf.Rad2Deg) - 90f);
         currentAngle = bossLogic.angle;

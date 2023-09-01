@@ -837,6 +837,34 @@ PrefabInstance:
     - {fileID: 7467064830971467819, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
     - {fileID: 7467064830971467820, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
+--- !u!1 &737177480 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7467064830971467816, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
+  m_PrefabInstance: {fileID: 737177479}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &737177481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737177480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c8a6dd6eb2a73145aed55686a602481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dash: {fileID: 8300000, guid: 9cd1918068545294d90cfbf79f337c0c, type: 3}
+  Throw: {fileID: 8300000, guid: 03bbb0d42b67b114faf3a5193313854f, type: 3}
+  Slash: {fileID: 8300000, guid: e063ea31c9a996a4f9c6324f789753d5, type: 3}
+  DynamiteThrow: {fileID: 8300000, guid: 03bbb0d42b67b114faf3a5193313854f, type: 3}
+  DynamiteExplode: {fileID: 8300000, guid: 90ef9882979e8e84f914ad8585f79d2a, type: 3}
+  audioSource: {fileID: 737177482}
+--- !u!82 &737177482 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7467064830971467817, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
+  m_PrefabInstance: {fileID: 737177479}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &762550623
 GameObject:
   m_ObjectHideFlags: 3
