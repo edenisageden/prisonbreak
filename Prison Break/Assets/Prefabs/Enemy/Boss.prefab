@@ -170,6 +170,7 @@ MonoBehaviour:
   playerTooCloseRadius: {fileID: 0}
   punchRange: {fileID: 0}
   knifeSpeed: 0
+  dynamiteSpeed: 0
   chaseSpeed: 0
   dynamiteCount: 0
   turnSpeed: 0
@@ -177,6 +178,8 @@ MonoBehaviour:
   maxCooldownTime: 0
   rotationTime: 0
   indicatorTime: 0
+  dynamiteMinThrowTime: 0
+  dynamiteMaxThrowTime: 0
   aiDestinationSetter: {fileID: 8998925130358671970}
   playerTransform: {fileID: 3709649732908909760}
   aiPath: {fileID: 128247289811974445}
@@ -188,6 +191,8 @@ MonoBehaviour:
   indicator2: {fileID: 0}
   indicator3: {fileID: 0}
   knifeProjectile: {fileID: 0}
+  animator: {fileID: 0}
+  dynamite: {fileID: 0}
   angle: {x: 0, y: 0}
   currentHealth: 0
 --- !u!50 &17955346403446629

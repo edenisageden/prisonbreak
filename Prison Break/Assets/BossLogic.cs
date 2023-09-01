@@ -1,11 +1,14 @@
 using Pathfinding;
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class BossLogic : MonoBehaviour, IDamagable
 {
+    public event Action OnSlash = delegate { };
+    public event Action OnThrow = delegate { };
+    public event Action OnDynamiteThrow = delegate { };
+
     private bool isCoolingDown = false;
 
     [Header("New Config")]
@@ -128,6 +131,7 @@ public class BossLogic : MonoBehaviour, IDamagable
         if (bossMeleeCollision.isTouchingPlayer)
         {
             print("Punch");
+            OnSlash?.Invoke();
             animator.SetTrigger("OnPunch");
             aiDestinationSetter.target = null;
             aiPath.canMove = false;
@@ -162,6 +166,7 @@ public class BossLogic : MonoBehaviour, IDamagable
     private void DynamiteThrow()
     {
         print("Dynamite throw");
+        OnDynamiteThrow?.Invoke();
         animator.SetTrigger("OnDynamite");
         isAttacking = false;
         StartCoroutine(AttackCooldown());
@@ -177,9 +182,9 @@ public class BossLogic : MonoBehaviour, IDamagable
 
     private IEnumerator DoSpawnDynamite()
     {
-        GameObject newDynamite = Instantiate(dynamite, projectileSpawnPoint.position, Quaternion.Euler(0f, 0f, Random.Range(-180, 180)));
+        GameObject newDynamite = Instantiate(dynamite, projectileSpawnPoint.position, Quaternion.Euler(0f, 0f, UnityEngine.Random.Range(-180, 180)));
         newDynamite.GetComponent<Rigidbody2D>().velocity = newDynamite.transform.up * dynamiteSpeed;
-        yield return new WaitForSeconds(Random.Range(dynamiteMinThrowTime, dynamiteMaxThrowTime));
+        yield return new WaitForSeconds(UnityEngine.Random.Range(dynamiteMinThrowTime, dynamiteMaxThrowTime));
         newDynamite.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
 
@@ -188,6 +193,7 @@ public class BossLogic : MonoBehaviour, IDamagable
         // 1. Display indicator
         indicator1.SetActive(true);
         animator.SetTrigger("OnThrow1");
+        OnThrow?.Invoke();
 
         // 2. Wait for time
         yield return new WaitForSeconds(indicatorTime);
@@ -210,6 +216,7 @@ public class BossLogic : MonoBehaviour, IDamagable
         indicator2.SetActive(true);
         indicator3.SetActive(true);
         animator.SetTrigger("OnThrow2");
+        OnThrow?.Invoke();
 
         // 2. Wait for time
         yield return new WaitForSeconds(indicatorTime);
@@ -234,7 +241,7 @@ public class BossLogic : MonoBehaviour, IDamagable
     private IEnumerator AttackCooldown()
     {
         isCoolingDown = true;
-        yield return new WaitForSeconds(Random.Range(minCooldownTime, maxCooldownTime));
+        yield return new WaitForSeconds(UnityEngine.Random.Range(minCooldownTime, maxCooldownTime));
         isCoolingDown = false;
     }
 

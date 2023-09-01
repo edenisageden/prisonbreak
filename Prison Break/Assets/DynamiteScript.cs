@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class DynamiteScript : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class DynamiteScript : MonoBehaviour
     [SerializeField] private Collider2D radius;
     private Collider2D playerCol;
     [SerializeField] private Animator animator;
+    public event Action OnDynamiteExplode = delegate { };
 
     private void Start()
     {
@@ -16,8 +18,9 @@ public class DynamiteScript : MonoBehaviour
 
     private IEnumerator DynamiteExplosion()
     {
-        yield return new WaitForSeconds(Random.Range(dynamiteExplosionTimeMin, DynamiteExplosionTimeMax));
+        yield return new WaitForSeconds(UnityEngine.Random.Range(dynamiteExplosionTimeMin, DynamiteExplosionTimeMax));
         animator.SetTrigger("OnExplode");
+        OnDynamiteExplode?.Invoke();
         if (FindAnyObjectByType<PlayerController>())
         {
             playerCol = FindAnyObjectByType<PlayerController>().GetComponent<Collider2D>();

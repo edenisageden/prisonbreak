@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class BossDashLogic : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class BossDashLogic : MonoBehaviour
     public Vector2 currentRB;
     [SerializeField] private Animator animator;
     private Vector2 movementDirection;
+    public event Action OnDash = delegate { };
 
     private void FixedUpdate()
     {

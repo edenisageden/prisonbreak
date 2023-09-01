@@ -23,6 +23,7 @@ public class SoundEffectManager : MonoBehaviour
         RocketExplosion.OnExplode += PlayExplode;
         DoorLogic.OnDoorOpen += PlayDoor;
         NextLevelBox.OnComplete += PlayComplete;
+
     }
     private void OnDestroy()
     {
