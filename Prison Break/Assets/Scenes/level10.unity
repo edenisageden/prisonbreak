@@ -858,7 +858,7 @@ MonoBehaviour:
   Throw: {fileID: 8300000, guid: 03bbb0d42b67b114faf3a5193313854f, type: 3}
   Slash: {fileID: 8300000, guid: e063ea31c9a996a4f9c6324f789753d5, type: 3}
   DynamiteThrow: {fileID: 8300000, guid: 03bbb0d42b67b114faf3a5193313854f, type: 3}
-  DynamiteExplode: {fileID: 8300000, guid: 90ef9882979e8e84f914ad8585f79d2a, type: 3}
+  DynamiteExplode: {fileID: 8300000, guid: b14cab5d081c07c45bd8f9b073e7f76f, type: 3}
   audioSource: {fileID: 737177482}
 --- !u!82 &737177482 stripped
 AudioSource:
