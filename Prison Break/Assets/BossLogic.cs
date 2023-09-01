@@ -37,6 +37,7 @@ public class BossLogic : MonoBehaviour, IDamagable
     [SerializeField] private GameObject knifeProjectile;
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject dynamite;
+    [SerializeField] private GameObject deadPrefab;
 
     [HideInInspector] public Vector2 angle;
     private bool isDoingKnifeThrow;
@@ -294,6 +295,8 @@ public class BossLogic : MonoBehaviour, IDamagable
         {
             // Death
             print("Boss killed");
+            Instantiate(deadPrefab, transform.position, transform.rotation);
+            gameObject.SetActive(false);
         }
     }
 }

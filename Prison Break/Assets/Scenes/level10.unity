@@ -13606,6 +13606,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8846484531784022509, guid: ff565e647d5dc9c4daab0dd42ab7a5e9, type: 3}
+      propertyPath: deadPrefab
+      value: 
+      objectReference: {fileID: 8510047037880979022, guid: 098b33ab4c25f134e8e124aecfdea711, type: 3}
+    - target: {fileID: 8846484531784022509, guid: ff565e647d5dc9c4daab0dd42ab7a5e9, type: 3}
       propertyPath: indicator1
       value: 
       objectReference: {fileID: 1915898075}
