@@ -71,7 +71,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ignoreLayer: Enemy
   bulletLifetime: 10
-  damage: 8
+  damage: 15
 --- !u!1 &2536217855392283270
 GameObject:
   m_ObjectHideFlags: 0
