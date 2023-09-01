@@ -59,7 +59,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7467064830971467816}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53435570a038f3f44ae00af55886f189, type: 3}
   m_Name: 
@@ -68,6 +68,7 @@ MonoBehaviour:
   player: {fileID: 2381969614320695955, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
   ammo: {fileID: 0}
   weaponHolder: {fileID: 1879942244058850348, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
+  isPaused: 0
 --- !u!114 &7467064830971467819
 MonoBehaviour:
   m_ObjectHideFlags: 0
