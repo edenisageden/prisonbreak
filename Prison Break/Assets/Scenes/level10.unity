@@ -368,6 +368,7 @@ GameObject:
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
   - component: {fileID: 519420035}
+  - component: {fileID: 519420036}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -523,6 +524,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextLevelBox: {fileID: 1456698741}
   animator: {fileID: 3884738493036096765}
+--- !u!114 &519420036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 478a68fe9fdc7b9488b0731378cc1609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeScale: 0.3
 --- !u!114 &557341297 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1879942244058850348, guid: d4581bbd16360d647a5a6cd839cdf265, type: 3}
@@ -702,7 +716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossSprite: {fileID: 283567601}
-  blinkMaterial: {fileID: -8409732584157952117, guid: 20d89a3f0e647ea429dda728437f70e5, type: 2}
+  blinkMaterial: {fileID: 2100000, guid: b683845e01b5dbd4182dc3f3228ceb35, type: 2}
   defaultMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   blinkTime: 0.1
 --- !u!1001 &819604815
