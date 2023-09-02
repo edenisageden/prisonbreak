@@ -332,6 +332,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &283567601 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7045718803669574275, guid: ff565e647d5dc9c4daab0dd42ab7a5e9, type: 3}
+  m_PrefabInstance: {fileID: 2915069040071753617}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &338448947 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6242038790324980287, guid: ff565e647d5dc9c4daab0dd42ab7a5e9, type: 3}
@@ -684,6 +689,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53435570a038f3f44ae00af55886f189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &737177484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737177480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f22a013d86fd8c743bda32632bb87e80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossSprite: {fileID: 283567601}
+  blinkMaterial: {fileID: -8409732584157952117, guid: 20d89a3f0e647ea429dda728437f70e5, type: 2}
+  defaultMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  blinkTime: 0.1
 --- !u!1001 &819604815
 PrefabInstance:
   m_ObjectHideFlags: 0
