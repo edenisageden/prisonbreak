@@ -565,6 +565,74 @@ Transform:
   m_Father: {fileID: 2915069040071753618}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &710020487
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7975197045158823980, guid: f054291dac200744ea342e969d75051f, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975197045158823980, guid: f054291dac200744ea342e969d75051f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.64431214
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975197045158823980, guid: f054291dac200744ea342e969d75051f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.595039
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975197045158823980, guid: f054291dac200744ea342e969d75051f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.17524078
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975197045158823980, guid: f054291dac200744ea342e969d75051f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975197045158823980, guid: f054291dac200744ea342e969d75051f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975197045158823980, guid: f054291dac200744ea342e969d75051f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975197045158823980, guid: f054291dac200744ea342e969d75051f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975197045158823980, guid: f054291dac200744ea342e969d75051f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975197045158823980, guid: f054291dac200744ea342e969d75051f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975197045158823980, guid: f054291dac200744ea342e969d75051f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7975197045158823981, guid: f054291dac200744ea342e969d75051f, type: 3}
+      propertyPath: m_Name
+      value: UIAudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f054291dac200744ea342e969d75051f, type: 3}
+--- !u!114 &710020488 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8586094138510022531, guid: f054291dac200744ea342e969d75051f, type: 3}
+  m_PrefabInstance: {fileID: 710020487}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f547ee94d31d0844b38f1d4161057fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &737177479
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15472,6 +15540,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 710020488}
+        m_TargetAssemblyTypeName: UIAudioMiddleMan, Assembly-CSharp
+        m_MethodName: PlayUI1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &7850498123792882455
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16368,6 +16448,18 @@ MonoBehaviour:
           m_IntArgument: -1
           m_FloatArgument: 0
           m_StringArgument: levelselection
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 710020488}
+        m_TargetAssemblyTypeName: UIAudioMiddleMan, Assembly-CSharp
+        m_MethodName: PlayUI2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!224 &7850498124517244059

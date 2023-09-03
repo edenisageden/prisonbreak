@@ -321,8 +321,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 8954110048007610885}
-  UI1: {fileID: 8300000, guid: 611235e60b2d6c0479fb14467644d91e, type: 3}
-  UI2: {fileID: 8300000, guid: ce0bf1da94bed424db03f59093cb2542, type: 3}
+  UI1: {fileID: 8300000, guid: a2d9daf16243a7d409e49f667b7114d4, type: 3}
+  UI2: {fileID: 8300000, guid: 5f08add15fdd73b459c0b0191296ed0e, type: 3}
 --- !u!82 &8954110048007610885
 AudioSource:
   m_ObjectHideFlags: 0
