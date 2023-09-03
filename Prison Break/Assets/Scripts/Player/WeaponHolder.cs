@@ -20,6 +20,7 @@ public class WeaponHolder : MonoBehaviour
     [HideInInspector] public int currentAmmo;
     public static event Action OnFistAttack = delegate { };
     [HideInInspector] public bool canAttack;
+    public static event Action OnEmptyShoot = delegate { };
 
     private void Update()
     {
@@ -55,7 +56,11 @@ public class WeaponHolder : MonoBehaviour
 
     private void Shoot()
     {
-        if (currentAmmo <= 0 && isRanged && weapon != null) return;
+        if (currentAmmo <= 0 && isRanged && weapon != null)
+        {
+            OnEmptyShoot?.Invoke();
+            return;
+        }
         if (!canShoot) return;
         canShoot = false;
         weapon.Attack(transform.position, transform.rotation, weapon.spread, transform.up, "Player", animator);

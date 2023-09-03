@@ -103,6 +103,7 @@ MonoBehaviour:
   explodeSound: {fileID: 8300000, guid: 90ef9882979e8e84f914ad8585f79d2a, type: 3}
   doorSound: {fileID: 8300000, guid: 1635cb1b99d0d4f429056df0ca981d85, type: 3}
   completeSound: {fileID: 8300000, guid: 07e8c294742aaeb4dab7ca39b76c2bd3, type: 3}
+  emptySound: {fileID: 8300000, guid: 059eb1c2c3732b94e908fabb66d7982b, type: 3}
 --- !u!82 &7467064830971467817
 AudioSource:
   m_ObjectHideFlags: 0
@@ -292,7 +293,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursorIsCrossHair: 0
+  isMenu: 0
   mouseCursorTexture: {fileID: 2800000, guid: 0c946a8fbf97d0c488ca3b0f3352aacb, type: 3}
   crossHairTexture: {fileID: 2800000, guid: 07579ecc487852d4d9bdf3554883ef18, type: 3}
-  nextLevelBox: {fileID: 0}
+  completionMenu: {fileID: 0}
   gameMenuManager: {fileID: 7467064830971467820}

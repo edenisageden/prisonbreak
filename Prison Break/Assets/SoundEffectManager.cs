@@ -11,6 +11,7 @@ public class SoundEffectManager : MonoBehaviour
     [SerializeField] AudioClip explodeSound;
     [SerializeField] AudioClip doorSound;
     [SerializeField] AudioClip completeSound;
+    [SerializeField] AudioClip emptySound;
 
     private void Start()
     {
@@ -23,6 +24,7 @@ public class SoundEffectManager : MonoBehaviour
         RocketExplosion.OnExplode += PlayExplode;
         DoorLogic.OnDoorOpen += PlayDoor;
         NextLevelBox.OnComplete += PlayComplete;
+        WeaponHolder.OnEmptyShoot += PlayEmpty;
 
     }
     private void OnDestroy()
@@ -36,6 +38,11 @@ public class SoundEffectManager : MonoBehaviour
         RocketExplosion.OnExplode -= PlayExplode;
         DoorLogic.OnDoorOpen -= PlayDoor;
         NextLevelBox.OnComplete -= PlayComplete;
+        WeaponHolder.OnEmptyShoot -= PlayEmpty;
+    }
+    private void PlayEmpty()
+    {
+        audioSource.PlayOneShot(emptySound);
     }
     private void PlayComplete()
     {
