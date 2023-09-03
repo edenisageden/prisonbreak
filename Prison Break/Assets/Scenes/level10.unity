@@ -16608,6 +16608,18 @@ MonoBehaviour:
           m_StringArgument: levelselection
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 710020488}
+        m_TargetAssemblyTypeName: UIAudioMiddleMan, Assembly-CSharp
+        m_MethodName: PlayUI2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!224 &7850498124582092335
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16880,6 +16892,18 @@ MonoBehaviour:
       - m_Target: {fileID: 4302695099576757186, guid: a78435a2bc96c9949b4e42f019901c2e, type: 3}
         m_TargetAssemblyTypeName: MonobehaviourUtility, Assembly-CSharp
         m_MethodName: ReloadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 710020488}
+        m_TargetAssemblyTypeName: UIAudioMiddleMan, Assembly-CSharp
+        m_MethodName: PlayUI1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
