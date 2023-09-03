@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7467064830971467823}
   - component: {fileID: 3026520244190601819}
   - component: {fileID: -3754945340548164507}
+  - component: {fileID: 4317156595243803796}
   m_Layer: 0
   m_Name: Gameplay Manager
   m_TagString: Untagged
@@ -59,7 +60,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7467064830971467816}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53435570a038f3f44ae00af55886f189, type: 3}
   m_Name: 
@@ -278,3 +279,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseTime: 0.025
+--- !u!114 &4317156595243803796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7467064830971467816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f00d8be9dc2033747b8837cae65de44a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorIsCrossHair: 0
+  mouseCursorTexture: {fileID: 2800000, guid: 0c946a8fbf97d0c488ca3b0f3352aacb, type: 3}
+  crossHairTexture: {fileID: 2800000, guid: 09ef3537aece2cd4b9f09a1bc037483d, type: 3}
