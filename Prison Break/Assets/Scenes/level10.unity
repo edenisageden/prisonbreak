@@ -12747,7 +12747,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 34ac606d9611fa7438ca1d5564d9ef35, type: 2}
   - {fileID: 11400000, guid: 32a968fbd8d52b341a80966aa4201e3a, type: 2}
   - {fileID: 11400000, guid: 2a9d9f3fa4f99524290c0cc4f41f1a3f, type: 2}
-  - {fileID: 11400000, guid: 44c75b2d0ac8caa42a31ff95c9fc6e85, type: 2}
   xMin: 0
   xMax: 24
   yMin: -12
