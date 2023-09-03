@@ -43,6 +43,7 @@ public class WeaponHolder : MonoBehaviour
                 {
                     Shoot();
                 }
+                IsFirstShot();
             }
             else
             {
@@ -54,11 +55,29 @@ public class WeaponHolder : MonoBehaviour
         }
     }
 
+    // 1. The first time it is true, let it pass through the if statement. Once the second onwards, don't let it in until it has turned false and then back true
+    bool hasShotFirst = false;
+
+    private void IsFirstShot()
+    {
+        if (isAttacking)
+        {
+            if (!hasShotFirst)
+            {
+                hasShotFirst = true;
+            }
+        }
+        else
+        {
+            hasShotFirst = false;
+        }
+    }
+
     private void Shoot()
     {
         if (currentAmmo <= 0 && isRanged && weapon != null)
         {
-            OnEmptyShoot?.Invoke();
+            if (!hasShotFirst) OnEmptyShoot?.Invoke();
             return;
         }
         if (!canShoot) return;
