@@ -8,7 +8,7 @@ public class UIAudioMiddleMan : MonoBehaviour
 
     private void Awake()
     {
-        uIAudio = FindAnyObjectByType<UIAudio>();
+        uIAudio = FindObjectOfType<UIAudio>();
     }
     public void PlayUI1()
     {
