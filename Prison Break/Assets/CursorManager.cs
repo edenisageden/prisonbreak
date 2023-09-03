@@ -14,18 +14,19 @@ public class CursorManager : MonoBehaviour
     {
         if (!isMenu)
         {
-            if (completionMenu.activeSelf) cursorIsCrossHair = false;
-            else cursorIsCrossHair = true;
-            if (gameMenuManager.isPaused) cursorIsCrossHair = false;
-            else cursorIsCrossHair = true;
+            if (completionMenu.activeSelf || gameMenuManager.isPaused) Cursor.SetCursor(mouseCursorTexture, new Vector2(10, 10), CursorMode.Auto);
+            else Cursor.SetCursor(crossHairTexture, new Vector2(10, 10), CursorMode.Auto);
+            /*if (gameMenuManager.isPaused) cursorIsCrossHair = false;
+            else cursorIsCrossHair = true;*/
         }
-        if (cursorIsCrossHair)
+
+        /*if (cursorIsCrossHair)
         {
             Cursor.SetCursor(crossHairTexture, new Vector2(10, 10), CursorMode.Auto);
         }
         else
         {
             Cursor.SetCursor(mouseCursorTexture, new Vector2(10, 10), CursorMode.Auto);
-        }
+        }*/
     }
 }
