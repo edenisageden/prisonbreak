@@ -19,14 +19,9 @@ public class CursorManager : MonoBehaviour
             /*if (gameMenuManager.isPaused) cursorIsCrossHair = false;
             else cursorIsCrossHair = true;*/
         }
-
-        /*if (cursorIsCrossHair)
-        {
-            Cursor.SetCursor(crossHairTexture, new Vector2(10, 10), CursorMode.Auto);
-        }
         else
         {
             Cursor.SetCursor(mouseCursorTexture, new Vector2(10, 10), CursorMode.Auto);
-        }*/
+        }
     }
 }
