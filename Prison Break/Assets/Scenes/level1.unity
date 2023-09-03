@@ -10732,6 +10732,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1239492910}
     - target: {fileID: 4317156595243803796, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
+      propertyPath: cursorIsCrossHair
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4317156595243803796, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
       propertyPath: mouseCursorTexture
       value: 
       objectReference: {fileID: 2800000, guid: 0c946a8fbf97d0c488ca3b0f3352aacb, type: 3}

@@ -293,4 +293,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursorIsCrossHair: 0
   mouseCursorTexture: {fileID: 2800000, guid: 0c946a8fbf97d0c488ca3b0f3352aacb, type: 3}
-  crossHairTexture: {fileID: 2800000, guid: 09ef3537aece2cd4b9f09a1bc037483d, type: 3}
+  crossHairTexture: {fileID: 2800000, guid: 07579ecc487852d4d9bdf3554883ef18, type: 3}

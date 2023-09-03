@@ -640,6 +640,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4317156595243803796, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
+      propertyPath: cursorIsCrossHair
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7467064830971467816, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
       propertyPath: m_Name
       value: Gameplay Manager
