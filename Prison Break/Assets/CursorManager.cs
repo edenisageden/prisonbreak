@@ -10,9 +10,8 @@ public class CursorManager : MonoBehaviour
     [SerializeField] private NextLevelBox nextLevelBox;
     [SerializeField] private GameMenuManager gameMenuManager;
 
-    private void FixedUpdate()
+    private void Update()
     {
-        print("Hello");
         if (!isMenu)
         {
             if (nextLevelBox.isCompleteFully) cursorIsCrossHair = false;
