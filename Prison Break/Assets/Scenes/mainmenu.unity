@@ -612,6 +612,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8484425860977653468, guid: 4de74e34f2c709242b54e18c809655f5, type: 3}
+      propertyPath: isMenu
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8484425860977653469, guid: 4de74e34f2c709242b54e18c809655f5, type: 3}
       propertyPath: m_Name
       value: CursorManager

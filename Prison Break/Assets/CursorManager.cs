@@ -5,21 +5,24 @@ using UnityEngine;
 public class CursorManager : MonoBehaviour
 {
     public bool cursorIsCrossHair;
+    public bool isMenu = false;
     [SerializeField] private Texture2D mouseCursorTexture, crossHairTexture;
     [SerializeField] private NextLevelBox nextLevelBox;
     [SerializeField] private GameMenuManager gameMenuManager;
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (nextLevelBox.isCompleteFully) cursorIsCrossHair = false;
-        else cursorIsCrossHair = true;
-        if (gameMenuManager.isPaused) cursorIsCrossHair = false;
-        else cursorIsCrossHair = true;
-
+        print("Hello");
+        if (!isMenu)
+        {
+            if (nextLevelBox.isCompleteFully) cursorIsCrossHair = false;
+            else cursorIsCrossHair = true;
+            if (gameMenuManager.isPaused) cursorIsCrossHair = false;
+            else cursorIsCrossHair = true;
+        }
         if (cursorIsCrossHair)
         {
             Cursor.SetCursor(crossHairTexture, new Vector2(10, 10), CursorMode.Auto);
-
         }
         else
         {
