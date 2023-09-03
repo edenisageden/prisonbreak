@@ -7,14 +7,14 @@ public class CursorManager : MonoBehaviour
     public bool cursorIsCrossHair;
     public bool isMenu = false;
     [SerializeField] private Texture2D mouseCursorTexture, crossHairTexture;
-    [SerializeField] private NextLevelBox nextLevelBox;
+    [SerializeField] private GameObject completionMenu;
     [SerializeField] private GameMenuManager gameMenuManager;
 
     private void Update()
     {
         if (!isMenu)
         {
-            if (nextLevelBox.isCompleteFully) cursorIsCrossHair = false;
+            if (completionMenu.activeSelf) cursorIsCrossHair = false;
             else cursorIsCrossHair = true;
             if (gameMenuManager.isPaused) cursorIsCrossHair = false;
             else cursorIsCrossHair = true;

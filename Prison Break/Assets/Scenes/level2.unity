@@ -10219,6 +10219,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1045111295}
     - target: {fileID: 4317156595243803796, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
+      propertyPath: completionMenu
+      value: 
+      objectReference: {fileID: 1625971803}
+    - target: {fileID: 4317156595243803796, guid: 57b42a6ca821be945ac3fda74d84083d, type: 3}
       propertyPath: cursorIsCrossHair
       value: 1
       objectReference: {fileID: 0}
