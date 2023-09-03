@@ -36,12 +36,15 @@ public class CameraShakeManager : MonoBehaviour
 
     IEnumerator ShakeCamera()
     {
-        cinemachineShake.m_AmplitudeGain = amplitude;
-        cinemachineShake.m_FrequencyGain = frequency;
+        if (PlayerPrefs.GetInt("Screenshake") == 1)
+        {
+            cinemachineShake.m_AmplitudeGain = amplitude;
+            cinemachineShake.m_FrequencyGain = frequency;
 
-        yield return new WaitForSecondsRealtime(duration);
+            yield return new WaitForSecondsRealtime(duration);
 
-        cinemachineShake.m_AmplitudeGain = 0f;
-        cinemachineShake.m_FrequencyGain = 0f;
+            cinemachineShake.m_AmplitudeGain = 0f;
+            cinemachineShake.m_FrequencyGain = 0f;
+        }
     }
 }

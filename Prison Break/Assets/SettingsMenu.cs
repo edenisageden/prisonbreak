@@ -15,6 +15,12 @@ public class SettingsMenu : MonoBehaviour
         float value;
         audioMixer.GetFloat("Volume", out value);
         audioSlider.value = value;
+
+        if (PlayerPrefs.GetInt("Screenshake") == 1) screenshakeToggle.isOn = true;
+        else screenshakeToggle.isOn = false;
+
+        if (PlayerPrefs.GetInt("PostProcessing") == 1) postProcessingToggle.isOn = true;
+        else postProcessingToggle.isOn = false;
     }
 
     public void SetPostProcessing(bool isOn)
