@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d78d4f3eda49ad44a8b33bde25ffda0c, type: 3}
   m_Name: LevelInfo 5
   m_EditorClassIdentifier: 
-  level: 3
+  level: 5
   goldTime: 8
   silverTime: 12
+  isBoss: 0
