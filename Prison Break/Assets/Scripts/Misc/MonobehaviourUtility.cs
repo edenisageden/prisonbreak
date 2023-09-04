@@ -36,6 +36,8 @@ public class MonobehaviourUtility: MonoBehaviour
     public static void DeleteData()
     {
         PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("PostProcessing", 1);
+        PlayerPrefs.SetInt("Screenshake", 1);
         OnDataDeleted?.Invoke();
     }
     public static void CloseGame()
