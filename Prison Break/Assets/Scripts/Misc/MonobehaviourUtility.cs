@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class MonobehaviourUtility: MonoBehaviour
 {
+    public static event Action OnDataDeleted = delegate { };
+
     public static void OpenScene(string name)
     {
         SceneManager.LoadScene(name.ToLower().Trim());
@@ -34,6 +36,7 @@ public class MonobehaviourUtility: MonoBehaviour
     public static void DeleteData()
     {
         PlayerPrefs.DeleteAll();
+        OnDataDeleted?.Invoke();
     }
     public static void CloseGame()
     {

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -17,6 +18,14 @@ public class SettingsMenu : MonoBehaviour
         audioSlider.value = value;
 
         InitializeToggles();
+    }
+    private void Awake()
+    {
+        MonobehaviourUtility.OnDataDeleted += InitializeToggles;
+    }
+    private void OnDestroy()
+    {
+        MonobehaviourUtility.OnDataDeleted -= InitializeToggles;
     }
 
     private void InitializeToggles()

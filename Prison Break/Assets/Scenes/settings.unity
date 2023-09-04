@@ -1412,6 +1412,7 @@ GameObject:
   - component: {fileID: 734352249}
   - component: {fileID: 734352254}
   - component: {fileID: 734352255}
+  - component: {fileID: 734352256}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1537,6 +1538,18 @@ MonoBehaviour:
   audioSlider: {fileID: 560849723}
   postProcessingToggle: {fileID: 259997918}
   screenshakeToggle: {fileID: 253129330}
+--- !u!114 &734352256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734352248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3bc85f988cae0d4ba70762147e55d10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &790453740
 GameObject:
   m_ObjectHideFlags: 0
