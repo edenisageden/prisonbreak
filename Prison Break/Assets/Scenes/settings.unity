@@ -1535,8 +1535,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: bf98ddf241e4a8844847f35e9d1f6281, type: 2}
   audioSlider: {fileID: 560849723}
-  postProcessingToggle: {fileID: 0}
-  screenshakeToggle: {fileID: 0}
+  postProcessingToggle: {fileID: 259997918}
+  screenshakeToggle: {fileID: 253129330}
 --- !u!1 &790453740
 GameObject:
   m_ObjectHideFlags: 0
