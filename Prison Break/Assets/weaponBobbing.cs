@@ -10,6 +10,8 @@ public class weaponBobbing : MonoBehaviour
 
     private void Start()
     {
+        LeanTween.reset();
+        LeanTween.init();
         if (doScale) ScaleUp();
         if (doPulse) PulseUp();
     }
