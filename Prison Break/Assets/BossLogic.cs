@@ -47,6 +47,9 @@ public class BossLogic : MonoBehaviour, IDamagable
     private Attacks currentAttack;
     private bool isAttacking;
     private bool justDashed;
+    private bool hasDonePowerUp = false;
+    public static event Action OnAngry = delegate { };
+    private bool canContinue;
     private enum BossState
     {
         Attacking, Waiting, Dead
@@ -79,6 +82,23 @@ public class BossLogic : MonoBehaviour, IDamagable
 
     private void Update()
     {
+        if (isPhase2 && !hasDonePowerUp)
+        {
+            animator.SetTrigger("OnAngry");
+            hasDonePowerUp = true;
+        }
+        else if (isPhase2 && !canContinue)
+        {
+            aiDestinationSetter.enabled = false;
+            aiPath.enabled = false;
+            return;
+        }
+        else
+        {
+            aiDestinationSetter.enabled = true;
+            aiPath.enabled = true;
+        }
+
         CalculateAngle();
 
         if (justDashed && !bossDashLogic.isDashDuration)
@@ -129,6 +149,10 @@ public class BossLogic : MonoBehaviour, IDamagable
             if (x == 0) return Attacks.Punch;
             else return Attacks.KnifeThrow;
         }
+    }
+    private void SetCanContinueToTrue()
+    {
+        canContinue = true;
     }
     private void CalculateAngle()
     {
