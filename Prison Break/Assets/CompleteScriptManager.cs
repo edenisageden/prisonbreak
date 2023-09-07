@@ -62,7 +62,7 @@ public class CompleteScriptManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(15);
+            SceneManager.LoadScene(0);
         }
     }
 }
