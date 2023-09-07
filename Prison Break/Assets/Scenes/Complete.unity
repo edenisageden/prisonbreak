@@ -532,7 +532,7 @@ GameObject:
   - component: {fileID: 2115873629}
   - component: {fileID: 2115873628}
   - component: {fileID: 2115873627}
-  - component: {fileID: 2115873631}
+  - component: {fileID: 2115873632}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -623,7 +623,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &2115873631
+--- !u!114 &2115873632
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -632,19 +632,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2115873626}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd3c2d6a058757b49b94e2446437783c, type: 3}
+  m_Script: {fileID: 11500000, guid: f096569244f952544b55953e441db192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 896080956}
   image: {fileID: 1458896316}
   sprites:
-  - {fileID: 21300000, guid: 7232425f5378906448db77579aeb832e, type: 3}
-  - {fileID: 21300000, guid: 4361af94b04547045aeb73cd29940c0f, type: 3}
-  - {fileID: 21300000, guid: 07eb5bee743bf8747b160a6696aa0274, type: 3}
-  - {fileID: 21300000, guid: 9fd067e5f8865db4aae29d529983d85d, type: 3}
+  - {fileID: 21300000, guid: 76b2a842871052848bed6b99afbaf07a, type: 3}
+  - {fileID: 21300000, guid: 3353ec32b3e0aa549b5632ced35e3590, type: 3}
+  - {fileID: 21300000, guid: ecf7b67c49878024fa1d97e3893bc035, type: 3}
   lines:
-  - You were arrested on September 8th for misgendering your neighbors dog.
-  - The police raided your house.
-  - You were thrown in the highest security prison. Escape is IMPOSSIBLE...
-  - Or is it?
+  - The exit is in front of you. Finally...
+  - Freedom!
+  - You somehow destroy the fence and escape.
   textSpeed: 0.05
