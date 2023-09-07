@@ -43,7 +43,7 @@ public class BossLogic : MonoBehaviour, IDamagable
     [HideInInspector] public Vector2 angle;
     private bool isDoingKnifeThrow;
     public float currentHealth;
-    private bool isPhase2 => currentHealth <= phase2Health;
+    public bool isPhase2 => currentHealth <= phase2Health;
     private Attacks currentAttack;
     private bool isAttacking;
     private bool justDashed;

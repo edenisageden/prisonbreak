@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class BGMManager : MonoBehaviour
 {
-    [SerializeField] private GameObject BGM1, BGM2, BGM3, BGM4;
+    [SerializeField] private GameObject BGM1, BGM2, BGM3, BGM3dash5, BGM4;
 
     private void Awake()
     {
@@ -60,7 +60,12 @@ public class BGMManager : MonoBehaviour
     }
     private bool IsBGMScene3()
     {
-        if (SceneManager.GetActiveScene().name == "level10") return true;
+        if (SceneManager.GetActiveScene().name == "level10" && !FindAnyObjectByType<BossLogic>().isPhase2) return true;
+        else return false;
+    }
+    private bool IsBGMScene3dash5()
+    {
+        if (SceneManager.GetActiveScene().name == "level10" && FindAnyObjectByType<BossLogic>().isPhase2) return true;
         else return false;
     }
     private bool IsBGMScene4()
