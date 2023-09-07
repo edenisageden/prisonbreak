@@ -23,6 +23,7 @@ public class BGMManager : MonoBehaviour
             BGM1.SetActive(true);
             BGM2.SetActive(false);
             BGM3.SetActive(false);
+            BGM3dash5.SetActive(false);
             BGM4.SetActive(false);
         }
         if (IsBGMScene2())
@@ -30,6 +31,7 @@ public class BGMManager : MonoBehaviour
             BGM1.SetActive(false);
             BGM2.SetActive(true);
             BGM3.SetActive(false);
+            BGM3dash5.SetActive(false);
             BGM4.SetActive(false);
         }
         if (IsBGMScene3())
@@ -37,6 +39,15 @@ public class BGMManager : MonoBehaviour
             BGM1.SetActive(false);
             BGM2.SetActive(false);
             BGM3.SetActive(true);
+            BGM3dash5.SetActive(false);
+            BGM4.SetActive(false);
+        }
+        if (IsBGMScene3dash5())
+        {
+            BGM1.SetActive(false);
+            BGM2.SetActive(false);
+            BGM3.SetActive(false);
+            BGM3dash5.SetActive(true);
             BGM4.SetActive(false);
         }
         if (IsBGMScene4())
@@ -44,6 +55,7 @@ public class BGMManager : MonoBehaviour
             BGM1.SetActive(false);
             BGM2.SetActive(false);
             BGM3.SetActive(false);
+            BGM3dash5.SetActive(false);
             BGM4.SetActive(true);
         }
     }
