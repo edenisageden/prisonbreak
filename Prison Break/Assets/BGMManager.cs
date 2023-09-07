@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class BGMManager : MonoBehaviour
 {
-    [SerializeField] private GameObject BGM1, BGM2, BGM3;
+    [SerializeField] private GameObject BGM1, BGM2, BGM3, BGM4;
 
     private void Awake()
     {
@@ -23,24 +23,34 @@ public class BGMManager : MonoBehaviour
             BGM1.SetActive(true);
             BGM2.SetActive(false);
             BGM3.SetActive(false);
+            BGM4.SetActive(false);
         }
         if (IsBGMScene2())
         {
             BGM1.SetActive(false);
             BGM2.SetActive(true);
             BGM3.SetActive(false);
+            BGM4.SetActive(false);
         }
         if (IsBGMScene3())
         {
             BGM1.SetActive(false);
             BGM2.SetActive(false);
             BGM3.SetActive(true);
+            BGM4.SetActive(false);
+        }
+        if (IsBGMScene4())
+        {
+            BGM1.SetActive(false);
+            BGM2.SetActive(false);
+            BGM3.SetActive(false);
+            BGM4.SetActive(true);
         }
     }
 
     private bool IsBGMScene1()
     {
-        if (SceneManager.GetActiveScene().name == "levelselection" || SceneManager.GetActiveScene().name == "mainmenu" || SceneManager.GetActiveScene().name == "settings") return true;
+        if (SceneManager.GetActiveScene().name == "mainmenu" || SceneManager.GetActiveScene().name == "settings") return true;
         else return false;
     }
     private bool IsBGMScene2()
@@ -51,6 +61,11 @@ public class BGMManager : MonoBehaviour
     private bool IsBGMScene3()
     {
         if (SceneManager.GetActiveScene().name == "level10") return true;
+        else return false;
+    }
+    private bool IsBGMScene4()
+    {
+        if (SceneManager.GetActiveScene().name == "levelselection") return true;
         else return false;
     }
 }
