@@ -67,7 +67,17 @@ public class BGMManager : MonoBehaviour
     }
     private bool IsBGMScene2()
     {
-        if (SceneManager.GetActiveScene().name == "level1" || SceneManager.GetActiveScene().name == "level2") return true;
+        if (
+            SceneManager.GetActiveScene().name == "level1" || 
+            SceneManager.GetActiveScene().name == "level2" ||
+            SceneManager.GetActiveScene().name == "level3" ||
+            SceneManager.GetActiveScene().name == "level4" ||
+            SceneManager.GetActiveScene().name == "level5" ||
+            SceneManager.GetActiveScene().name == "level6" ||
+            SceneManager.GetActiveScene().name == "level7" ||
+            SceneManager.GetActiveScene().name == "level8" ||
+            SceneManager.GetActiveScene().name == "level9"
+            ) return true;
         else return false;
     }
     private bool IsBGMScene3()
