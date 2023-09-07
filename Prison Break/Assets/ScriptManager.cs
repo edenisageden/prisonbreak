@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScriptManager : MonoBehaviour
 {
@@ -61,7 +62,7 @@ public class ScriptManager : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
+            SceneManager.LoadScene(3);
         }
     }
 }
