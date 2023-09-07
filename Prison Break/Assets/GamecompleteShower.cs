@@ -18,6 +18,7 @@ public class GamecompleteShower : MonoBehaviour
 
     private IEnumerator GoToComplete()
     {
+        PlayerPrefs.SetFloat("CompleteTime" + 10, 3f);
         yield return new WaitForSeconds(delay);
         SceneManager.LoadScene(14);
     }
