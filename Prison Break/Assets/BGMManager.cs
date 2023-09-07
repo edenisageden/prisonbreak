@@ -76,7 +76,8 @@ public class BGMManager : MonoBehaviour
             SceneManager.GetActiveScene().name == "level6" ||
             SceneManager.GetActiveScene().name == "level7" ||
             SceneManager.GetActiveScene().name == "level8" ||
-            SceneManager.GetActiveScene().name == "level9"
+            SceneManager.GetActiveScene().name == "level9" ||
+            SceneManager.GetActiveScene().name == "level0" 
             ) return true;
         else return false;
     }
